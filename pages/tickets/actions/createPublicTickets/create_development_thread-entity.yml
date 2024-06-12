@@ -1,0 +1,6 @@
+mode: structured
+valueByMode:
+  structured:
+    thread_type:
+      value: Development
+  custom: ''

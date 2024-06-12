@@ -1,0 +1,31 @@
+id: '17123059925530.546329493021249'
+definitionId: accordion
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 102
+      w: 24
+      h: 30
+  xs:
+    gridItem:
+      x: 0
+      y: 213
+      w: 24
+      h: 36
+properties:
+  heightMode: auto
+  name: acc_ProgressUpdates
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+actions: {}
+slots:
+  - id: '17123059925530.9754807104694627'
+    name: items
+    children:
+      - accordionItem/accordionItem.yml
+      - accordionItem2/accordionItem2.yml
+      - accordionItem3/accordionItem3.yml
+      - accordionItem4/accordionItem4.yml

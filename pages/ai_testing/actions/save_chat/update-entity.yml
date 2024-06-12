@@ -1,0 +1,8 @@
+mode: structured
+valueByMode:
+  structured:
+    agent_number:
+      value: '{{state.randomNum}}'
+    transcript:
+      value: '{{JSON.stringify(ui.cht_brainlessAgent.messages)}}'
+  custom: ''

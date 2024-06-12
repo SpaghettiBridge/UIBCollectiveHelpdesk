@@ -1,0 +1,96 @@
+id: '17123082748040.8676247745009467'
+kind: workflow
+name: load_Chat_from_table
+nameConfigured: true
+steps:
+  - id: '17123082788120.04877286232519484'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17123072909830.49629678951883127'
+        valueType: string
+      - type: value
+        value: '{{ui.tbl_my_chats.selectedRow.data.pk_chat_id}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17123090142730.6162309690834338'
+    type: putInStore
+    name: save2
+    params:
+      - type: name
+        value: '17122266748490.4108536235161897'
+        valueType: string
+      - type: value
+        value: '{{ui.tbl_my_chats.selectedRow.data.agent_number}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17123088488210.8351628282155352'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17123089928030.8604239726555245'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17123089706850.6659793088503139'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.load_Chat_from_table.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.load_Chat_from_table.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.load_Chat_from_table.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

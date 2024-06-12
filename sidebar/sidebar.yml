@@ -1,0 +1,26 @@
+id: '17180163636600.7274071742723958'
+name: content
+children:
+  - id: '17180163636620.5709666492726606'
+    definitionId: layoutSidebar
+    parentSlotId: '17180163636600.7274071742723958'
+    styles: {}
+    properties:
+      name: layoutSidebar
+      __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+        - xl
+        - xs
+      stickySidebar:
+        value: false
+        dataValue: 'false'
+        withData: false
+      __UIBAKERY__SHOW__CONDITION__CODE__: 'true'
+    index: 0
+    slots:
+      - id: '17180163636620.30762030648752514'
+        name: content
+        children:
+          - components/flt_type.yml
+          - components/select7.yml
+          - components/select8.yml
+          - components/select9.yml

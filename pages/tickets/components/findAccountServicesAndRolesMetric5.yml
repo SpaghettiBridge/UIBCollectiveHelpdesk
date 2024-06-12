@@ -1,0 +1,70 @@
+id: '17158500582040.7967311680954965'
+definitionId: metric
+parentSlotId: '17152448971770.540481335972298'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 3
+      h: 19
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 112
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 712
+      w: 24
+      h: 19
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 112
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  data: >-
+    {{actions.get_tickets.data.filter(x=> x.fk_creator_id ==
+    state.AccountData.account_id)}}
+  name: findAccountServicesAndRolesMetric5
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Tickets I've raised
+  operation: count
+  groupType: not_group
+  showLoading:
+    withData: true
+    dataValue: 'false'
+    value: false
+  showGroupField: true
+actions: {}
+slots:
+  - id: '17158500582040.9411380200220225'
+    name: metricField
+    children:
+      - id: '17158500582040.456103233760649'
+        definitionId: atomicString
+        parentSlotId: '17158500582040.9411380200220225'
+        styles: {}
+        properties:
+          name: atomicString
+          prop: fk_creator_id
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []
+  - id: '17158500582040.2836616655061748'
+    name: additionalField
+    children: []
+  - id: '17158500582040.733170215004451'
+    name: groupByField
+    children: []

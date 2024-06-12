@@ -1,0 +1,109 @@
+id: '17122275709480.4376545303910706'
+kind: workflow
+name: change_assistant
+nameConfigured: true
+steps:
+  - id: '17122275754140.6591676432259368'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17122277427370.07653004729668922'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17122269305690.28070208828106336'
+        valueType: string
+      - type: value
+        value: >2-
+           {{
+          if(state.randomNum >= 50 && state.randomNum != 100){
+
+          return
+          "https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2024/04/8cd02a5f-854a-4d41-b880-4bbc732d80ad-removebg-preview.png"
+
+          }
+
+          else if(state.randomNum <= 49 && state.randomNum != 100) {
+
+          return
+          "https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2024/04/57222f02-e3d0-45fa-a0fb-ea35d5f550f4-removebg-preview.png" 
+
+          }
+
+          else{
+
+          return
+          "https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2024/04/feedme.jpg"}
+
+          }}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17122277560220.8521215902175674'
+    type: putInStore
+    name: save2
+    params:
+      - type: name
+        value: '17122270979560.36898943077649116'
+        valueType: string
+      - type: value
+        value: |-
+          {{
+          if(state.randomNum >= 50 && state.randomNum != 100){
+          return "Jim"
+          }
+          else if(state.randomNum <= 49 && state.randomNum != 100) {
+          return "Larry" 
+          }
+          else{
+          return "Lilith"
+          }
+          }}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.change_assistant.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.change_assistant.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.change_assistant.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+actions:
+  success:
+    - action: '17123072009380.9989319400181726'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []

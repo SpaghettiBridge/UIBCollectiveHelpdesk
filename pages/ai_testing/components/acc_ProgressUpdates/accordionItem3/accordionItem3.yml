@@ -1,0 +1,24 @@
+id: '17123059925530.34385083987859044'
+definitionId: accordionItem
+styles: {}
+properties:
+  name: accordionItem3
+  heightMode: auto
+  collapsible: true
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17123059925530.9754807104694627'
+index: 0
+slots:
+  - id: '17123059925530.2411464413507305'
+    name: header
+    children:
+      - hd_CurrStatus.yml
+  - id: '17123059925530.13658238552612167'
+    name: footer
+    children: []
+  - id: '17123059925530.617355349862708'
+    name: views
+    children:
+      - view_3/view_3.yml

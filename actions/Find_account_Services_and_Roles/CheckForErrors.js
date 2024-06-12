@@ -1,0 +1,1 @@
+if({{error}}){return false}return true

@@ -1,0 +1,122 @@
+id: '17122265948970.8245536807121343'
+kind: workflow
+name: createAssistant
+nameConfigured: true
+steps:
+  - id: '17122265993050.754000286796171'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17122266569850.4309209996562078'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17122266748490.4108536235161897'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17122269142990.37076300227359926'
+    type: putInStore
+    name: save2
+    params:
+      - type: name
+        value: '17122269305690.28070208828106336'
+        valueType: string
+      - type: value
+        value: >-
+          {{
+
+          if(state.randomNum >= 50 && state.randomNum != 100){
+
+          return
+          "https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2024/04/8cd02a5f-854a-4d41-b880-4bbc732d80ad-removebg-preview.png"
+
+          }
+
+          else if(state.randomNum <= 49 && state.randomNum != 100) {
+
+          return
+          "https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2024/04/57222f02-e3d0-45fa-a0fb-ea35d5f550f4-removebg-preview.png" 
+
+          }
+
+          else{
+
+          return
+          "https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2024/04/feedme.jpg"
+
+          }
+
+          }}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17122270853890.02046261292512086'
+    type: putInStore
+    name: save3
+    params:
+      - type: name
+        value: '17122270979560.36898943077649116'
+        valueType: string
+      - type: value
+        value: |-
+          {{
+          if(state.randomNum >= 50 && state.randomNum != 100){
+          return "Jim"
+          }
+          else if(state.randomNum <= 49 && state.randomNum != 100) {
+          return "Larry" 
+          }
+          else{
+          return "Lilith"
+          }
+          }}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.createAssistant.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.createAssistant.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.createAssistant.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

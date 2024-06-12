@@ -1,0 +1,275 @@
+id: '17122306321880.7445086892652237'
+name: Find_account_Services_and_Roles
+nameConfigured: true
+steps:
+  - id: '17122306321880.2341047496284694'
+    type: customSQLQuery
+    name: FindServicesForLoggedInUser
+    params:
+      - type: query
+        value: ./FindServicesForLoggedInUser-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./FindServicesForLoggedInUser-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.User.email || user.email   )
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ./FindServicesForLoggedInUser-successMapper.js
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: true
+    isChanged: true
+    nameConfigured: true
+  - id: '17122306321880.7492782150632573'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17122306321880.385813701421444'
+                type: condition
+                name: CheckForErrors
+                params:
+                  - type: code
+                    value: ./CheckForErrors.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17122306321880.8643052579562831'
+                            type: putInStore
+                            name: SaveFoundAccountToState
+                            params:
+                              - type: name
+                                value: '17122307117810.24574614629219704'
+                                valueType: string
+                              - type: value
+                                value: "let services =[],\n    roles = []\nif(data.length > 1){\n\t{{data}}.map(item => {\n    \troles.push({role:item.system_role,id:item.service_id})\n    services.push(item.service_id);\n\t})\n  \tdata[0].service_id = services;\n  \tdata[0].roles=roles;\n}\n\nreturn data[0]"
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: producible
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                            paused: false
+                          - id: '17122306321880.9533458107791024'
+                            type: customAsyncCode
+                            name: Console_Log_Account
+                            params:
+                              - type: asyncCode
+                                value: ./Console_Log_Account.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            paused: true
+                            nameConfigured: true
+                          - id: '17122306321880.8937153581209114'
+                            type: putInStore
+                            name: ResetErrorCount
+                            params:
+                              - type: name
+                                value: '17122307389200.19517116941607915'
+                                valueType: string
+                              - type: value
+                                value: '0'
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: producible
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                            paused: false
+                      - condition: false
+                        steps:
+                          - id: '17122306321880.823388637318486'
+                            type: condition
+                            name: CheckIfWeHad3Errors
+                            params:
+                              - type: code
+                                value: ./CheckIfWeHad3Errors.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: steps
+                                value:
+                                  - condition: true
+                                    steps:
+                                      - id: '17122306321880.2673585574014443'
+                                        type: putInStore
+                                        name: UpdateErrorCount
+                                        params:
+                                          - type: name
+                                            value: '16806918795330.8591439274959567'
+                                            valueType: string
+                                          - type: value
+                                            value: '{{state.errorCount+1}}'
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                        level: 3
+                                        fallthroughError: false
+                                        isChanged: true
+                                        nameConfigured: true
+                                        paused: false
+                                      - id: '17122306321880.7454604098715005'
+                                        type: customAsyncCode
+                                        name: RestartMainAction
+                                        params:
+                                          - type: asyncCode
+                                            value: ./RestartMainAction.js
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                        level: 3
+                                        fallthroughError: false
+                                        isChanged: true
+                                        nameConfigured: true
+                                        paused: false
+                                  - condition: false
+                                    steps:
+                                      - id: '17122306321880.07619272598596694'
+                                        type: showToast
+                                        name: TellUserToReloadApp
+                                        params:
+                                          - type: message
+                                            value: >-
+                                              App has failed to load please refresh
+                                              the page
+                                            valueType: interpolatedValue
+                                          - type: type
+                                            value: danger
+                                            valueType: string
+                                          - type: icon
+                                            value: alert-triangle
+                                            valueType: string
+                                          - type: duration
+                                            value: '3000'
+                                            valueType: interpolatedValue
+                                          - type: position
+                                            value: top-end
+                                            valueType: string
+                                          - type: hideOnClick
+                                            value: true
+                                            valueType: custom
+                                        level: 3
+                                        fallthroughError: false
+                                        isChanged: true
+                                        nameConfigured: true
+                                        paused: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                            paused: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+                paused: false
+          - condition: false
+            steps:
+              - id: '17122306321880.1753525145842485'
+                type: showToast
+                name: notification
+                params:
+                  - type: message
+                    value: >-
+                      Sorry, your user account has not been found. Please
+                      request a login from your Head Teacher or contact IT
+                      support through the helpdesk.
+                    valueType: interpolatedValue
+                  - type: type
+                    value: danger
+                    valueType: string
+                  - type: icon
+                    value: checkmark-circle-2
+                    valueType: string
+                  - type: duration
+                    value: '3000'
+                    valueType: interpolatedValue
+                  - type: position
+                    value: top-end
+                    valueType: string
+                  - type: hideOnClick
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                paused: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+singleStep: false
+mode: manual
+modeConfigured: true
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.fnFindAccount.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.fnFindAccount.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: >-
+    Action "{{actions.Find_account_Services_and_Roles.name}}" has failed with
+    error: {{actions.Find_account_Services_and_Roles.error}} 
+  errorToastDuration: '3000'
+  errorToastHideByClick: true
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: true
+assigned: true
+selected: true
+configured: true
+kind: workflow
+actions:
+  success:
+    - action: '17123071466220.5411316437214853'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17072150506960.4378088238275031'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+  error: []

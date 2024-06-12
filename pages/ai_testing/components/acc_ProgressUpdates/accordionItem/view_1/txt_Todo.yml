@@ -1,0 +1,31 @@
+id: '17122309198290.46164973996401715'
+definitionId: text
+parentSlotId: '17123059925530.07192351918551121'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 21
+      h: 58
+  xs:
+    gridItem:
+      id: '17122309198290.46164973996401715'
+      x: 0
+      y: 0
+      w: 21
+      h: 79
+properties:
+  name: txt_Todo
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: |-
+    * Link to A created assistant (not currently possible until a UIB Update)
+    * work out how to add files into the assistant
+    * do we try to have people to people convo?
+    * are we building a full support system?
+    * have threads of chats so we can return to a conversation
+  markdownSupport: true
+actions: {}
+slots: []

@@ -1,0 +1,31 @@
+id: '17123060381720.21087745376340128'
+definitionId: text
+parentSlotId: '17123059925530.49744570969906654'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 53
+  xs:
+    gridItem:
+      id: '17123060381720.21087745376340128'
+      x: 0
+      y: 0
+      w: 9
+      h: 6
+properties:
+  name: txt_working
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: |-
+    * Ask Anything To ChatGPT
+    * Clear The chat when done
+    * Change Assistant Name and username based on dynamic data
+    * save chats in database
+    * allow a user to see their most recent chats
+    * how do we end the conversation? was it useful (Yes/No) 
+actions: {}
+slots: []

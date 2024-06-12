@@ -1,0 +1,10 @@
+- Send_Message
+- reset_chat
+- createAssistant
+- load_assistant
+- change_assistant
+- load_Mychats
+- save_chat
+- load_Chat_from_table
+- resolveChat
+- newAction

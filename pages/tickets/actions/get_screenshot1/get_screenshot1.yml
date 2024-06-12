@@ -1,0 +1,78 @@
+id: '17165389140600.7685731629406327'
+kind: workflow
+name: get_screenshot1
+nameConfigured: true
+steps:
+  - id: '17165441475500.05991709123235922'
+    type: s3Query
+    name: s3Query
+    params:
+      - type: datasourceId
+        value: supabase screenshot bucket
+        valueType: string
+      - type: s3ActionType
+        value: readFile
+        valueType: custom
+      - type: s3BucketName
+        value: ticket_screenshots
+        valueType: custom
+      - type: s3FilePrefix
+        value: ''
+        valueType: interpolatedValue
+      - type: s3Delimiter
+        value: ''
+        valueType: interpolatedValue
+      - type: s3MaxKeys
+        value: ''
+        valueType: interpolatedValue
+      - type: s3FileKey
+        value: >-
+          {{ui.getTicketsTable.selectedRow.data.id}}_{{ui.getTicketsTable.selectedRow.data.screenshot1}}
+        valueType: interpolatedValue
+      - type: s3SignedOperationType
+        value: PUT
+        valueType: custom
+      - type: s3UploadContentType
+        value: ''
+        valueType: interpolatedValue
+      - type: s3UploadData
+        value: ''
+        valueType: interpolatedValue
+      - type: s3DestinationFileKey
+        value: ''
+        valueType: interpolatedValue
+      - type: s3TagSet
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_screenshot1.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_screenshot1.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_screenshot1.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: false
+selected: true
+configured: true

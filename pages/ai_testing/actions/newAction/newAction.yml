@@ -1,0 +1,70 @@
+id: '17123267875740.190243410893292'
+kind: workflow
+name: newAction
+nameConfigured: false
+steps:
+  - id: '17123267888560.1062565015306014'
+    type: openApiRequest
+    name: request
+    params:
+      - type: datasourceId
+        value: Ai playground
+        valueType: string
+        mustSelectFirst: true
+      - type: url
+        value: https://api.openai.com/v1
+        valueType: string
+      - type: operation
+        value: get-/models
+        valueType: string
+        required: true
+      - type: parameters
+        value: []
+        valueType: custom
+        interpolationType: code
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: ''
+        valueType: string
+      - type: isBodyBinary
+        value: false
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.newAction.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.newAction.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.newAction.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false

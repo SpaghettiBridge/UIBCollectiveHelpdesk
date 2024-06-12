@@ -1,0 +1,23 @@
+id: '17127351682970.6916433793693451'
+definitionId: accordionItem
+parentSlotId: '17123059925530.9754807104694627'
+styles: {}
+properties:
+  name: accordionItem4
+  heightMode: auto
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+index: 3
+slots:
+  - id: '17127351682970.9676333799419234'
+    name: header
+    children:
+      - heading.yml
+  - id: '17127351682970.25019148559560755'
+    name: footer
+    children: []
+  - id: '17127351682970.5907970974941317'
+    name: views
+    children:
+      - view_4/view_4.yml

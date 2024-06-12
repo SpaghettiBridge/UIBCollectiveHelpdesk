@@ -1,0 +1,91 @@
+storeItemList:
+  - id: '17121472024830.8764250765599653'
+    name: droppedData
+    value: []
+    valueType: array
+    initialValue: []
+    version: 1
+  - id: '17122243619340.06032288274995756'
+    name: current_chat_log
+    value: []
+    valueType: array
+    initialValue: []
+    version: 1
+  - id: '17122266748490.4108536235161897'
+    name: randomNum
+    value: 0
+    valueType: number
+    initialValue: 0
+    version: 1
+  - id: '17122269305690.28070208828106336'
+    name: chatIcon
+    value: ''
+    valueType: string
+    initialValue: ''
+    version: 1
+  - id: '17122270979560.36898943077649116'
+    name: assistantName
+    value: ''
+    valueType: string
+    initialValue: ''
+    version: 1
+  - id: '17122306573300.2301098676119182'
+    name: User
+    value: {}
+    valueType: object
+    initialValue: {}
+    version: 1
+  - id: '17122307117810.24574614629219704'
+    name: AccountData
+    value: {}
+    valueType: object
+    initialValue: {}
+    version: 1
+  - id: '17122307389200.19517116941607915'
+    name: errorCount
+    value: 0
+    valueType: number
+    initialValue: 0
+    version: 1
+  - id: '17123072909830.49629678951883127'
+    name: current_chat_id
+    value: ''
+    valueType: string
+    initialValue: ''
+    version: 1
+  - id: '17158471634990.930037243865043'
+    name: user_type
+    value: USER
+    valueType: string
+    initialValue: USER
+    version: 1
+  - id: '17163653426990.19593589516807453'
+    name: image_token
+    value: >-
+      ?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ0aWNrZXRfc2NyZWVuc2hvdHMvZXJyb3IucG5nIiwiaWF0IjoxNzE2MzY1MDYxLCJleHAiOjE3MTY5Njk4NjF9.yVAhkYsud0XQhC_xxKBYfRBSojQxFwixkng4u50Ld5s&t=2024-05-22T08%3A04%3A22.935Z
+    valueType: string
+    initialValue: >-
+      ?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ0aWNrZXRfc2NyZWVuc2hvdHMvZXJyb3IucG5nIiwiaWF0IjoxNzE2MzY1MDYxLCJleHAiOjE3MTY5Njk4NjF9.yVAhkYsud0XQhC_xxKBYfRBSojQxFwixkng4u50Ld5s&t=2024-05-22T08%3A04%3A22.935Z
+    version: 1
+    parentPageId: '17152448971770.8946191640924275'
+metadata:
+  favicon: ''
+  code: "<script src=\"https://deno.land/x/openai@v4.29.2/mod.ts\"></script>\n\n<style>\n/*   Menu styles - Horizontal / brand colours */\nnb-menu ul.menu-items {\n  border-radius: 6px !important;\n\t list-style-type: none !important;\n   display: flex !important;\n   flex-wrap: wrap !important;\n   background-color: #00697F !important;\n   text-transform: uppercase !important;\n   font-weight: 400 !important;\n   letter-spacing: .09em !important;\n   box-shadow: none !important;\n}\n  nb-menu li.menu-item {\n    border: 0 !important;\n    border-right: 1px solid #fff !important;\n}\n    \n  nb-menu li.menu-item a {\n    color: #fff !important;\n}\n  .ub-context-menu nb-context-menu, .ub-context-menu__only-icons nb-context-menu{\nmin-width: max-content !important;\n}\n  nb-menu li.menu-item a:hover {\n    background-color: #DDEDEE !important;\n         color: #513C35 !important;\n  }\n\n  nb-menu .menu-item a.active {\n    background-color:#DDEDEE !important;\n     color: #513C35 !important;\n}\n/* Select fields - enabled/disabled */\n  .select-button[disabled] nb-icon{\n  color: white !important;\n  }\n\n.edit-input:not([disabled]){\n  color: #000000 !important;\n  background: #E6E9F0 !important;\n  border: 1px solid #DFE2E8 !important;\n} \n \n.edit-input[disabled]{ \n  color: #000000 !important;\n  background: white !important;\n  border: none !important; \n} \n  \n .select-button:not([disabled]){   \n  color: #000000 !important;\n  background: #E6E9F0 !important;\n  border: 1px solid #DFE2E8 !important;\n} \n  \n.select-button[disabled]{  \n  color: #000000 !important;\n  background: white !important;\n  border: none !important; \n} \n   .zoom{\ntransition: transform .2s;\n}\n.zoom:hover {\n  z-index: 99;\n  transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */\n} \n  </style>"
+  title: AI support
+  description: ''
+  breakpoints: []
+  rendererCachingEnabled: false
+appSettings:
+  properties:
+    defaultData: '{}'
+  actions:
+    appLoad:
+      - action: '17122306321880.7445086892652237'
+        paramCode: ''
+        blockPageLoad: false
+        preventDefault: false
+        index: 0
+    appData: []
+  gridVersion: 2
+  density: compact
+internalType: project

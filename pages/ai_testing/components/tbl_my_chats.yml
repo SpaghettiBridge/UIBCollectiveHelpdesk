@@ -1,0 +1,184 @@
+id: '17123064514880.7550516985208853'
+definitionId: smartTable
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 8
+      y: 9
+      w: 16
+      h: 88
+  xs:
+    gridItem:
+      x: 0
+      y: 258
+      w: 24
+      h: 80
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: '{{actions.load_Mychats.data}}'
+  name: tbl_my_chats
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: My Chat History
+  showLoading:
+    withData: true
+    dataValue: '{{actions.load_Mychats.loading}}'
+    value: false
+  sortColumn:
+    value: created_at
+    dataValue: ''
+    withData: false
+  sortDirection:
+    value: desc
+    dataValue: asc
+    withData: false
+  rowHeight: dynamic
+actions:
+  smartTableRowClick:
+    - action: '17123082748040.8676247745009467'
+      paramCode: ''
+      index: 0
+slots:
+  - id: '17123064514880.3354100723297604'
+    name: columns
+    children:
+      - id: '17123081660440.0811635736541032'
+        definitionId: atomicString
+        parentSlotId: '17123064514880.3354100723297604'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString
+          prop: pk_chat_id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 0
+        slots: []
+      - id: '17123081660440.977184157984345'
+        definitionId: atomicString
+        parentSlotId: '17123064514880.3354100723297604'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString2
+          prop: fk_account_id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 2
+        slots: []
+      - id: '17123081660440.21369424799634107'
+        definitionId: atomicDateTime
+        parentSlotId: '17123064514880.3354100723297604'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicDateTime
+          prop: created_at
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 1
+        slots: []
+      - id: '17123081660440.8072237978818271'
+        definitionId: atomicNumber
+        parentSlotId: '17123064514880.3354100723297604'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicNumber
+          prop: agent_number
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 60
+          widthMode: auto
+          filter: true
+        index: 3
+        slots: []
+      - id: '17123081660440.6739194341960959'
+        definitionId: atomicText
+        parentSlotId: '17123064514880.3354100723297604'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText
+          prop: transcript
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          widthMode: auto
+          width: 120
+          mappedValue: '{{value[0].content}}'
+          title: Initial Question
+        index: 4
+        slots: []
+      - id: '17123081660440.5903704928570797'
+        definitionId: atomicBoolean
+        parentSlotId: '17123064514880.3354100723297604'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean
+          prop: resolved
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          widthMode: fixed
+          width: '80'
+          pinColumn: right
+          controlType:
+            value: toggle
+            dataValue: toggle
+            withData: false
+        index: 5
+        slots: []

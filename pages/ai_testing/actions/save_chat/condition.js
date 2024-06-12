@@ -1,0 +1,1 @@
+{{state.current_chat_id != ""}}

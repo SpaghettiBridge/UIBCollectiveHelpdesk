@@ -1,0 +1,1 @@
+return {{ui.cht_brainlessAgent.messages}};

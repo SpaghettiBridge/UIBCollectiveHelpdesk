@@ -1,0 +1,95 @@
+id: '17122247514460.895207964466886'
+kind: workflow
+name: reset_chat
+nameConfigured: true
+steps:
+  - id: '17122247552340.9968353239443188'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17122243619340.06032288274995756'
+        valueType: string
+      - type: value
+        value: '[]'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17122247826900.19682957653407818'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+  - id: '17123085622460.4190005602417939'
+    type: putInStore
+    name: save2
+    params:
+      - type: name
+        value: '17123072909830.49629678951883127'
+        valueType: string
+      - type: value
+        value: '""'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17123086021670.47296915315175436'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17122275709480.4376545303910706'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.reset_chat.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.reset_chat.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.reset_chat.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

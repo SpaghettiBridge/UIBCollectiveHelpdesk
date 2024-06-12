@@ -1,0 +1,79 @@
+id: '17163037365990.06647517562604355'
+definitionId: selectWithAtomics
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: '{{actions.get_ticket_types.data}}'
+    withData: true
+  name: select3
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: name
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_ticket_types.loading}}'
+    value: false
+  labelConfig:
+    text: Type
+    position: horizontal
+    align: left
+  disabled:
+    value: false
+    dataValue: '{{state.user_type == "USER"}}'
+    withData: true
+  value: '{{ui.getTicketsTable.selectedRow.data.ticket_type}}'
+parentSlotId: '17163037365990.12536073187745211'
+index: -1
+slots:
+  - id: '17163037365990.24734203098237972'
+    name: optionViewTypes
+    children:
+      - id: '17163042234000.04796159072804973'
+        definitionId: atomicString
+        parentSlotId: '17163037365990.24734203098237972'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString16
+          prop: name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []

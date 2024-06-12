@@ -1,0 +1,41 @@
+id: '1'
+name: AI Testing
+url: ai_testing
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+slots:
+  - id: '1'
+    name: content
+    bindings: {}
+    children:
+      - id: '1'
+        definitionId: grid
+        parentSlotId: '1'
+        index: 0
+        styles: {}
+        properties:
+          name: grid
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        actions:
+          pageLoad:
+            - action: '17122265948970.8245536807121343'
+              paramCode: ''
+              blockPageLoad: false
+              preventDefault: false
+              index: 0
+        slots:
+          - id: '2'
+            name: content
+            bindings: {}
+            children:
+              - components/cht_brainlessAgent.yml
+              - components/btn_clearChat.yml
+              - components/btn_ChangeAgent.yml
+              - components/div_Split.yml
+              - components/acc_ProgressUpdates/acc_ProgressUpdates.yml
+              - components/tbl_my_chats.yml
+              - components/button.yml

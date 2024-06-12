@@ -1,0 +1,21 @@
+id: '17158465343410.44931998158605446'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: 12
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      h: 9
+      w: 24
+properties:
+  name: heading2
+  text: Tickets
+  verticalAlignment: middle
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17158465343410.71512537254104'
+index: 0
+slots: []

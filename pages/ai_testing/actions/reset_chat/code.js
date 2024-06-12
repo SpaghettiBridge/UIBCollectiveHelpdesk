@@ -1,0 +1,1 @@
+{{ui.cht_brainlessAgent.setMessages([])}}

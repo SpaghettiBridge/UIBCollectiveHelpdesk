@@ -1,0 +1,1 @@
+{{ui.cht_brainlessAgent.setMessages(ui.tbl_my_chats.selectedRow.data.transcript)}}

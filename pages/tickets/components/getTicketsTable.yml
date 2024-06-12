@@ -1,0 +1,529 @@
+id: '17163015320360.08110732432047918'
+definitionId: smartTable
+parentSlotId: '17152448971770.540481335972298'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 33
+      w: 24
+      h: 150
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 1221
+      w: 24
+      h: 29
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: |-
+    // Create an object to store the filter conditions
+    var filters = {};
+
+    // Check if 'ui' exists and use destructuring to extract required properties
+    if (ui) {
+      const {
+        flt_type,
+       
+      } = ui;
+
+      // Reduce the filter conditions into the 'filters' object
+      const filterConditions = [
+        { key: "ticket_type_id", value: flt_type?.value },
+        
+      ];
+
+      filters = filterConditions.reduce((result, condition) => {
+        if (condition.value !== "") {
+          result[condition.key] = condition.value;
+        }
+        return result;
+      }, {});
+    }
+
+    // Apply the filters and map the results
+    let output = [];
+
+    if (actions && actions.get_tickets && actions.get_tickets.data !== null) {
+      output = actions.get_tickets.data
+        .sort((a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime())
+        .filter((c) => {
+          for (const key in filters) {
+            if (c[key] !== filters[key]) {
+              return false;
+            }
+          }
+          return true;
+        });
+    }
+
+    return output
+  name: getTicketsTable
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: ''
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_tickets.loading}}'
+    value: false
+  containerStyles:
+    withData: false
+    dataValue: |-
+      {
+        padding: 'default',
+        shadow: 'default',
+        border: 'default'
+      }
+    value:
+      padding: none
+      shadow: none
+      border: none
+  heightMode: auto
+  rowHeight: dynamic
+  showFooter:
+    value: true
+    dataValue: 'true'
+    withData: false
+  sortColumn:
+    value: ticket_number
+    dataValue: ''
+    withData: false
+  sortDirection:
+    value: asc
+    dataValue: asc
+    withData: false
+  limit: '50'
+actions:
+  uiOnRowDoubleClick:
+    - action: '17158492966490.31101718163823167'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17165389140600.7685731629406327'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+    - action: '17165567040060.39781109585737817'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 2
+    - action: '17165567055800.8515563080232058'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 3
+  init: []
+  smartTableCreate: []
+  smartTableEdit: []
+  smartTableBulkEdit: []
+  smartTableDelete: []
+  smartTableRowSelect: []
+  smartTableRowClick: []
+  smartTablePageSelect: []
+  uiOnPageSizeChange: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+  smartTableReload: []
+  uiOnCellChangeTrigger: []
+slots:
+  - id: '17163015320360.8319390737963326'
+    name: columns
+    children:
+      - id: '17163026452170.2713539100177933'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString3
+          prop: location
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 8
+        slots: []
+      - id: '17163026452170.16610953810105666'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString4
+          prop: priority
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 1
+        slots: []
+      - id: '17163026452180.1280324827964694'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString5
+          prop: links
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 9
+        slots: []
+      - id: '17163026452180.9901020485991534'
+        definitionId: atomicText
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText2
+          prop: details
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          widthMode: auto
+          filter: true
+        index: 3
+        slots: []
+      - id: '17163026452180.8346498050270661'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString6
+          prop: title
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 2
+        slots: []
+      - id: '17163026452180.7024203068813972'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString7
+          prop: urgency
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 10
+        slots: []
+      - id: '17163026452180.09458345095641207'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString8
+          prop: importance
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 11
+        slots: []
+      - id: '17163026452180.5932567400026745'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString9
+          prop: assigned_queue
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 12
+        slots: []
+      - id: '17163026452180.0625955611161999'
+        definitionId: atomicDateTime
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime2
+          prop: entered_date
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 6
+        slots: []
+      - id: '17163026452180.6134199004150653'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString10
+          prop: creator
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 13
+        slots: []
+      - id: '17163026452180.06508430771490081'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString11
+          prop: agent
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 7
+        slots: []
+      - id: '17163026452180.3304359036551521'
+        definitionId: atomicSelect
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect5
+          prop: status
+          primaryKey: false
+          options:
+            value:
+              - value: New
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17163026452180.031034772433319535'
+            dataValue: |-
+              [
+                {
+                  value: 'New',
+                  color: 'primary'
+                }
+              ]
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 4
+        slots: []
+      - id: '17163026452180.1371186303377585'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString12
+          prop: ticket_type
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 5
+        slots: []
+      - id: '17163026452180.022588425441705917'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString13
+          prop: app_name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 14
+        slots: []
+      - id: '17163026452180.4587364586727587'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString26
+          prop: category
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 15
+        slots: []
+      - id: '17163026452180.5644152019415414'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString27
+          prop: subcategory
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 16
+        slots: []
+      - id: '17163026452180.27440162150945846'
+        definitionId: atomicJsonEditor
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicJsonEditor
+          prop: external_thread
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 17
+        slots: []
+      - id: '17163026452180.7237120191711555'
+        definitionId: atomicJsonEditor
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicJsonEditor2
+          prop: internal_thread
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 18
+        slots: []
+      - id: '17163030838520.046131385580348905'
+        definitionId: atomicNumber
+        parentSlotId: '17163015320360.8319390737963326'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber
+          prop: ticket_number
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          title: ' '
+          width: '45'
+          widthMode: fixed
+        index: 0
+        slots: []

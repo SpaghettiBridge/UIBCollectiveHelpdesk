@@ -1,0 +1,38 @@
+id: '17152448971770.8946191640924275'
+name: Tickets
+url: tickets
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+parentPageId: ''
+slots:
+  - id: '17152448971770.10547391630782199'
+    name: content
+    children:
+      - id: '17152448971770.9133121676214331'
+        definitionId: grid
+        parentSlotId: '17152448971770.10547391630782199'
+        styles: {}
+        properties:
+          name: tickets
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17152448971770.540481335972298'
+            name: content
+            children:
+              - components/findAccountServicesAndRolesMetric3.yml
+              - components/findAccountServicesAndRolesMetric2.yml
+              - components/findAccountServicesAndRolesMetric4.yml
+              - components/button3.yml
+              - components/button4.yml
+              - components/frameDrawer/frameDrawer.yml
+              - components/findAccountServicesAndRolesMetric5.yml
+              - components/button5.yml
+              - components/modal/modal.yml
+              - components/publicActionsMetric.yml
+              - components/getTicketsTable.yml
+              - components/modal2/modal2.yml

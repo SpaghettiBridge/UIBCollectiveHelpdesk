@@ -1,0 +1,36 @@
+id: '17169066657630.015318062694977375'
+definitionId: radio
+parentSlotId: '17163037365990.8430285832788247'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 100
+      w: 18
+      h: 14
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 56
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 100
+      w: 24
+      h: 14
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 56
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: radio
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+slots: []
