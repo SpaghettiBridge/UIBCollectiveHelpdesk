@@ -1,0 +1,10 @@
+{{ui.modal.close()}}
+{{ui.inp_ticket_title.reset()}}
+{{ui.inp_ticket_type.reset()}}
+{{ui.inp_importancy.reset()}}
+{{ui.inp_urgency.reset()}}
+{{ui.inp_ticket_details.reset()}}
+{{ui.inp_ticket_links.reset()}}
+{{ui.inp_ticket_sh1.reset()}}
+{{ui.inp_ticket_sh2.reset()}}
+{{ui.inp_ticket_sh3.reset()}}

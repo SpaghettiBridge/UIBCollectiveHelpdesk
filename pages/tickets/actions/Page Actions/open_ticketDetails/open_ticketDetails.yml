@@ -1,0 +1,46 @@
+id: '17158492966490.31101718163823167'
+kind: workflow
+name: open_ticketDetails
+nameConfigured: true
+steps:
+  - id: '17163031871570.3948023369148437'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17152448971770.8946191640924275'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.open_ticketDetails.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.open_ticketDetails.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.open_ticketDetails.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentId: '17182716152270.2745684905907171'
+actions:
+  success:
+    - action: '17182701389130.869232521641933'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []

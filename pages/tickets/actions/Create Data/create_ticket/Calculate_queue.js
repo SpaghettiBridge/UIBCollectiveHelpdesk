@@ -1,0 +1,1 @@
+return {{actions.get_ticket_types.data.filter(x=> x.id == ui.inp_ticket_type.value)[0].ticket_queue}};

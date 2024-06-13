@@ -1,0 +1,1 @@
+{{ui.mdl_merge_tickets.close()}}

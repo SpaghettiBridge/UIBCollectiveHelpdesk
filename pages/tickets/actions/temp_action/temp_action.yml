@@ -1,0 +1,42 @@
+id: '17158492967230.570401052909612'
+kind: workflow
+name: temp_action
+nameConfigured: true
+steps:
+  - id: '17158493365570.17186575751895838'
+    type: putInStore
+    name: save2
+    params:
+      - type: name
+        value: '17158471634990.930037243865043'
+        valueType: string
+      - type: value
+        value: '{{params.value}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: true
+parentPageId: '17152448971770.8946191640924275'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.temp_action.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.temp_action.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.temp_action.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

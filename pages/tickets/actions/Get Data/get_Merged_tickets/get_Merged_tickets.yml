@@ -1,0 +1,132 @@
+id: '17182701389130.869232521641933'
+kind: workflow
+name: get_Merged_tickets
+nameConfigured: true
+steps:
+  - id: '17182701664930.7230473280471783'
+    type: LOAD_COLLECTION
+    name: load
+    params:
+      - type: datasourceId
+        value: Dvelopment Database
+        valueType: string
+      - type: resourceId
+        value: public.join_tickets
+        valueType: string
+      - type: filters
+        value:
+          - column: fk_parent_ticket
+            operation: '='
+            value:
+              value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+        valueType: custom
+      - type: ordering
+        value:
+          limit:
+            value: 1000
+          offset:
+            value: ''
+          orderBy:
+            value: ''
+          orderDirection:
+            value: asc
+        valueType: custom
+      - type: additionalParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17182704031520.029612824380485847'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17182701389140.06596365789856629'
+                type: customSQLQuery
+                name: query
+                params:
+                  - type: query
+                    value: ./query-query.sql
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: ./query-preparedQuery.sql
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value:
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(data.map(item =>
+                        item.fk_child_ticket))
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17182679214480.22948806657656773'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.get_Merged_tickets.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_Merged_tickets.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_Merged_tickets.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

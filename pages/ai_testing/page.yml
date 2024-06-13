@@ -39,3 +39,5 @@ slots:
               - components/acc_ProgressUpdates/acc_ProgressUpdates.yml
               - components/tbl_my_chats.yml
               - components/button.yml
+              - components/menu2.yml
+              - components/button8.yml
