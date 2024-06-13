@@ -1,0 +1,12 @@
+- get_screenshot2
+- get_apps
+- get_ticket_subcategories
+- get_tickets
+- get_Merged_tickets
+- get_ticket_types
+- get_ticket_categories
+- get_ticket_statuses
+- get_screenshot1
+- get_screenshot3
+- get_accounts
+- get_ticket_groups

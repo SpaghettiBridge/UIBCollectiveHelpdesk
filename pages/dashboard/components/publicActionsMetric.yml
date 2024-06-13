@@ -1,0 +1,97 @@
+id: '17181982352510.27322431990149143'
+definitionId: metric
+parentSlotId: '17181967114260.5849276826931535'
+styles:
+  xl:
+    gridItem:
+      x: 12
+      y: 10
+      w: 2
+      h: 19
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 112
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 76
+      w: 24
+      h: 19
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 112
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  data: |-
+    {{
+    let date1 = new Date(ui.tbl_mainTickets.selectedRow.data.entered_date);
+    let date2 = new Date();
+    let Difference_In_Time =
+        date2.getTime() - date1.getTime();
+    let Difference_In_Days =
+        Math.round
+            (Difference_In_Time / (1000 * 3600 * 24));
+    return Difference_In_Days
+
+    }}
+  name: publicActionsMetric
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Days Active
+  operation: show_last
+  groupType: not_group
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_tickets.loading}}'
+    value: false
+  showGroupField: false
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type != "USER"}}'
+actions: {}
+slots:
+  - id: '17181982352510.03577702568579966'
+    name: metricField
+    children:
+      - id: '17181982352510.047207666223769484'
+        definitionId: atomicSelect
+        styles: {}
+        properties:
+          name: atomicSelect
+          prop: id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          options:
+            value: []
+            dataValue: '[]'
+            withData: false
+          mappedColor: |-
+            {{
+            if (value < 50) {
+               return "#32a852" //  block of code to be executed if condition1 is true
+            } else if ( value > 50 && value < 100) {
+              return "warning"//  block of code to be executed if the condition1 is false and condition2 is true
+            } else {
+               return "danger"//  block of code to be executed if the condition1 is false and condition2 is false
+            }
+            }}
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+        parentSlotId: '17181982352510.03577702568579966'
+        index: 0
+        slots: []
+  - id: '17181982352510.7033692777590084'
+    name: additionalField
+    children: []
+  - id: '17181982352510.5439934969303635'
+    name: groupByField
+    children: []

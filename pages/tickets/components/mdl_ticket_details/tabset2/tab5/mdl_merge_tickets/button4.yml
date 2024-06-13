@@ -1,0 +1,49 @@
+id: '17182674795310.020723764189769955'
+definitionId: button
+parentSlotId: '17182671839330.05018131042524532'
+styles:
+  xl:
+    gridItem:
+      x: 22
+      y: 0
+      w: 2
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 9
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: button4
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Merge
+  disabled:
+    value: false
+    dataValue: '{{ui.tbl_merge_options.selectedRows.data.length == 0}}'
+    withData: true
+actions:
+  buttonClick:
+    - action: '17182687667150.5662517515703245'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

@@ -1,0 +1,30 @@
+id: '17182679332370.5987681764973114'
+kind: folder
+name: Delete Data
+nameConfigured: true
+steps:
+  - id: '17182679332360.23388444872617842'
+    type: draft
+    name: newStep
+    params: []
+    level: 0
+    fallthroughError: false
+    isChanged: false
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Delete Data.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Delete Data.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Delete Data.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: false

@@ -1,0 +1,42 @@
+id: '17182872971160.2785387364058107'
+kind: workflow
+name: Editing_details
+nameConfigured: true
+steps:
+  - id: '17182873146130.5030037101481306'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17182872518880.579279834439659'
+        valueType: string
+      - type: value
+        value: '{{!state.editing}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17152448971770.8946191640924275'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Editing_details.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Editing_details.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Editing_details.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentId: '17182679468640.0719616409524717'

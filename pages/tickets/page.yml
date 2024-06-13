@@ -24,15 +24,7 @@ slots:
           - id: '17152448971770.540481335972298'
             name: content
             children:
-              - components/findAccountServicesAndRolesMetric3.yml
-              - components/findAccountServicesAndRolesMetric2.yml
-              - components/findAccountServicesAndRolesMetric4.yml
-              - components/button3.yml
-              - components/button4.yml
-              - components/frameDrawer/frameDrawer.yml
-              - components/findAccountServicesAndRolesMetric5.yml
-              - components/button5.yml
-              - components/modal/modal.yml
-              - components/publicActionsMetric.yml
-              - components/getTicketsTable.yml
-              - components/modal2/modal2.yml
+              - components/tbl_mainTickets.yml
+              - components/mdl_ticket_details/mdl_ticket_details.yml
+              - components/menu.yml
+              - components/button7.yml

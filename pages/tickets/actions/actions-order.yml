@@ -1,14 +1,6 @@
-- onClick
-- onClick2
-- get_tickets
-- upload_image
-- get_ticket_types
-- get_ticket_categories
-- get_ticket_subcategories
-- get_ticket_statuses
-- get_apps
-- get_screenshot1
-- get_screenshot2
-- get_screenshot3
-- createPublicTickets
-- newAction
+- temp_action
+- Get Data
+- Create Data
+- Delete Data
+- Manage Data
+- Page Actions
