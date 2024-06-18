@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 11
+      y: 73
       w: 1
       h: 9
     flex:
@@ -59,7 +59,7 @@ slots:
   - id: '17163031235450.32908588863058896'
     name: body
     children:
-      - tabset2/tabset2.yml
+      - tbs_ticket_details/tbs_ticket_details.yml
       - modal3/modal3.yml
   - id: '17163031235450.062265760037990114'
     name: footer

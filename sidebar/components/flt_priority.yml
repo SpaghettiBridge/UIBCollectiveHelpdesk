@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 37
+      y: 6
       w: 24
-      h: 14
+      h: 9
     flex:
       size:
         widthValue: auto
@@ -19,9 +19,9 @@ styles:
     gridItem:
       id: '17168987292300.5677198224881896'
       x: 0
-      y: 28
-      w: 24
-      h: 14
+      y: 80
+      w: 4
+      h: 9
     flex:
       size:
         widthValue: auto
@@ -41,10 +41,7 @@ properties:
       - title: Low
         value: Low
         __UIBAKERY__SYSTEM_ID__: '17182028289720.31861033353252965'
-      - title: Very Low
-        value: Very Low
-        __UIBAKERY__SYSTEM_ID__: '17182028294010.21390949190462027'
-    dataValue: '{{actions.get_tickets.data}}'
+    dataValue: '{{actions.get_My_tickets.data}}'
     withData: false
   name: flt_priority
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
@@ -53,13 +50,14 @@ properties:
   optionValueKey: value
   showLoading:
     withData: true
-    dataValue: '{{actions.get_tickets.loading}}'
+    dataValue: '{{actions.get_My_tickets.loading}}'
     value: false
   labelConfig:
     text: Priority
-    position: vertical
+    position: horizontal
     align: left
   multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "My Tickets" }}'
 actions: {}
 slots:
   - id: '17168987292300.662123316812925'

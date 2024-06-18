@@ -1,0 +1,83 @@
+id: '17183729252680.07468573054216154'
+definitionId: selectWithAtomics
+parentSlotId: '17158509358300.2799774051180577'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 10
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 146
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: '{{actions.lu_services.data}}'
+    withData: true
+  name: slct_createTick_service
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.lu_services.loading}}'
+    value: false
+  value: '{{state.AccountData.service_id}}'
+  disabled:
+    value: false
+    dataValue: '{{!Array.isArray(state.AccountData.service_id)}}'
+    withData: true
+  allowResetValue:
+    value: false
+    dataValue: 'true'
+    withData: false
+  labelConfig:
+    text: Service
+    position: horizontal
+    align: left
+actions: {}
+slots:
+  - id: '17183729252680.49109297494701276'
+    name: optionViewTypes
+    children:
+      - id: '17183730234980.5976854780667469'
+        definitionId: atomicString
+        parentSlotId: '17183729252680.49109297494701276'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString60
+          prop: service_name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []

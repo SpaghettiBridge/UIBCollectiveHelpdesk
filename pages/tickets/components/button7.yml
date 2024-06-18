@@ -4,8 +4,8 @@ parentSlotId: '17152448971770.540481335972298'
 styles:
   xl:
     gridItem:
-      x: 0
-      y: 0
+      x: 2
+      y: 10
       w: 1
       h: 9
     flex:
@@ -35,11 +35,10 @@ properties:
     - xl
     - xs
   icon:
-    value: arrowhead-right
-    dataValue: >-
-      {{ return ui.layoutSidebar.collapsed ? 'arrowhead-right' :
-      'arrowhead-left';}}
+    value: filter
+    dataValue: '{{ return ui.layoutSidebar.collapsed ? ''funnel'' : ''arrowhead-left'';}}'
     withData: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
 actions:
   buttonClick:
     - action: '17182004823150.634906067555842'

@@ -3,7 +3,7 @@ name: AI Testing
 url: ai_testing
 roleIds: []
 disableInMenu: false
-hideFromMenu: false
+hideFromMenu: true
 slots:
   - id: '1'
     name: content

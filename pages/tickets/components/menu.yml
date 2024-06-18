@@ -4,9 +4,9 @@ parentSlotId: '17152448971770.540481335972298'
 styles:
   xl:
     gridItem:
-      x: 1
+      x: 0
       y: 0
-      w: 23
+      w: 24
       h: 10
     flex:
       size:
@@ -37,16 +37,18 @@ properties:
   items: |-
     [
       {
-        title: 'Tickets',
+        title: 'My Tickets',
         link: '/tickets'
       },
       {
         title: 'AI Testing',
-        link: '/ai_testing'
+        link: '/ai_testing',
+        hidden: true
       },
       {
         title: 'Dashboard',
-        link: '/dashboard'
+        link: '/dashboard',
+        hidden: true
       }
     ]
 actions: {}

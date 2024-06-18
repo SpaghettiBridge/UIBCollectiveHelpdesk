@@ -1,5 +1,5 @@
 return new Promise((resolve) => {
-  const file = {{ui.inp_ticket_sh2.value}};
+  const file = {{ui.slct_createTick_sh2.value}};
   const reader = new FileReader();
   reader.readAsBinaryString(file);
   reader.onload = () => {

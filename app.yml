@@ -86,11 +86,16 @@ appSettings:
     defaultData: '{}'
   actions:
     appLoad:
-      - action: '17122306321880.7445086892652237'
+      - action: '17187078029690.6363177507429028'
+        paramCode: ''
+        blockPageLoad: true
+        preventDefault: false
+        index: 0
+      - action: '17182004823150.634906067555842'
         paramCode: ''
         blockPageLoad: false
         preventDefault: false
-        index: 0
+        index: 1
     appData: []
   gridVersion: 2
   density: compact

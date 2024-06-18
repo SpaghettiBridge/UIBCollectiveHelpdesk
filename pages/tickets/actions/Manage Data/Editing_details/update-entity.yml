@@ -1,0 +1,18 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_type_id:
+      value: '{{ui.slct_details_type.value}}'
+    priority:
+      value: '{{ui.slct_details_priority.value}}'
+    fk_subcategory_id:
+      value: '{{ui.slct_subcategory.value || null}}'
+    fk_category_id:
+      value: '{{ui.slct_category.value}}'
+    fk_ticket_group_id:
+      value: '{{ui.slct_group.value|| null}}'
+    details:
+      value: '{{ui.inp_details.value}}'
+    fk_status_id:
+      value: '{{ui.slct_details_status.value}}'
+  custom: ''

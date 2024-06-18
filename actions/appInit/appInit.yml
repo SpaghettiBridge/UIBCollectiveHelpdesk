@@ -1,0 +1,65 @@
+id: '17187078114090.5114181601700221'
+name: appInit
+nameConfigured: true
+steps:
+  - id: '17187078114090.26906023731592144'
+    type: putInStore
+    name: Save_User
+    params:
+      - type: name
+        value: '17122306573300.2301098676119182'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17187078114090.6648046282310569'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.appInit.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.appInit.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: >-
+    Action "{{actions.appInit.name}}" has failed with error:
+    {{actions.appInit.error}}
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: false
+selected: false
+configured: false
+parentId: null
+kind: workflow
+actions:
+  success:
+    - action: '17122306321880.7445086892652237'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  error: []

@@ -1,5 +1,5 @@
 id: '17152448971770.8946191640924275'
-name: Tickets
+name: My Tickets
 url: tickets
 roleIds: []
 disableInMenu: false
@@ -20,11 +20,15 @@ slots:
             - xl
             - xs
         index: 0
+        actions:
+          pageLoad: []
         slots:
           - id: '17152448971770.540481335972298'
             name: content
             children:
+              - components/modal/modal.yml
               - components/tbl_mainTickets.yml
               - components/mdl_ticket_details/mdl_ticket_details.yml
               - components/menu.yml
               - components/button7.yml
+              - components/chk_all_tickets.yml

@@ -37,16 +37,18 @@ properties:
   items: |-
     [
       {
-        title: 'Tickets',
+        title: 'My Tickets',
         link: '/tickets'
       },
       {
         title: 'AI Testing',
-        link: '/ai_testing'
+        link: '/ai_testing',
+        hidden: true
       },
       {
         title: 'Dashboard',
-        link: '/dashboard'
+        link: '/dashboard',
+        hidden: true
       }
     ]
 actions: {}
