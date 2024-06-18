@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 65
+      y: 43
       w: 24
-      h: 14
+      h: 9
     flex:
       size:
         widthValue: auto
@@ -17,9 +17,10 @@ styles:
       shrink: '0'
   xs:
     gridItem:
+      id: '17182748199060.6888721944640368'
       x: 0
-      y: 65
-      w: 24
+      y: 116
+      w: 4
       h: 9
     flex:
       size:
@@ -52,8 +53,10 @@ properties:
     value: false
   labelConfig:
     text: Status
-    position: vertical
+    position: horizontal
     align: left
+  multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "My Tickets" }}'
 actions: {}
 slots:
   - id: '17182748199060.7558417090379184'

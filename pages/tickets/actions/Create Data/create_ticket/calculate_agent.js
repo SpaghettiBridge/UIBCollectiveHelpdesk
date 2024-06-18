@@ -1,1 +1,1 @@
-return {{actions.get_ticket_types.data.filter(x=> x.id == ui.inp_ticket_type.value)[0].fk_agent_id}}
+return {{actions.get_ticket_types.data.filter(x=> x.id == ui.slct_createTick_type.value)[0].fk_agent_id}}

@@ -1,0 +1,88 @@
+id: '17182890193550.32809182772285705'
+definitionId: selectWithAtomics
+parentSlotId: '17163037365990.12536073187745211'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 54
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 158
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: >-
+      {{actions.get_ticket_subcategories.data.filter(x=> x.fk_category_id ==
+      ui.slct_category.value)}}
+    withData: true
+  name: slct_subcategory
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_ticket_subcategories.loading}}'
+    value: false
+  labelConfig:
+    text: Sub-category
+    position: horizontal
+    align: left
+  disabled:
+    value: false
+    dataValue: '{{state.user_type == "User"|| state.editing == false}}'
+    withData: true
+  value: '{{ui.tbl_mainTickets.selectedRow.data.fk_subcategory_id}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: >-
+    {{actions.get_ticket_subcategories.data.filter(x=> x.fk_category_id ==
+    ui.slct_category.value) != 0 && ui.slct_category.value != "" }}
+actions:
+  selectChange: []
+  init: []
+  focusEvent: []
+  blurEvent: []
+slots:
+  - id: '17182890193550.43622210817033436'
+    name: optionViewTypes
+    children:
+      - id: '17182891992760.6644324561875905'
+        definitionId: atomicString
+        parentSlotId: '17182890193550.43622210817033436'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString58
+          prop: name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []

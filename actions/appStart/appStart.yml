@@ -1,0 +1,43 @@
+id: '17187078029690.6363177507429028'
+name: appStart
+nameConfigured: true
+steps:
+  - id: '17187078029690.18311138694206885'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: false
+singleStep: true
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.appStart.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.appStart.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: >-
+    Action "{{actions.appStart.name}}" has failed With Error:
+    {{actions.appStart.error}}
+  errorToastDuration: '3000'
+  errorToastHideByClick: true
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: false
+selected: true
+configured: true
+actions:
+  success: []
+  error: []
+parentId: null
+kind: workflow

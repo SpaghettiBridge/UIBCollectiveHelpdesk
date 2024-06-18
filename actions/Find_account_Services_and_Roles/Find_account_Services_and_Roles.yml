@@ -83,6 +83,23 @@ steps:
                             isChanged: true
                             nameConfigured: true
                             paused: false
+                          - id: '17183528684150.4219471182462349'
+                            type: putInStore
+                            name: save
+                            params:
+                              - type: name
+                                value: '17158471634990.930037243865043'
+                                valueType: string
+                              - type: value
+                                value: '{{data[0].role}}'
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: producible
+                                value: true
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
                           - id: '17122306321880.9533458107791024'
                             type: customAsyncCode
                             name: Console_Log_Account

@@ -151,195 +151,376 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
-    level: 0
+    level: 1
     fallthroughError: false
     isChanged: true
     nameConfigured: true
-  - id: '17165555338520.8351194851183623'
-    type: customAsyncCode
-    name: code
+  - id: '17186219719460.0870062821817632'
+    type: condition
+    name: newStep
     params:
-      - type: asyncCode
-        value: ./code.js
+      - type: code
+        value: ./newStep.js
         valueType: interpolatedValue
         interpolationType: code
-    level: 0
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17186221509550.8597519312755775'
+                type: UPDATE_ENTITY
+                name: update
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{steps.create_ticket.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17165555338520.8351194851183623'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+              - id: '17165555634650.1409115745601368'
+                type: s3Query
+                name: s3Query
+                params:
+                  - type: datasourceId
+                    value: supabase screenshot bucket
+                    valueType: string
+                  - type: s3ActionType
+                    value: uploadData
+                    valueType: custom
+                  - type: s3BucketName
+                    value: ticket_screenshots
+                    valueType: custom
+                  - type: s3FilePrefix
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3Delimiter
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3MaxKeys
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                  - type: s3FileKey
+                    value: >-
+                      {{steps.create_ticket.data.id}}_{{ui.slct_createTick_sh1.value.name}}
+                    valueType: interpolatedValue
+                  - type: s3SignedOperationType
+                    value: GET
+                    valueType: custom
+                  - type: s3UploadContentType
+                    value: '{{ui.slct_createTick_sh1.value.type}}'
+                    valueType: interpolatedValue
+                  - type: s3UploadData
+                    value: '{{steps.code.data}}'
+                    valueType: interpolatedValue
+                  - type: s3DestinationFileKey
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3TagSet
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 1
     fallthroughError: false
     isChanged: true
-  - id: '17165555634650.1409115745601368'
-    type: s3Query
-    name: s3Query
+    nameConfigured: true
+  - id: '17186219776410.6944083680596949'
+    type: condition
+    name: condition
     params:
-      - type: datasourceId
-        value: supabase screenshot bucket
-        valueType: string
-      - type: s3ActionType
-        value: uploadData
-        valueType: custom
-      - type: s3BucketName
-        value: ticket_screenshots
-        valueType: custom
-      - type: s3FilePrefix
-        value: ''
-        valueType: interpolatedValue
-      - type: s3Delimiter
-        value: ''
-        valueType: interpolatedValue
-      - type: s3MaxKeys
-        value: '{{data}}'
-        valueType: interpolatedValue
-      - type: s3FileKey
-        value: '{{steps.create_ticket.data.id}}_{{ui.inp_ticket_sh1.value.name}}'
-        valueType: interpolatedValue
-      - type: s3SignedOperationType
-        value: GET
-        valueType: custom
-      - type: s3UploadContentType
-        value: '{{ui.inp_ticket_sh1.value.type}}'
-        valueType: interpolatedValue
-      - type: s3UploadData
-        value: '{{steps.code.data}}'
-        valueType: interpolatedValue
-      - type: s3DestinationFileKey
-        value: ''
-        valueType: interpolatedValue
-      - type: s3TagSet
-        value: ''
-        valueType: interpolatedValue
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
-  - id: '17165567658670.923245309222521'
-    type: customAsyncCode
-    name: code2
-    params:
-      - type: asyncCode
-        value: ./code2.js
+      - type: code
+        value: ./condition.js
         valueType: interpolatedValue
         interpolationType: code
-    level: 0
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17186221917090.5730805161007306'
+                type: UPDATE_ENTITY
+                name: update2
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{steps.create_ticket.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update2-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567658670.923245309222521'
+                type: customAsyncCode
+                name: code2
+                params:
+                  - type: asyncCode
+                    value: ./code2.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567707630.14932136293566556'
+                type: s3Query
+                name: s3Query2
+                params:
+                  - type: datasourceId
+                    value: supabase screenshot bucket
+                    valueType: string
+                  - type: s3ActionType
+                    value: uploadData
+                    valueType: custom
+                  - type: s3BucketName
+                    value: ticket_screenshots
+                    valueType: custom
+                  - type: s3FilePrefix
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3Delimiter
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3MaxKeys
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                  - type: s3FileKey
+                    value: >-
+                      {{steps.create_ticket.data.id}}_{{ui.slct_createTick_sh2.value.name}}
+                    valueType: interpolatedValue
+                  - type: s3SignedOperationType
+                    value: GET
+                    valueType: custom
+                  - type: s3UploadContentType
+                    value: '{{ui.slct_createTick_sh2.value.type}}'
+                    valueType: interpolatedValue
+                  - type: s3UploadData
+                    value: '{{steps.code2.data}}'
+                    valueType: interpolatedValue
+                  - type: s3DestinationFileKey
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3TagSet
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 1
     fallthroughError: false
     isChanged: true
-  - id: '17165567707630.14932136293566556'
-    type: s3Query
-    name: s3Query2
+  - id: '17186220501230.21773567110104364'
+    type: condition
+    name: condition2
     params:
-      - type: datasourceId
-        value: supabase screenshot bucket
-        valueType: string
-      - type: s3ActionType
-        value: uploadData
-        valueType: custom
-      - type: s3BucketName
-        value: ticket_screenshots
-        valueType: custom
-      - type: s3FilePrefix
-        value: ''
-        valueType: interpolatedValue
-      - type: s3Delimiter
-        value: ''
-        valueType: interpolatedValue
-      - type: s3MaxKeys
-        value: '{{data}}'
-        valueType: interpolatedValue
-      - type: s3FileKey
-        value: '{{steps.create_ticket.data.id}}_{{ui.inp_ticket_sh2.value.name}}'
-        valueType: interpolatedValue
-      - type: s3SignedOperationType
-        value: GET
-        valueType: custom
-      - type: s3UploadContentType
-        value: '{{ui.inp_ticket_sh2.value.type}}'
-        valueType: interpolatedValue
-      - type: s3UploadData
-        value: '{{steps.code2.data}}'
-        valueType: interpolatedValue
-      - type: s3DestinationFileKey
-        value: ''
-        valueType: interpolatedValue
-      - type: s3TagSet
-        value: ''
-        valueType: interpolatedValue
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
-  - id: '17165567746630.4003974976125979'
-    type: customAsyncCode
-    name: code3
-    params:
-      - type: asyncCode
-        value: ./code3.js
+      - type: code
+        value: ./condition2.js
         valueType: interpolatedValue
         interpolationType: code
-    level: 0
-    fallthroughError: false
-    isChanged: true
-  - id: '17165567779700.9403785136565939'
-    type: s3Query
-    name: s3Query3
-    params:
-      - type: datasourceId
-        value: supabase screenshot bucket
-        valueType: string
-      - type: s3ActionType
-        value: uploadData
-        valueType: custom
-      - type: s3BucketName
-        value: ticket_screenshots
-        valueType: custom
-      - type: s3FilePrefix
-        value: ''
-        valueType: interpolatedValue
-      - type: s3Delimiter
-        value: ''
-        valueType: interpolatedValue
-      - type: s3MaxKeys
-        value: '{{data}}'
-        valueType: interpolatedValue
-      - type: s3FileKey
-        value: '{{steps.create_ticket.data.id}}_{{ui.inp_ticket_sh3.value.name}}'
-        valueType: interpolatedValue
-      - type: s3SignedOperationType
-        value: GET
-        valueType: custom
-      - type: s3UploadContentType
-        value: '{{ui.inp_ticket_sh3.value.type}}'
-        valueType: interpolatedValue
-      - type: s3UploadData
-        value: '{{steps.code3.data}}'
-        valueType: interpolatedValue
-      - type: s3DestinationFileKey
-        value: ''
-        valueType: interpolatedValue
-      - type: s3TagSet
-        value: ''
-        valueType: interpolatedValue
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17186221962280.694157269885612'
+                type: UPDATE_ENTITY
+                name: update3
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{steps.create_ticket.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update3-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567746630.4003974976125979'
+                type: customAsyncCode
+                name: code3
+                params:
+                  - type: asyncCode
+                    value: ./code3.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567779700.9403785136565939'
+                type: s3Query
+                name: s3Query3
+                params:
+                  - type: datasourceId
+                    value: supabase screenshot bucket
+                    valueType: string
+                  - type: s3ActionType
+                    value: uploadData
+                    valueType: custom
+                  - type: s3BucketName
+                    value: ticket_screenshots
+                    valueType: custom
+                  - type: s3FilePrefix
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3Delimiter
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3MaxKeys
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                  - type: s3FileKey
+                    value: >-
+                      {{steps.create_ticket.data.id}}_{{ui.slct_createTick_sh3.value.name}}
+                    valueType: interpolatedValue
+                  - type: s3SignedOperationType
+                    value: GET
+                    valueType: custom
+                  - type: s3UploadContentType
+                    value: '{{ui.slct_createTick_sh3.value.type}}'
+                    valueType: interpolatedValue
+                  - type: s3UploadData
+                    value: '{{steps.code3.data}}'
+                    valueType: interpolatedValue
+                  - type: s3DestinationFileKey
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3TagSet
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
         valueType: custom
     level: 0
     fallthroughError: false
@@ -369,7 +550,7 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
-    level: 0
+    level: 2
     fallthroughError: false
     isChanged: true
   - id: '17168984497630.7641050652418786'
@@ -380,7 +561,7 @@ steps:
         value: ./code4.js
         valueType: interpolatedValue
         interpolationType: code
-    level: 0
+    level: 2
     fallthroughError: false
     isChanged: true
 mode: manual

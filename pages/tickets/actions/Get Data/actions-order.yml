@@ -1,7 +1,8 @@
 - get_screenshot2
 - get_apps
 - get_ticket_subcategories
-- get_tickets
+- get_My_tickets
+- get_All_tickets
 - get_Merged_tickets
 - get_ticket_types
 - get_ticket_categories
@@ -10,3 +11,4 @@
 - get_screenshot3
 - get_accounts
 - get_ticket_groups
+- Get_ticket_history

@@ -20,9 +20,10 @@ children:
       - id: '17180163636620.30762030648752514'
         name: content
         children:
-          - components/modal/modal.yml
           - components/flt_type.yml
           - components/flt_ticket_num.yml
           - components/flt_priority.yml
           - components/flt_services.yml
           - components/flt_status.yml
+          - components/text2.yml
+          - components/flt_queue.yml

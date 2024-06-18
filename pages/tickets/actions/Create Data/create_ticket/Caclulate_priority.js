@@ -1,7 +1,7 @@
 var urgency_score = 0,
   importance_score = 0;
 
-switch ({{ui.inp_urgency.value}}) {
+switch ({{ui.slct_createTick_urgency.value}}) {
   case 'High':
     urgency_score = 7;
     break;
@@ -15,7 +15,7 @@ switch ({{ui.inp_urgency.value}}) {
     urgency_score = 0;
 }
 
-switch ({{ui.inp_importancy.value}}) {
+switch ({{ui.slct_createTick_importancy.value}}) {
   case 'High':
     importance_score = 7;
     break;

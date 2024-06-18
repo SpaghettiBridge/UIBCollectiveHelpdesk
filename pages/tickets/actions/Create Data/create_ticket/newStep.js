@@ -1,0 +1,1 @@
+{{ui.slct_createTick_sh1.value!= "" && ui.slct_createTick_sh1.value!= null}}
