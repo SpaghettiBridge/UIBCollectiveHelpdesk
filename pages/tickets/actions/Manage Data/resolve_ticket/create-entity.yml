@@ -1,0 +1,10 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_updated_by:
+      value: '{{state.AccountData.account_id}}'
+    fk_ticket_id:
+      value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+    change:
+      value: '{{state.AccountData.name}} has marked this ticket as resolved.'
+  custom: ''

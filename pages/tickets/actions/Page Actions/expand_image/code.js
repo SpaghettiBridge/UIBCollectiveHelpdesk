@@ -1,2 +1,2 @@
-{{ui.modal3.open()}}
+{{ui.mdl_expand_image.open()}}
 return {{params}}

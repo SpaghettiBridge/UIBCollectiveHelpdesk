@@ -55,12 +55,12 @@ slots:
   - id: '17163031235450.9207252476565222'
     name: header
     children:
-      - heading6.yml
+      - hd_ticket_details.yml
   - id: '17163031235450.32908588863058896'
     name: body
     children:
       - tbs_ticket_details/tbs_ticket_details.yml
-      - modal3/modal3.yml
+      - mdl_expand_image/mdl_expand_image.yml
   - id: '17163031235450.062265760037990114'
     name: footer
     children: []

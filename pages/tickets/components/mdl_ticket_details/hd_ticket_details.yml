@@ -1,4 +1,4 @@
-id: '17158509358300.40563973902371053'
+id: '17163031235450.33711746106049967'
 definitionId: heading
 styles:
   xl:
@@ -7,18 +7,16 @@ styles:
       customUnit: px
       themeDefaultOverridePropertyKey: baseTextFontSize
     gridItem:
-      x: 0
-      y: 0
-      w: 22
       h: 9
+      w: 24
 properties:
-  name: heading5
-  text: Create New Ticket
+  name: hd_ticket_details
+  text: '{{ui.tbl_mainTickets.selectedRow.data.title}}'
   verticalAlignment: middle
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-parentSlotId: '17158509358300.21252583662319458'
+parentSlotId: '17163031235450.9207252476565222'
 index: 0
 actions: {}
 slots: []

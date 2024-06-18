@@ -1,9 +1,9 @@
-id: '17163037365990.9402507153920594'
+id: '17163037365990.9582943030327686'
 definitionId: image
 styles:
   xl:
     gridItem:
-      x: 0
+      x: 16
       y: 130
       w: 8
       h: 25
@@ -17,7 +17,7 @@ styles:
       shrink: '0'
     src:
       url: >-
-        https://eqoxirpzbhptqtesisva.supabase.co/storage/v1/object/public/ticket_screenshots/{{actions.get_screenshot1.data.Key}}
+        https://eqoxirpzbhptqtesisva.supabase.co/storage/v1/object/public/ticket_screenshots/{{actions.get_screenshot3.data.Key}}
       uploadUrl: ''
       name: ''
       active: url
@@ -27,9 +27,9 @@ styles:
     fit: scale-down
   xs:
     gridItem:
-      id: '17163037365990.9402507153920594'
-      x: 0
-      y: 65
+      id: '17163037365990.9582943030327686'
+      x: 4
+      y: 115
       w: 2
       h: 25
     flex:
@@ -41,15 +41,14 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: image3
+  name: img_sh3_view
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   heightMode: fixed
-  openInNewTab: false
   cssClasses:
     - zoom
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{ui.tbl_mainTickets.selectedRow.data.screenshot1 != null}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{ui.tbl_mainTickets.selectedRow.data.screenshot3 != null}}'
 parentSlotId: '17163037365990.12536073187745211'
 index: -1
 actions:
@@ -57,7 +56,7 @@ actions:
     - action: '17182014939930.8760849245358753'
       paramCode: |-
         {
-          image: {{actions.get_screenshot1.data.Key}}
+          image: {{actions.get_screenshot3.data.Key}}
         }
       blockPageLoad: false
       preventDefault: false

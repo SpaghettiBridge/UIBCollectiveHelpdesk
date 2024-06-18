@@ -26,9 +26,9 @@ slots:
           - id: '17152448971770.540481335972298'
             name: content
             children:
-              - components/modal/modal.yml
+              - components/md_create_ticket/md_create_ticket.yml
               - components/tbl_mainTickets.yml
               - components/mdl_ticket_details/mdl_ticket_details.yml
-              - components/menu.yml
-              - components/button7.yml
+              - components/mnu_MyTickets.yml
+              - components/btn_filters.yml
               - components/chk_all_tickets.yml

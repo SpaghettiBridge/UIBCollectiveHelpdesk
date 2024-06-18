@@ -1,0 +1,6 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_status_id:
+      value: '{{data.id}}'
+  custom: ''

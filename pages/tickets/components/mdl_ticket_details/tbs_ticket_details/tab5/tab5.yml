@@ -13,8 +13,9 @@ slots:
   - id: '17163037365990.4599257123876983'
     name: content
     children:
-      - card/card.yml
+      - crd_details/crd_details.yml
       - btn_mark_resolved.yml
       - cht_external.yml
       - mdl_merge_tickets/mdl_merge_tickets.yml
       - btn_edit_details.yml
+      - btn_mark_resolved2.yml
