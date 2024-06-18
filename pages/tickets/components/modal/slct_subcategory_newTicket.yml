@@ -56,9 +56,9 @@ properties:
     align: left
   disabled:
     value: false
-    dataValue: '{{state.user_type == "USER"|| state.editing == false}}'
+    dataValue: ''
     withData: true
-  value: '{{ui.tbl_mainTickets.selectedRow.data.fk_subcategory_id}}'
+  value: ''
   __UIBAKERY__SHOW__CONDITION__CODE__: >-
     {{actions.get_ticket_subcategories.data.filter(x=> x.fk_category_id ==
     ui.slct_category_newTicket.value) != 0 && ui.slct_category_newTicket.value
