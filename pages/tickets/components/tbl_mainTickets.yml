@@ -101,6 +101,10 @@ properties:
     value: checkbox
     dataValue: row
     withData: false
+  sortable:
+    value: false
+    dataValue: 'true'
+    withData: false
 actions:
   uiOnRowDoubleClick:
     - action: '17158492966490.31101718163823167'

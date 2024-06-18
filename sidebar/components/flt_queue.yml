@@ -44,16 +44,16 @@ properties:
           "title": "Asset"
         },
         {
+          "value": "Development",
+          "title": "Development"
+        },
+        {
           "value": "Helpdesk",
           "title": "Helpdesk"
         },
         {
           "value": "Training",
           "title": "Training"
-        },
-        {
-          "value": "Development",
-          "title": "Development"
         }
       ]
     withData: true
