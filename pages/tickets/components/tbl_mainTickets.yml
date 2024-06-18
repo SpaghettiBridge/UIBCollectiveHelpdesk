@@ -80,7 +80,7 @@ properties:
     dataValue: 'true'
     withData: false
   sortColumn:
-    value: ticket_number
+    value: priority
     dataValue: ''
     withData: false
   sortDirection:
