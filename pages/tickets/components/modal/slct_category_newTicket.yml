@@ -54,7 +54,7 @@ properties:
     align: left
   disabled:
     value: false
-    dataValue: '{{state.user_type == "USER"|| state.editing == false}}'
+    dataValue: ''
     withData: true
   value: >-
     {{ui.tbl_mainTickets.selectedRow.data.fk_category_id ||"
