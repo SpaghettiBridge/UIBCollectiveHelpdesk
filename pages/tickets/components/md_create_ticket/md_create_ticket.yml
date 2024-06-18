@@ -43,7 +43,7 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: modal
+  name: md_create_ticket
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -53,8 +53,8 @@ slots:
   - id: '17158509358300.21252583662319458'
     name: header
     children:
-      - heading5.yml
-      - button2.yml
+      - hd_create_new_ticket.yml
+      - btn_save_new_ticket.yml
   - id: '17158509358300.2799774051180577'
     name: body
     children:

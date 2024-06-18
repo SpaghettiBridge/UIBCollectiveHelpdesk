@@ -13,12 +13,12 @@ slots:
   - id: '17163037365990.12536073187745211'
     name: content
     children:
-      - image.yml
-      - image2.yml
-      - image3.yml
+      - img_sh3_view.yml
+      - img_sh2_view.yml
+      - img_sh1_view.yml
       - slct_details_type.yml
       - slct_details_priority.yml
-      - datePicker.yml
+      - dt_ticket_details_date.yml
       - inp_details.yml
       - slct_details_status.yml
       - slct_category.yml

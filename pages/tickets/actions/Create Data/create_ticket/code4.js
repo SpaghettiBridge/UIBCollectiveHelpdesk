@@ -1,4 +1,4 @@
-{{ui.modal.close()}}
+{{ui.md_create_ticket.close()}}
 {{ui.inp_ticket_title.reset()}}
 {{ui.slct_createTick_type.reset()}}
 {{ui.slct_createTick_importancy.reset()}}

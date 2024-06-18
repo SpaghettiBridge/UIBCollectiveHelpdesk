@@ -42,7 +42,7 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: modal3
+  name: mdl_expand_image
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -50,7 +50,7 @@ properties:
   closeOnEsc: true
   closeOnBackdrop: true
   buttonHidden:
-    value: true
+    value: false
     dataValue: 'false'
     withData: false
   __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
@@ -62,7 +62,7 @@ slots:
   - id: '17182014375510.6539257578665878'
     name: body
     children:
-      - image4.yml
+      - img_sh_view_expanded.yml
   - id: '17182014375510.6289798097946022'
     name: footer
     children: []

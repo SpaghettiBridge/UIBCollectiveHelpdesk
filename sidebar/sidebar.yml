@@ -25,5 +25,5 @@ children:
           - components/flt_priority.yml
           - components/flt_services.yml
           - components/flt_status.yml
-          - components/text2.yml
+          - components/txt_filters_header.yml
           - components/flt_queue.yml

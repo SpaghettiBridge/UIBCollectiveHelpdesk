@@ -54,7 +54,7 @@ slots:
     name: header
     children:
       - hd_merge_tick.yml
-      - button4.yml
+      - btn_connect_tickets.yml
   - id: '17182671839330.755507249623701'
     name: body
     children:
