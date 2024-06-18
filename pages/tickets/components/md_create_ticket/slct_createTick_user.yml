@@ -49,7 +49,7 @@ properties:
     dataValue: '{{actions.get_accounts.loading}}'
     value: false
   labelConfig:
-    text: user
+    text: User
     position: horizontal
     align: left
   value: '{{state.AccountData.account_id}}'

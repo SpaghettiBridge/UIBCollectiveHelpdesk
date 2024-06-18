@@ -42,6 +42,10 @@ properties:
       ui.slct_createTick_urgency.valid== false|| ui.inp_ticket_title.valid==
       false}}
     withData: true
+  status:
+    value: primary
+    dataValue: primary
+    withData: true
 actions:
   buttonClick:
     - action: '17165454316930.19630407751516743'

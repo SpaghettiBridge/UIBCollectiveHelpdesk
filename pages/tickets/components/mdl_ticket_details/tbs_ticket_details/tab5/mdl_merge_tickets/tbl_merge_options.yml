@@ -52,7 +52,7 @@ properties:
       ]
     withData: false
   data: >-
-    actions.get_tickets.data.filter(ticket => ticket.id !=
+    actions.get_All_tickets.data.filter(ticket => ticket.id !=
     ui.tbl_mainTickets.selectedRow.data.id)
   name: tbl_merge_options
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
@@ -98,6 +98,7 @@ properties:
     value: checkbox
     dataValue: row
     withData: false
+  selectedRowIndex: ''
 actions:
   uiOnRowDoubleClick: []
   init: []
@@ -147,11 +148,12 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 120
-          widthMode: auto
+          width: 74
+          widthMode: fixed
           filter: true
         parentSlotId: '17182672454320.06214115009915644'
         index: 1
+        actions: {}
         slots: []
       - id: '17182672454320.9105008899040923'
         definitionId: atomicString
@@ -165,12 +167,13 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: '20'
-          widthMode: auto
+          width: 65
+          widthMode: fixed
           filter: true
           title: Service
         parentSlotId: '17182672454320.06214115009915644'
         index: 2
+        actions: {}
         slots: []
       - id: '17182672454320.15365194828963524'
         definitionId: atomicString
@@ -222,40 +225,19 @@ slots:
               - value: New
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '17163026452180.031034772433319535'
-            dataValue: |-
-              [
-                {
-                  value: 'New',
-                  color: 'primary'
-                }
-              ]
-            withData: false
+            dataValue: >-
+              {{actions.get_ticket_statuses.data.map(item=> {return{title:
+              item.name, value:item.id} })}}
+            withData: true
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 120
-          widthMode: auto
+          width: 149
+          widthMode: fixed
           filter: true
         parentSlotId: '17182672454320.06214115009915644'
         index: 5
-        slots: []
-      - id: '17182672454320.36850819835208926'
-        definitionId: atomicString
-        styles:
-          xl:
-            visible: true
-        properties:
-          name: atomicString32
-          prop: ticket_type
-          primaryKey: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: 120
-          widthMode: auto
-          filter: true
-        parentSlotId: '17182672454320.06214115009915644'
-        index: 6
+        actions: {}
         slots: []
       - id: '17182672454320.6969256659290921'
         definitionId: atomicDateTime
@@ -273,8 +255,8 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 120
-          widthMode: auto
+          width: 88
+          widthMode: fixed
           filter: true
           dateFormat:
             value: MMM dd, yyyy
@@ -282,6 +264,7 @@ slots:
             withData: true
         parentSlotId: '17182672454320.06214115009915644'
         index: 7
+        actions: {}
         slots: []
       - id: '17182672454320.3345096886087653'
         definitionId: atomicString
@@ -495,4 +478,38 @@ slots:
           primaryKey: true
         parentSlotId: '17182672454320.06214115009915644'
         index: 19
+        slots: []
+      - id: '17182672454320.36850819835208926'
+        definitionId: atomicSelect
+        parentSlotId: '17182672454320.06214115009915644'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect10
+          prop: ticket_type
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          widthMode: fixed
+          width: 174
+          options:
+            value:
+              - value: Equipment Help
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '17187186549800.8071423107797335'
+              - value: Chris Test
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '17187186549800.2832353598494206'
+              - value: Bridgelink/ System Support
+                color: warning
+                __UIBAKERY__SYSTEM_ID__: '17187186549800.10396106389735893'
+            dataValue: >-
+              {{actions.get_ticket_types.data.map(item=> {return{title:
+              item.name, value:item.id} })}}
+            withData: true
+        actions: {}
+        index: 6
         slots: []

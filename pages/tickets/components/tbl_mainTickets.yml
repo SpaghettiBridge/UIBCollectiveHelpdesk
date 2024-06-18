@@ -94,11 +94,11 @@ properties:
     withData: true
   showFilter: false
   multiplyRowSelection:
-    value: true
-    dataValue: '{{ui.tbl_mainTickets.isBulkEditingOpen}}'
-    withData: true
+    value: false
+    dataValue: ''
+    withData: false
   rowSelectionType:
-    value: checkbox
+    value: row
     dataValue: row
     withData: false
   sortable:
