@@ -11,7 +11,10 @@ styles:
       w: 24
 properties:
   name: hd_ticket_details
-  text: '{{ui.tbl_mainTickets.selectedRow.data.title}}'
+  text: >-
+    {{ui.tbl_mainTickets.selectedRow.data.service_name}} -
+    {{ui.tbl_mainTickets.selectedRow.data.ticket_number}}:
+    {{ui.tbl_mainTickets.selectedRow.data.title}}
   verticalAlignment: middle
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl

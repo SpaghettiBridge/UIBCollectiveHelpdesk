@@ -12,3 +12,7 @@
 - get_accounts
 - get_ticket_groups
 - Get_ticket_history
+- newAction
+- get_internal_messages
+- get_external_messages
+- get_Dev_messages

@@ -63,6 +63,10 @@ properties:
     text: Type
     position: horizontal
     align: left
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
 actions: {}
 slots:
   - id: '17158510345380.3522303908188076'

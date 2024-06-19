@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 55
+      y: 46
       w: 24
       h: 9
     flex:
@@ -56,9 +56,7 @@ properties:
     value: false
     dataValue: ''
     withData: true
-  value: >-
-    {{ui.tbl_mainTickets.selectedRow.data.fk_category_id ||"
-    1b9aa446-c96e-4704-8869-d7db4f672515"}}
+  value: 1b9aa446-c96e-4704-8869-d7db4f672515
   allowResetValue:
     value: false
     dataValue: 'true'

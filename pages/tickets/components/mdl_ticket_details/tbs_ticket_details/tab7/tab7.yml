@@ -21,4 +21,6 @@ slots:
   - id: '17163037365990.9240545219452285'
     name: content
     children:
-      - cht_internal.yml
+      - tbl_int_thread.yml
+      - txt_int_message.yml
+      - btn_send_int_message.yml

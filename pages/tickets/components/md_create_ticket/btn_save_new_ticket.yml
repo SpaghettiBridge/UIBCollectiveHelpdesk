@@ -40,7 +40,7 @@ properties:
       {{ui.slct_createTick_importancy.valid == false ||
       ui.slct_createTick_details.valid== false||
       ui.slct_createTick_urgency.valid== false|| ui.inp_ticket_title.valid==
-      false}}
+      false || ui.slct_createTick_type.valid == false}}
     withData: true
   status:
     value: primary

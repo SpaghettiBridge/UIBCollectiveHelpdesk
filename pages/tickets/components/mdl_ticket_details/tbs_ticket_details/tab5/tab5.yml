@@ -15,7 +15,10 @@ slots:
     children:
       - crd_details/crd_details.yml
       - btn_mark_resolved.yml
-      - cht_external.yml
       - mdl_merge_tickets/mdl_merge_tickets.yml
       - btn_edit_details.yml
       - btn_mark_resolved2.yml
+      - tbl_ext_thread.yml
+      - txt_ext_message.yml
+      - btn_send_ext_message.yml
+      - button2.yml

@@ -8,3 +8,6 @@
 {{ui.slct_createTick_sh1.reset()}}
 {{ui.slct_createTick_sh2.reset()}}
 {{ui.slct_createTick_sh3.reset()}}
+{{ui.slct_category_newTicket.reset()}}
+{{ui.slct_subcategory_newTicket.reset()}}
+{{ui.slct_group_newTicket.reset()}}

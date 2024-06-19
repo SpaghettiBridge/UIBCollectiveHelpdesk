@@ -47,7 +47,7 @@ properties:
     - xl
     - xs
   buttonText: Connect
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type != "User"}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type != "User" &&  state.editing != true}}'
 actions: {}
 slots:
   - id: '17182671839330.05018131042524532'
