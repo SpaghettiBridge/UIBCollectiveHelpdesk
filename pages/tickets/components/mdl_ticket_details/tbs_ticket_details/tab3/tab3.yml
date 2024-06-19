@@ -17,4 +17,6 @@ slots:
   - id: '17163037365990.8945181088118686'
     name: content
     children:
-      - cht_dev.yml
+      - tbl_dev_thread.yml
+      - txt_dev_message.yml
+      - btn_send_dev_message.yml

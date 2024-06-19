@@ -71,6 +71,7 @@ properties:
     position: horizontal
     align: left
   multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent"}}'
 actions: {}
 slots:
   - id: '17187048020790.9715838563495922'

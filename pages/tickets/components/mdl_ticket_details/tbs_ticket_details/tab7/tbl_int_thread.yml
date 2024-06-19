@@ -1,0 +1,201 @@
+id: '17188191422760.5167448524252733'
+definitionId: smartTable
+parentSlotId: '17163037365990.9240545219452285'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 20
+      w: 24
+      h: 57
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 57
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: '{{actions.get_internal_messages.data}}'
+  name: tbl_int_thread
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Conversation Thread
+  showLoading:
+    withData: true
+    dataValue: 'false'
+    value: false
+  showEditAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showDeleteAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showAddAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  heightMode: auto
+  containerStyles:
+    withData: false
+    dataValue: |-
+      {
+        padding: 'default',
+        shadow: 'default',
+        border: 'default'
+      }
+    value:
+      padding: default
+      shadow: default
+      border: default
+  rowHeight: dynamic
+  limit: '50'
+actions:
+  init: []
+  smartTableCreate:
+    - action: '17188182072340.005324802536976758'
+      paramCode: ''
+      index: 0
+  smartTableEdit:
+    - action: '17188192457700.9833781569906592'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+  smartTableBulkEdit: []
+  smartTableDelete: []
+  smartTableRowSelect: []
+  smartTableRowClick: []
+  uiOnRowDoubleClick: []
+  smartTablePageSelect: []
+  uiOnPageSizeChange: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+  smartTableReload: []
+  uiOnCellChangeTrigger: []
+slots:
+  - id: '17188191422760.703645522528807'
+    name: columns
+    children:
+      - id: '17188191422760.46949989432749795'
+        definitionId: atomicNumber
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicNumber6
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 30
+          widthMode: fixed
+          filter: true
+        parentSlotId: '17188191422760.703645522528807'
+        index: 0
+        slots: []
+      - id: '17188191422760.8846694908771697'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime8
+          prop: created_at
+          primaryKey: false
+          timeFormat:
+            value: HH:mm
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 126
+          widthMode: fixed
+          filter: true
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: dd/MM/yyyy
+            withData: true
+          forceView: true
+          enableAdding: false
+        parentSlotId: '17188191422760.703645522528807'
+        index: 1
+        actions: {}
+        slots: []
+      - id: '17188191422760.3417928864015878'
+        definitionId: atomicText
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText8
+          prop: message
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          widthMode: fixed
+          width: 1964
+        parentSlotId: '17188191422760.703645522528807'
+        index: 2
+        actions: {}
+        slots: []
+      - id: '17188191422760.1922769390825816'
+        definitionId: atomicString
+        styles: {}
+        properties:
+          name: atomicString70
+          prop: fk_account_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          forceView: true
+          title: User
+          enableAdding: false
+          widthMode: fixed
+          width: 50
+          mappedValue: '{{actions.get_accounts.data.filter(x=>value ==  x.id )[0].name}}'
+        parentSlotId: '17188191422760.703645522528807'
+        index: 3
+        slots: []

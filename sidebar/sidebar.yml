@@ -27,3 +27,4 @@ children:
           - components/flt_status.yml
           - components/txt_filters_header.yml
           - components/flt_queue.yml
+          - components/flt_category.yml

@@ -34,7 +34,9 @@ properties:
     - xl
     - xs
   text: Resolved
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{ui.tbl_mainTickets.selectedRow.data.status != "Resolved"}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: >-
+    {{ui.tbl_mainTickets.selectedRow.data.status != "Resolved" &&  state.editing
+    != true }}
 actions:
   buttonClick:
     - action: '17187110648100.29553034521118793'
