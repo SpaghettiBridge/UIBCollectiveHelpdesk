@@ -63,7 +63,10 @@ properties:
     {{actions.get_ticket_subcategories.data.filter(x=> x.fk_category_id ==
     ui.slct_category.value) != 0 && ui.slct_category.value != "" }}
 actions:
-  selectChange: []
+  selectChange:
+    - action: '17188734668670.401025197207709'
+      paramCode: ''
+      index: 0
   init: []
   focusEvent: []
   blurEvent: []

@@ -93,11 +93,30 @@ actions:
   smartTableCreate:
     - action: '17188182072340.005324802536976758'
       paramCode: ''
-      index: 1
+      index: 0
   smartTableEdit:
     - action: '17188185502410.06632738484641476'
       paramCode: ''
+      index: 1
+  smartTableDelete:
+    - action: '17188711518880.6243965882170532'
+      paramCode: |-
+        {
+          id: {{ui.tbl_ext_thread.deletedRow.data.id}}
+        }
+      blockPageLoad: false
+      preventDefault: false
       index: 2
+  smartTableBulkEdit: []
+  smartTableRowSelect: []
+  smartTableRowClick: []
+  uiOnRowDoubleClick: []
+  smartTablePageSelect: []
+  uiOnPageSizeChange: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+  smartTableReload: []
+  uiOnCellChangeTrigger: []
 slots:
   - id: '17188179110870.5728268371727454'
     name: columns

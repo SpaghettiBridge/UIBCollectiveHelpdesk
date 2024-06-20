@@ -9,3 +9,5 @@
 - edit_int_message
 - edit_dev_message
 - onClick
+- onDelete
+- onChange

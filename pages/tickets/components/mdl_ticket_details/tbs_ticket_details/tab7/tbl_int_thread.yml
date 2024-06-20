@@ -101,7 +101,15 @@ actions:
       preventDefault: false
       index: 1
   smartTableBulkEdit: []
-  smartTableDelete: []
+  smartTableDelete:
+    - action: '17188711518880.6243965882170532'
+      paramCode: |-
+        {
+          id: {{ui.tbl_int_thread.deletedRow.data.id}}
+        }
+      blockPageLoad: false
+      preventDefault: false
+      index: 2
   smartTableRowSelect: []
   smartTableRowClick: []
   uiOnRowDoubleClick: []

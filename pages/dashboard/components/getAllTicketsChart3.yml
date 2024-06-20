@@ -1,0 +1,140 @@
+id: '17188741740970.42984092649140004'
+definitionId: chart
+parentSlotId: '17181967114260.5849276826931535'
+styles:
+  xl:
+    gridItem:
+      x: 14
+      y: 29
+      w: 5
+      h: 80
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 274
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dataset: '{{actions.get_All_tickets.data}}'
+  config: |-
+    const uploadedDataURL =
+          {{actions.get_All_tickets.data}}
+    // myChart.showLoading();
+    // $.getJSON(uploadedDataURL, function (rawData) {
+    //   myChart.hideLoading();
+      function convert(source, target, basePath) {
+        for (let key in source) {
+          let path = basePath ? basePath + '.' + key : key;
+          if (!key.match(/^\$/)) {
+            target.children = target.children || [];
+            const child = {
+              name: path
+            };
+            target.children.push(child);
+            convert(source[key], child, path);
+          }
+        }
+        if (!target.children) {
+          target.value = source.$count || 1;
+        } else {
+          target.children.push({
+            name: basePath,
+            value: source.$count
+          });
+        }
+      }
+      const data = {
+        children: []
+      };
+      convert(rawData, data, '');
+      myChart.setOption(
+        (option = {
+          title: {
+            text: 'ECharts Options',
+            subtext: '2016/04',
+            left: 'leafDepth'
+          },
+          tooltip: {},
+          series: [
+            {
+              name: 'option',
+              type: 'treemap',
+              visibleMin: 300,
+              data: data.children,
+              leafDepth: 2,
+              levels: [
+                {
+                  itemStyle: {
+                    borderColor: '#555',
+                    borderWidth: 4,
+                    gapWidth: 4
+                  }
+                },
+                {
+                  colorSaturation: [0.3, 0.6],
+                  itemStyle: {
+                    borderColorSaturation: 0.7,
+                    gapWidth: 2,
+                    borderWidth: 2
+                  }
+                },
+                {
+                  colorSaturation: [0.3, 0.5],
+                  itemStyle: {
+                    borderColorSaturation: 0.6,
+                    gapWidth: 1
+                  }
+                },
+                {
+                  colorSaturation: [0.3, 0.5]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   );
+    // });
+  name: getAllTicketsChart3
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Ticket Groups
+  type: pieChart
+  structure:
+    - title: Get all ticket
+      data: []
+      color: primary
+      xProp: group_name
+      yProp: subcategory
+      ignoreTimezone: false
+      __UIBAKERY__SYSTEM_ID__: '17188737792220.19742227942095392'
+      groupType: value
+      groupFunctionType: count
+      disabled: false
+      disableColors: true
+      disabledTooltip: ''
+      formatter: ''
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_All_tickets.loading}}'
+    value: false
+  useJsConfig: ui
+  valueLabel: outside
+actions: {}
+slots: []
