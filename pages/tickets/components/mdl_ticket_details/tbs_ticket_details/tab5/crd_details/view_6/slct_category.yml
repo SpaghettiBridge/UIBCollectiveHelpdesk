@@ -64,7 +64,15 @@ properties:
     dataValue: 'true'
     withData: false
 actions:
-  selectChange: []
+  selectChange:
+    - action: '17188734668670.401025197207709'
+      paramCode: |-
+        {
+          type: 'category'
+        }
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
   init: []
   focusEvent: []
   blurEvent: []

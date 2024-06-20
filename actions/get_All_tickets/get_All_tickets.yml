@@ -42,8 +42,6 @@ steps:
     isChanged: true
 mode: manual
 modeConfigured: false
-parentPageId: '17152448971770.8946191640924275'
-parentId: '17182679214480.22948806657656773'
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.get_All_tickets.name}}"?
@@ -57,7 +55,7 @@ config:
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
-  preserveStateOnPageChange: false
+  preserveStateOnPageChange: true
 selected: true
 configured: true
 actions:

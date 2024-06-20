@@ -73,7 +73,7 @@ config:
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
-  runWhenFirstReferenced: true
+  runWhenFirstReferenced: false
   preserveStateOnPageChange: false
 selected: true
 configured: true

@@ -30,7 +30,7 @@ styles:
       shrink: '0'
 properties:
   data: >-
-    {{actions.get_tickets.data.filter(x=> x.fk_creator_id ==
+    {{actions.get_All_tickets.data.filter(x=> x.fk_creator_id ==
     state.AccountData.account_id)}}
   name: findAccountServicesAndRolesMetric5
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:

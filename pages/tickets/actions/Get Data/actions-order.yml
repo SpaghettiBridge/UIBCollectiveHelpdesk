@@ -2,7 +2,6 @@
 - get_apps
 - get_ticket_subcategories
 - get_My_tickets
-- get_All_tickets
 - get_Merged_tickets
 - get_ticket_types
 - get_ticket_categories
@@ -12,7 +11,7 @@
 - get_accounts
 - get_ticket_groups
 - Get_ticket_history
-- newAction
+- Get_All_Messages
 - get_internal_messages
 - get_external_messages
 - get_Dev_messages

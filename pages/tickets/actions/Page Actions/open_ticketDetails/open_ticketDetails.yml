@@ -43,4 +43,9 @@ actions:
       blockPageLoad: false
       preventDefault: false
       index: 0
+    - action: '17188176290390.04315737494013194'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
   error: []

@@ -50,6 +50,8 @@ properties:
     value: true
     dataValue: 'false'
     withData: false
+  closeOnBackdrop: true
+  closeOnEsc: true
 actions: {}
 slots:
   - id: '17163031235450.9207252476565222'

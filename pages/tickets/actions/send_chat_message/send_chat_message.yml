@@ -95,69 +95,13 @@ steps:
     name: execute2
     params:
       - type: action
-        value: '17188178475980.23983300511096672'
+        value: '17188176290390.04315737494013194'
         valueType: custom
       - type: isActionsLibraryCall
         value: false
         valueType: custom
       - type: customParams
         value: ./execute2-customParams.js
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 1
-    fallthroughError: false
-    isChanged: true
-  - id: '17188189472640.6291976783640392'
-    type: executeAction
-    name: execute
-    params:
-      - type: action
-        value: '17188177214120.6319649523769557'
-        valueType: custom
-      - type: isActionsLibraryCall
-        value: false
-        valueType: custom
-      - type: customParams
-        value: ./execute-customParams.js
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 1
-    fallthroughError: false
-    isChanged: true
-  - id: '17188189558920.7668603888481778'
-    type: executeAction
-    name: execute3
-    params:
-      - type: action
-        value: '17188178508080.30315073135147586'
-        valueType: custom
-      - type: isActionsLibraryCall
-        value: false
-        valueType: custom
-      - type: customParams
-        value: ./execute3-customParams.js
         valueType: interpolatedValue
         interpolationType: code
       - type: successMapper
