@@ -25,4 +25,5 @@ slots:
       - slct_subcategory.yml
       - slct_group.yml
       - slct_agent.yml
-      - slct_agent2.yml
+      - slct_creator.yml
+      - slct_others.yml
