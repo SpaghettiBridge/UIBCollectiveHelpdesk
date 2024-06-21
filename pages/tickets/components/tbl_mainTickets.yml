@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 19
+      y: 28
       w: 23
-      h: 120
+      h: 156
     flex:
       size:
         widthValue: 500
@@ -51,13 +51,28 @@ properties:
         }
       ]
     withData: false
-  data: |-
+  data: |
     // Create an object to store the filter conditions
     var filters = {};
 
     // Check if 'ui' exists and use destructuring to extract required properties
     if (ui) {
-      const { flt_type, flt_priority, flt_ticket_num, flt_services, flt_status, flt_queue, flt_category } = ui;
+      const {
+        flt_type,
+        flt_priority,
+        flt_ticket_num,
+        flt_services,
+        flt_status,
+        flt_queue,
+        flt_category,
+        flt_creator,
+        flt_agent,
+        flt_group,
+        flt_subcategory,
+        flt_date_from,
+        flt_date_to,
+        flt_textin
+      } = ui;
 
       // Reduce the filter conditions into the 'filters' object
       const filterConditions = [
@@ -68,12 +83,16 @@ properties:
         { key: 'fk_status_id', value: flt_status?.value },
         { key: 'assigned_queue', value: flt_queue?.value },
         { key: 'fk_category_id', value: flt_category?.value },
+        { key: 'fk_creator_id', value: flt_creator?.value },
+        { key: 'fk_agent_id', value: flt_agent?.value },
+        { key: 'fk_ticket_group_id', value: flt_group?.value },
+        { key: 'fk_subcategory_id', value: flt_subcategory?.value },
       ];
 
       console.log(filterConditions);
 
       filters = filterConditions.reduce((result, condition) => {
-        if (condition.value !== undefined && condition.value !== null && condition.value !== '' && condition.value.length != 0) {
+        if (condition.value !== undefined && condition.value !== null && condition.value !== '' && condition.value.length !== 0) {
           result[condition.key] = condition.value;
         }
         return result;
@@ -81,18 +100,21 @@ properties:
     }
 
     console.log(filters);
+
     // Apply the filters and map the results
     let output = [];
     let inputData = [];
-    if (ui.chk_all_tickets.value) {
+    if (ui.chk_all_tickets?.value) {
       inputData = actions.get_All_tickets;
     } else {
       inputData = actions.get_My_tickets;
     }
+
     if (actions && inputData && inputData.data !== null) {
       output = inputData.data
         .sort((a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime())
         .filter((c) => {
+          // Apply standard filters
           for (const key in filters) {
             if (Array.isArray(filters[key])) {
               if (!filters[key].includes(c[key])) {
@@ -104,6 +126,28 @@ properties:
               }
             }
           }
+
+          // Apply date range filter
+          if (ui.flt_date_from.value || ui.flt_date_to.value) {
+            const enteredDate = new Date(c.entered_date).getTime();
+            const fromDate = ui.flt_date_from.value ? new Date(ui.flt_date_from.value).getTime() : null;
+            const toDate = ui.flt_date_to.value ? new Date(ui.flt_date_to.value).getTime() : null;
+
+            if (fromDate && enteredDate < fromDate) return false;
+            if (toDate && enteredDate > toDate) return false;
+          }
+
+          // Apply text containment filter
+          if (ui.flt_textin.value) {
+            const text = ui.flt_textin.value.toLowerCase();
+            const title = c.title?.toLowerCase() || '';
+            const description = c.details?.toLowerCase() || '';
+
+            if (!title.includes(text) && !description.includes(text)) {
+              return false;
+            }
+          }
+
           return true;
         });
     }
@@ -137,7 +181,7 @@ properties:
     dataValue: 'true'
     withData: false
   sortColumn:
-    value: priority
+    value: ''
     dataValue: ''
     withData: false
   sortDirection:
@@ -159,7 +203,7 @@ properties:
     dataValue: row
     withData: false
   sortable:
-    value: false
+    value: true
     dataValue: 'true'
     withData: false
 actions:
@@ -685,6 +729,8 @@ slots:
           forceView: true
           alignment: center
           widthMode: fixed
+          sortable: false
+          enableAdding: false
         index: 20
         actions: {}
         slots: []
@@ -717,8 +763,9 @@ slots:
 
             }}
           title: ' Days'
-          viewTooltip: Days scince creation
+          viewTooltip: Days since creation
           alignment: center
+          forceView: true
         actions: {}
         index: 7
         slots: []

@@ -55,8 +55,8 @@ properties:
   value: '{{state.AccountData.account_id}}'
   disabled:
     value: true
-    dataValue: 'false'
-    withData: false
+    dataValue: '{{state.user_type == "User"}}'
+    withData: true
   allowResetValue:
     value: false
     dataValue: 'true'

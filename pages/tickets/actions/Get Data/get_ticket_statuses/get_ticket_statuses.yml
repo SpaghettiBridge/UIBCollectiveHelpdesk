@@ -19,6 +19,10 @@ steps:
             operation: '='
             value:
               value: ticket
+          - column: status
+            operation: '='
+            value:
+              value: Active
         valueType: custom
       - type: ordering
         value:

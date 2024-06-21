@@ -47,7 +47,30 @@ properties:
     - xl
     - xs
   buttonText: Connect
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type != "User" &&  state.editing != true}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: >-
+    {{
+
+    const deceasedDate = ui.tbl_mainTickets.selectedRow.data.entered_date;
+
+    const thirtyDays = moment(deceasedDate)
+      .add(30, 'days')
+      .startOf('day');
+
+    if(
+
+    state.user_type != "User" &&  state.editing != true &&
+    !moment(thirtyDays).isAfter(moment()) == false){
+
+    return true
+
+    }
+
+    return false
+
+
+
+
+    }}
 actions: {}
 slots:
   - id: '17182671839330.05018131042524532'

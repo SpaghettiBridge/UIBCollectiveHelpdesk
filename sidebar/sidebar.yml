@@ -28,3 +28,10 @@ children:
           - components/txt_filters_header.yml
           - components/flt_queue.yml
           - components/flt_category.yml
+          - components/flt_creator.yml
+          - components/flt_agent.yml
+          - components/flt_subcategory.yml
+          - components/flt_group.yml
+          - components/flt_textin.yml
+          - components/flt_date_from.yml
+          - components/flt_date_to.yml

@@ -2,7 +2,7 @@ mode: structured
 valueByMode:
   structured:
     fk_creator_id:
-      value: '{{state.AccountData.account_id}}'
+      value: '{{ui.slct_createTick_user.value}}'
     fk_agent_id:
       value: '{{steps.calculate_agent.data}}'
     fk_status_id:
@@ -30,9 +30,14 @@ valueByMode:
     assigned_queue:
       value: '{{steps.Calculate_queue.data}}'
     fk_category_id:
-      value: 1b9aa446-c96e-4704-8869-d7db4f672515
+      value: >-
+        {{ui.slct_category_newTicket.value||"1b9aa446-c96e-4704-8869-d7db4f672515"}}
     fk_awaiting_response:
       value: '{{steps.calculate_agent.data}}'
     fk_service_id:
       value: '{{ui.slct_createTick_service.value}}'
+    fk_subcategory_id:
+      value: '{{ui.slct_subcategory_newTicket.value || null}}'
+    fk_ticket_group_id:
+      value: '{{ui.slct_group_newTicket.value || null}}'
   custom: ''
