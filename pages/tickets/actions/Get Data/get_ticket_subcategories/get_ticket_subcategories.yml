@@ -14,7 +14,11 @@ steps:
         value: public.lu_ticket_subcategories
         valueType: string
       - type: filters
-        value: []
+        value:
+          - column: status
+            operation: '='
+            value:
+              value: Active
         valueType: custom
       - type: ordering
         value:

@@ -35,8 +35,29 @@ properties:
     - xs
   text: Re-open
   __UIBAKERY__SHOW__CONDITION__CODE__: >-
-    {{ui.tbl_mainTickets.selectedRow.data.status == "Resolved"&&  state.editing
-    != true}}
+    {{
+
+    const deceasedDate = ui.tbl_mainTickets.selectedRow.data.entered_date;
+
+    const thirtyDays = moment(deceasedDate)
+      .add(30, 'days')
+      .startOf('day');
+
+    if(
+
+    ui.tbl_mainTickets.selectedRow.data.status == "Resolved"&&  state.editing !=
+    true && !moment(thirtyDays).isAfter(moment()) == false){
+
+    return true
+
+    }
+
+    return false
+
+
+
+
+    }}
 actions:
   buttonClick:
     - action: '17187117098380.9220553306873174'

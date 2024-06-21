@@ -37,3 +37,4 @@ slots:
               - components/mnu_MyTickets.yml
               - components/btn_filters.yml
               - components/chk_all_tickets.yml
+              - components/input.yml

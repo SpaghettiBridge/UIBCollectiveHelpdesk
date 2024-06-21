@@ -1,6 +1,6 @@
 mode: structured
 valueByMode:
   structured:
-    screenshot1:
+    screenshot3:
       value: '{{ui.slct_createTick_sh3.value.name}}'
   custom: ''

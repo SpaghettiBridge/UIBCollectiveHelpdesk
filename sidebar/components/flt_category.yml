@@ -53,7 +53,7 @@ properties:
     text: Category
     position: horizontal
     align: left
-  multi: true
+  multi: false
 actions: {}
 slots:
   - id: '17188151628940.6172729508068162'

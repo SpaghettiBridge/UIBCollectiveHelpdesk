@@ -19,7 +19,8 @@ steps:
         value: ./query-preparedQuery.sql
         valueType: interpolatedValue
       - type: preparedQueryParams
-        value: []
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.AccountData.service_id)
         valueType: custom
       - type: customDatabaseName
         value: ''
