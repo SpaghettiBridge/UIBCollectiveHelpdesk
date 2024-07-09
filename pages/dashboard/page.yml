@@ -3,7 +3,7 @@ name: Dashboard
 url: dashboard
 roleIds: []
 disableInMenu: false
-hideFromMenu: true
+hideFromMenu: false
 parentPageId: ''
 slots:
   - id: '17181967114260.7247476011398688'

@@ -3,13 +3,10 @@ kind: workflow
 name: get_Merged_tickets
 nameConfigured: true
 steps:
-  - id: '17182701664930.7230473280471783'
+  - id: '17192366616310.9692323334504152'
     type: LOAD_COLLECTION
-    name: load
+    name: load2
     params:
-      - type: datasourceId
-        value: Dvelopment Database
-        valueType: string
       - type: resourceId
         value: public.join_tickets
         valueType: string
@@ -47,6 +44,9 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
+        valueType: custom
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false

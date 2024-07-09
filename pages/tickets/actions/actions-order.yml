@@ -1,13 +1,7 @@
-- temp_action
+- Variables
 - Get Data
 - Create Data
 - Delete Data
 - Manage Data
 - Page Actions
-- send_chat_message
-- edit_ext_message
-- edit_int_message
-- edit_dev_message
-- onClick
 - onDelete
-- onChange

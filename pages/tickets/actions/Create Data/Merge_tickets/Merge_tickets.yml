@@ -3,18 +3,15 @@ kind: workflow
 name: Merge_tickets
 nameConfigured: true
 steps:
-  - id: '17182682021430.19213626466277645'
+  - id: '17192367245860.8156174608347322'
     type: CREATE_ENTITY
-    name: create
+    name: create2
     params:
-      - type: datasourceId
-        value: Dvelopment Database
-        valueType: string
       - type: resourceId
         value: public.join_tickets
         valueType: string
       - type: entity
-        value: ./create-entity.yml
+        value: ./create2-entity.yml
         valueType: custom
       - type: customDatabaseName
         value: ''
@@ -27,6 +24,9 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
+        valueType: custom
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false

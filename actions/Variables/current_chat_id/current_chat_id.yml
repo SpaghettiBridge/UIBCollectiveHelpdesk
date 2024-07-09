@@ -1,0 +1,11 @@
+id: '17123072909830.49629678951883127'
+nameConfigured: true
+name: current_chat_id
+kind: store_item
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: ''
+  valueType: string
+  initialValue: ''
+  version: 1
+steps: []

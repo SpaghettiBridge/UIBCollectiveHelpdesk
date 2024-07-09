@@ -3,13 +3,10 @@ kind: workflow
 name: lu_services
 nameConfigured: true
 steps:
-  - id: '17182043815520.14099450425814752'
+  - id: '17192368087960.021978173473483187'
     type: LOAD_COLLECTION
-    name: load
+    name: load2
     params:
-      - type: datasourceId
-        value: Dvelopment Database
-        valueType: string
       - type: resourceId
         value: public.services
         valueType: string
@@ -47,6 +44,9 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
+        valueType: custom
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false

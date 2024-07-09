@@ -3,20 +3,16 @@ kind: workflow
 name: get_accounts
 nameConfigured: true
 steps:
-  - id: '17182735709170.8159614472940304'
+  - id: '17192366881260.5711819738948438'
     type: customSQLQuery
-    name: query
+    name: query2
     params:
       - type: query
-        value: ./query-query.sql
+        value: ./query2-query.sql
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: Dvelopment Database
-        valueType: string
-        mustSelectFirst: true
       - type: preparedQuery
-        value: ./query-preparedQuery.sql
+        value: ./query2-preparedQuery.sql
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
@@ -37,6 +33,9 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
@@ -56,7 +55,8 @@ config:
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
-  runWhenFirstReferenced: true
+  runWhenFirstReferenced: false
   preserveStateOnPageChange: false
+  autoTrigger: false
 selected: true
 configured: true

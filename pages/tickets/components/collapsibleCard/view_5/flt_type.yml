@@ -1,0 +1,87 @@
+id: '17200045631530.22760091955344008'
+definitionId: selectWithAtomics
+parentSlotId: '17200045123660.7548036710449333'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 9
+      w: 8
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: |-
+      switch(state.user_type) {
+        case "Agent":
+          return {{actions.get_ticket_types.data}}// code block
+          break;
+        case "User":
+          return {{actions.get_ticket_types.data.filter(x=> x.role == "User")}}// code block
+          break;
+        default:
+          // code block
+           return {{actions.get_ticket_types.data}}
+      }
+    withData: true
+  name: flt_type
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_ticket_types.loading}}'
+    value: false
+  labelConfig:
+    text: Type
+    position: horizontal
+    align: left
+  multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "My Tickets" }}'
+actions: {}
+slots:
+  - id: '17200045631530.5547279209995721'
+    name: optionViewTypes
+    children:
+      - id: '17200045631530.6707227007518168'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString22
+          prop: name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '17200045631530.5547279209995721'
+        index: 0
+        slots: []

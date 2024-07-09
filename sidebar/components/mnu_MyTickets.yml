@@ -1,0 +1,55 @@
+id: '17182004361730.5133319742429259'
+definitionId: menu
+parentSlotId: '17180163636620.30762030648752514'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 101
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 160
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17182004361730.5133319742429259'
+      x: 0
+      y: 80
+      w: 24
+      h: 10
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 160
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  autoSyncItems: true
+  name: mnu_MyTickets
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  items: |-
+    [
+      {
+        title: 'Dashboard',
+        link: '/dashboard'
+      },
+      {
+        title: 'My Tickets',
+        link: '/tickets'
+      },
+      {
+        title: 'AI Testing',
+        link: '/ai_testing',
+        hidden: true
+      }
+    ]
+actions: {}
+slots: []

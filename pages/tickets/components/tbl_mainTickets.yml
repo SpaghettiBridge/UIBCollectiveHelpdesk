@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 19
-      w: 24
-      h: 60
+      y: 11
+      w: 19
+      h: 125
     flex:
       size:
         widthValue: 500
@@ -193,7 +193,7 @@ properties:
     value: true
     dataValue: '{{state.user_type != "User"}}'
     withData: true
-  showFilter: false
+  showFilter: true
   multiplyRowSelection:
     value: false
     dataValue: ''
@@ -205,6 +205,10 @@ properties:
   sortable:
     value: true
     dataValue: 'true'
+    withData: false
+  showDeleteAction:
+    value: true
+    dataValue: 'false'
     withData: false
 actions:
   uiOnRowDoubleClick:
@@ -235,7 +239,10 @@ actions:
     - action: '17182715892620.7200858866938806'
       paramCode: ''
       index: 4
-  smartTableDelete: []
+  smartTableDelete:
+    - action: '17205145988230.08375388784278148'
+      paramCode: ''
+      index: 5
   smartTableRowSelect: []
   smartTableRowClick: []
   smartTablePageSelect: []
@@ -452,42 +459,6 @@ slots:
           filter: true
         index: 15
         slots: []
-      - id: '17163026452180.5644152019415414'
-        definitionId: atomicString
-        parentSlotId: '17163015320360.8319390737963326'
-        styles:
-          xl:
-            visible: false
-        properties:
-          name: atomicString27
-          prop: subcategory
-          primaryKey: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: 120
-          widthMode: auto
-          filter: true
-        index: 16
-        slots: []
-      - id: '17163026452180.27440162150945846'
-        definitionId: atomicJsonEditor
-        parentSlotId: '17163015320360.8319390737963326'
-        styles:
-          xl:
-            visible: false
-        properties:
-          name: atomicJsonEditor
-          prop: external_thread
-          primaryKey: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: 120
-          widthMode: auto
-          filter: true
-        index: 17
-        slots: []
       - id: '17163026452180.7237120191711555'
         definitionId: atomicJsonEditor
         parentSlotId: '17163015320360.8319390737963326'
@@ -504,7 +475,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 18
+        index: 16
         slots: []
       - id: '17163030838520.046131385580348905'
         definitionId: atomicNumber
@@ -540,7 +511,7 @@ slots:
             - xl
             - xs
           primaryKey: true
-        index: 19
+        index: 17
         slots: []
       - id: '17163026452170.16610953810105666'
         definitionId: atomicSelect
@@ -731,7 +702,7 @@ slots:
           widthMode: fixed
           sortable: false
           enableAdding: false
-        index: 20
+        index: 18
         actions: {}
         slots: []
       - id: '17163026452180.1280324827964694'

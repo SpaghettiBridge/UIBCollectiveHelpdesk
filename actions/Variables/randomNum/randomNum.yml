@@ -1,0 +1,11 @@
+id: '17122266748490.4108536235161897'
+nameConfigured: true
+name: randomNum
+kind: store_item
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: ''
+  valueType: number
+  initialValue: '0'
+  version: 1
+steps: []

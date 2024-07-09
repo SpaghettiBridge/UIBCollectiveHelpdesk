@@ -1,0 +1,14 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_account_id:
+      value: '{{state.AccountData.account_id}}'
+    message:
+      value: '{{params.message}}'
+    message_type:
+      value: '{{params.type}}'
+    fk_ticket_id:
+      value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+    message_attachment:
+      value: '{{ui.msg_attach.value.name||null}}'
+  custom: ''
