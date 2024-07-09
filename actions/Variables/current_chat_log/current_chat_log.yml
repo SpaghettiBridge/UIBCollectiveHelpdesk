@@ -1,0 +1,11 @@
+id: '17122243619340.06032288274995756'
+nameConfigured: true
+name: current_chat_log
+kind: store_item
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: ''
+  valueType: array
+  initialValue: '[]'
+  version: 1
+steps: []

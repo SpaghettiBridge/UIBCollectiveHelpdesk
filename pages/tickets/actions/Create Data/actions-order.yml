@@ -1,8 +1,9 @@
 - create_ticket
-- upload_image
+- upload_msg_attachment
 - Merge_tickets
 - start_merging
 - External_message_sent
 - internal_message_sent
 - development_message_sent
 - log_change_to_hstory
+- send_chat_message

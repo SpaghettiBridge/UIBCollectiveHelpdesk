@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 88
+      y: 156
       w: 1
       h: 9
     flex:
@@ -52,6 +52,8 @@ properties:
     withData: false
   closeOnBackdrop: true
   closeOnEsc: true
+  cssClasses:
+    - modals
 actions: {}
 slots:
   - id: '17163031235450.9207252476565222'

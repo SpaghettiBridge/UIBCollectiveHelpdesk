@@ -7,7 +7,7 @@ styles:
       x: 13
       y: 20
       w: 11
-      h: 38
+      h: 60
     flex:
       size:
         widthValue: 500
@@ -183,14 +183,15 @@ slots:
           primaryKey: false
           filter: true
           widthMode: fixed
-          width: 768
+          width: 558
         actions: {}
         index: 2
         slots: []
       - id: '17188179844290.4424270012186866'
         definitionId: atomicString
         parentSlotId: '17188179110870.5728268371727454'
-        styles: {}
+        styles:
+          xl: {}
         properties:
           name: atomicString68
           prop: fk_account_id
@@ -201,7 +202,33 @@ slots:
           title: User
           enableAdding: false
           widthMode: fixed
-          width: 50
+          width: 145
           mappedValue: '{{actions.get_accounts.data.filter(x=>value ==  x.id )[0].name}}'
         index: 3
+        actions: {}
+        slots: []
+      - id: '17192368828800.7701364405877962'
+        definitionId: atomicFile
+        parentSlotId: '17188179110870.5728268371727454'
+        styles: {}
+        properties:
+          name: atomicFile
+          title: Image title
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          mappedValue: >-
+            https://eqoxirpzbhptqtesisva.supabase.co/storage/v1/object/public/ticket_attachments/{{ui.tbl_mainTickets.selectedRow.data.id}}_{{value}}
+          prop: message_attachment
+          placeholder: ''
+          fileInputType:
+            value: text
+            withData: false
+            dataValue: file
+          editContentHidden:
+            value: false
+            dataValue: 'false'
+            withData: true
+          forceView: true
+        index: 4
         slots: []

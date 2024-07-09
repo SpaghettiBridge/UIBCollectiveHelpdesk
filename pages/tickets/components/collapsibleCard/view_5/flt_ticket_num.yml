@@ -1,0 +1,83 @@
+id: '17200045631530.15919460003707542'
+definitionId: selectWithAtomics
+parentSlotId: '17200045123660.7548036710449333'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 19
+      w: 8
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 9
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: |-
+      if(ui.chk_all_tickets.value){
+      return actions.get_All_tickets.data
+      }else {
+      return actions.get_My_tickets.data
+      }
+    withData: true
+  name: flt_ticket_num
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: ticket_number
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_My_tickets.loading}}'
+    value: false
+  labelConfig:
+    text: Ticket
+    position: horizontal
+    align: left
+  allowResetValue:
+    value: true
+    dataValue: 'true'
+    withData: false
+  multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "My Tickets" }}'
+actions: {}
+slots:
+  - id: '17200045631530.6678101176526718'
+    name: optionViewTypes
+    children:
+      - id: '17200045631530.984074633331314'
+        definitionId: atomicNumber
+        styles: {}
+        properties:
+          name: atomicNumber8
+          prop: ticket_number
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '17200045631530.6678101176526718'
+        index: 1
+        slots: []

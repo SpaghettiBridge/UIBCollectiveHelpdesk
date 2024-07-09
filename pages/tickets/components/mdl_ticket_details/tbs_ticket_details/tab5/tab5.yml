@@ -21,4 +21,5 @@ slots:
       - tbl_ext_thread.yml
       - txt_ext_message.yml
       - btn_send_ext_message.yml
-      - button2.yml
+      - btn_finishEdit.yml
+      - msg_attach.yml

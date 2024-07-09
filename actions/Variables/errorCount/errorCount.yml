@@ -1,0 +1,11 @@
+id: '17122307389200.19517116941607915'
+nameConfigured: true
+name: errorCount
+kind: store_item
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: ''
+  valueType: number
+  initialValue: '0'
+  version: 1
+steps: []

@@ -1,0 +1,11 @@
+id: '17182872518880.579279834439659'
+nameConfigured: true
+name: editing
+kind: store_item
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: ''
+  valueType: boolean
+  initialValue: 'false'
+  version: 1
+steps: []

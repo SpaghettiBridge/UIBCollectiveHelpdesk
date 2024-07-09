@@ -11,27 +11,20 @@ children:
         - xl
         - xs
       stickySidebar:
-        value: false
+        value: true
         dataValue: 'false'
         withData: false
       __UIBAKERY__SHOW__CONDITION__CODE__: ''
+      sidebarWidth:
+        value:
+          customValue: 150
+          customUnit: px
+        dataValue: 240px
+        withData: false
+      expandContentToFit: false
     index: 0
     slots:
       - id: '17180163636620.30762030648752514'
         name: content
         children:
-          - components/flt_type.yml
-          - components/flt_ticket_num.yml
-          - components/flt_priority.yml
-          - components/flt_services.yml
-          - components/flt_status.yml
-          - components/txt_filters_header.yml
-          - components/flt_queue.yml
-          - components/flt_category.yml
-          - components/flt_creator.yml
-          - components/flt_agent.yml
-          - components/flt_subcategory.yml
-          - components/flt_group.yml
-          - components/flt_textin.yml
-          - components/flt_date_from.yml
-          - components/flt_date_to.yml
+          - components/mnu_MyTickets.yml

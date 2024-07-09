@@ -279,27 +279,27 @@ configured: true
 kind: workflow
 actions:
   success:
-    - action: '17123071466220.5411316437214853'
-      paramCode: ''
-      blockPageLoad: false
-      preventDefault: false
-      index: 0
     - action: '17158522669320.584790712107971'
       paramCode: ''
       blockPageLoad: false
       preventDefault: false
-      index: 1
+      index: 0
     - action: '17163041389230.004277703631166085'
       paramCode: ''
       blockPageLoad: false
       preventDefault: false
-      index: 2
+      index: 1
     - action: '17163041201120.04067347496398521'
       paramCode: ''
       blockPageLoad: false
       preventDefault: false
-      index: 3
+      index: 2
     - action: '17187019713980.3586599423532837'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 3
+    - action: '17182734804060.06122864549132401'
       paramCode: ''
       blockPageLoad: false
       preventDefault: false

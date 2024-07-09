@@ -21,12 +21,7 @@ slots:
             - xs
         index: 0
         actions:
-          pageLoad:
-            - action: '17182004823150.634906067555842'
-              paramCode: ''
-              blockPageLoad: false
-              preventDefault: false
-              index: 0
+          pageLoad: []
         slots:
           - id: '17152448971770.540481335972298'
             name: content
@@ -34,6 +29,6 @@ slots:
               - components/md_create_ticket/md_create_ticket.yml
               - components/tbl_mainTickets.yml
               - components/mdl_ticket_details/mdl_ticket_details.yml
-              - components/mnu_MyTickets.yml
-              - components/btn_filters.yml
               - components/chk_all_tickets.yml
+              - components/collapsibleCard/collapsibleCard.yml
+              - components/getRecentTicketHistoryTable.yml

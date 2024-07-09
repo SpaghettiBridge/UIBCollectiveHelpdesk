@@ -1,0 +1,11 @@
+id: '17122307117810.24574614629219704'
+nameConfigured: true
+name: AccountData
+kind: store_item
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: ''
+  valueType: object
+  initialValue: '{}'
+  version: 1
+steps: []

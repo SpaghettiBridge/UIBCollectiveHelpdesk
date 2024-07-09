@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 10
+      y: 1
       w: 2
       h: 9
     flex:
@@ -48,7 +48,10 @@ properties:
     - xl
     - xs
   buttonText: New Ticket
-actions: {}
+actions:
+  close: []
+  init: []
+  open: []
 slots:
   - id: '17158509358300.21252583662319458'
     name: header
