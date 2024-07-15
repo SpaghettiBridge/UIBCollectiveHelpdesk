@@ -12,7 +12,7 @@ properties:
     dataValue: '{{state.user_type != "User"}}'
     withData: true
 parentSlotId: '17163037365990.38397609047939585'
-index: 3
+index: 1
 slots:
   - id: '17163037365990.983242674439764'
     name: content

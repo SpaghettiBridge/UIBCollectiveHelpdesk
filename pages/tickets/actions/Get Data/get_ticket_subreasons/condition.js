@@ -1,0 +1,1 @@
+{{ui.slct_reason.value != null && ui.slct_reason.value != ""}}

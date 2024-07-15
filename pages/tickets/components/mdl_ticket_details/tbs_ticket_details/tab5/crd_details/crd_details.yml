@@ -3,10 +3,10 @@ definitionId: cardNew
 styles:
   xl:
     gridItem:
-      x: 0
-      y: 18
-      w: 13
-      h: 159
+      x: 15
+      y: 9
+      w: 9
+      h: 211
     flex:
       size:
         widthValue: 300

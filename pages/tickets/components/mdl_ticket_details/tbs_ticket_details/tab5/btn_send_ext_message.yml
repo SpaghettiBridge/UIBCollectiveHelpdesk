@@ -4,10 +4,10 @@ parentSlotId: '17163037365990.4599257123876983'
 styles:
   xl:
     gridItem:
-      x: 23
-      y: 11
+      x: 14
+      y: 101
       w: 1
-      h: 9
+      h: 15
     flex:
       size:
         widthValue: auto
@@ -35,7 +35,7 @@ properties:
     - xl
     - xs
   icon:
-    value: plus
+    value: paper-plane
     dataValue: star-outline
     withData: false
   disabled:
@@ -47,7 +47,7 @@ actions:
     - action: '17188182072340.005324802536976758'
       paramCode: |-
         {
-          type: 'External',
+          type: {{ui.slct_message_type.value}},
           message:{{ui.txt_ext_message.value}}
         }
       blockPageLoad: false

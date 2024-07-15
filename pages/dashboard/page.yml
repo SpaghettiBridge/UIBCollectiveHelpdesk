@@ -29,8 +29,6 @@ slots:
               - components/findAccountServicesAndRolesMetric5.yml
               - components/findAccountServicesAndRolesMetric3.yml
               - components/publicActionsMetric.yml
-              - components/menu3.yml
-              - components/button9.yml
               - components/getAllTicketsChart.yml
               - components/getAllTicketsChart2.yml
               - components/getAllTicketsChart3.yml
