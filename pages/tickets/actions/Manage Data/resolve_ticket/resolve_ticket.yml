@@ -51,6 +51,14 @@ steps:
             operation: '='
             value:
               value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+          - column: fk_ticket_reason
+            operation: '='
+            value:
+              value: '{{params.reason}}'
+          - column: fk_ticket_sub_reason
+            operation: '='
+            value:
+              value: '{{params.subreason}}'
         valueType: custom
       - type: entity
         value: ./update-entity.yml
@@ -101,6 +109,17 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17205167915540.377186655500495'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true

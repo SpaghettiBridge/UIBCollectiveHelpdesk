@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 9
+      y: 99
       w: 24
       h: 9
     flex:
@@ -54,7 +54,7 @@ properties:
     withData: true
   __UIBAKERY__SHOW__CONDITION__CODE__: state.user_type != "User"
   labelConfig:
-    text: Agent
+    text: Assigned Agent
     position: horizontal
     align: left
   value: '{{ui.tbl_mainTickets.selectedRow.data.fk_agent_id}}'

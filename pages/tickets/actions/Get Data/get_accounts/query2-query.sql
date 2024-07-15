@@ -1,6 +1,7 @@
 select
   acc.id as id,
   acc.name,
+  acc.email,
  jas.service_id, 
  jac.role
 from

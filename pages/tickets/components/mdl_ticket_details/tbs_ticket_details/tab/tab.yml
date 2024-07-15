@@ -12,7 +12,7 @@ properties:
     value: true
     dataValue: '{{actions.get_Merged_tickets.data.length != 0}}'
     withData: true
-index: 4
+index: 2
 slots:
   - id: '17182701091750.8206688787035528'
     name: content

@@ -27,3 +27,7 @@ slots:
       - slct_agent.yml
       - slct_creator.yml
       - slct_others.yml
+      - txt_service.yml
+      - txt_email.yml
+      - txt_title.yml
+      - slct_queue.yml

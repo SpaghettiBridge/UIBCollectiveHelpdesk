@@ -49,7 +49,7 @@ properties:
     dataValue: '{{actions.get_accounts.loading}}'
     value: false
   labelConfig:
-    text: Creator
+    text: Contact
     position: horizontal
     align: left
   value: ''

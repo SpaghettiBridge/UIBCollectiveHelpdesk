@@ -11,6 +11,10 @@ steps:
         value: ./query2-query.sql
         valueType: interpolatedValue
         interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
       - type: preparedQuery
         value: ./query2-preparedQuery.sql
         valueType: interpolatedValue
@@ -32,9 +36,6 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
-        valueType: custom
-      - type: datasourceId
-        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false

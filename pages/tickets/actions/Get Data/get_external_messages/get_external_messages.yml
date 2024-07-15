@@ -19,10 +19,6 @@ steps:
             operation: '='
             value:
               value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
-          - column: message_type
-            operation: '='
-            value:
-              value: External
         valueType: custom
       - type: ordering
         value:

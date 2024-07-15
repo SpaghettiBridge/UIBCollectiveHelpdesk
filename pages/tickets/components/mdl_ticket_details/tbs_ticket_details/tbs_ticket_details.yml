@@ -7,7 +7,7 @@ styles:
       x: 0
       y: 0
       w: 24
-      h: 181
+      h: 233
     flex:
       size:
         widthValue: auto
@@ -41,7 +41,5 @@ slots:
     name: tabs
     children:
       - tab5/tab5.yml
-      - tab3/tab3.yml
-      - tab7/tab7.yml
       - tab4/tab4.yml
       - tab/tab.yml

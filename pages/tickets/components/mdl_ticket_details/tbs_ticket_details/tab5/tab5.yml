@@ -14,7 +14,6 @@ slots:
     name: content
     children:
       - crd_details/crd_details.yml
-      - btn_mark_resolved.yml
       - mdl_merge_tickets/mdl_merge_tickets.yml
       - btn_edit_details.yml
       - btn_mark_resolved2.yml
@@ -23,3 +22,7 @@ slots:
       - btn_send_ext_message.yml
       - btn_finishEdit.yml
       - msg_attach.yml
+      - mdl_ticket_reason/mdl_ticket_reason.yml
+      - btn_mark_resolved3.yml
+      - slct_message_type.yml
+      - listView/listView.yml

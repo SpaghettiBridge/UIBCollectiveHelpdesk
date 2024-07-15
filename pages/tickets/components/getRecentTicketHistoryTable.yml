@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 19
-      y: 1
+      y: 0
       w: 5
-      h: 204
+      h: 205
     flex:
       size:
         widthValue: 500
@@ -75,6 +75,7 @@ properties:
     dataValue: asc
     withData: false
   limit: '50'
+  heightMode: auto
 actions: {}
 slots:
   - id: '17201698426790.4477591082555761'

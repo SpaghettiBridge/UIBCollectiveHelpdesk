@@ -7,7 +7,7 @@ styles:
       x: 0
       y: 11
       w: 19
-      h: 125
+      h: 109
     flex:
       size:
         widthValue: 500
@@ -268,14 +268,14 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 48
+          width: 50
           widthMode: fixed
           filter: true
           title: Service
           forceView: true
           alignment: center
-          __UIBAKERY__SHOW__CONDITION__CODE__: '{{ui.chk_all_tickets.value}}'
-        index: 2
+          __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent"}}'
+        index: 3
         actions: {}
         slots: []
       - id: '17163026452180.9901020485991534'
@@ -295,7 +295,7 @@ slots:
           widthMode: fixed
           filter: true
           forceView: true
-        index: 4
+        index: 6
         actions: {}
         slots: []
       - id: '17163026452180.8346498050270661'
@@ -315,7 +315,7 @@ slots:
           widthMode: fixed
           filter: true
           forceView: true
-        index: 3
+        index: 5
         actions: {}
         slots: []
       - id: '17163026452180.7024203068813972'
@@ -334,7 +334,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 11
+        index: 13
         slots: []
       - id: '17163026452180.09458345095641207'
         definitionId: atomicString
@@ -352,7 +352,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 12
+        index: 14
         slots: []
       - id: '17163026452180.5932567400026745'
         definitionId: atomicString
@@ -370,7 +370,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 13
+        index: 15
         slots: []
       - id: '17163026452180.0625955611161999'
         definitionId: atomicDateTime
@@ -398,7 +398,7 @@ slots:
             withData: true
           forceView: true
           title: Created Date
-        index: 6
+        index: 9
         actions: {}
         slots: []
       - id: '17163026452180.6134199004150653'
@@ -414,13 +414,14 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 130
+          width: 111
           widthMode: fixed
           filter: true
           forceView: true
           alignment: center
-          __UIBAKERY__SHOW__CONDITION__CODE__: '{{ui.chk_all_tickets.value}}'
-        index: 9
+          __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type != "User"}}'
+          title: Contact
+        index: 2
         actions: {}
         slots: []
       - id: '17163026452180.022588425441705917'
@@ -439,7 +440,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 14
+        index: 16
         slots: []
       - id: '17163026452180.4587364586727587'
         definitionId: atomicString
@@ -457,7 +458,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 15
+        index: 17
         slots: []
       - id: '17163026452180.7237120191711555'
         definitionId: atomicJsonEditor
@@ -475,7 +476,7 @@ slots:
           width: 120
           widthMode: auto
           filter: true
-        index: 16
+        index: 18
         slots: []
       - id: '17163030838520.046131385580348905'
         definitionId: atomicNumber
@@ -491,11 +492,11 @@ slots:
             - xl
             - xs
           title: ' #'
-          width: 32
+          width: 48
           widthMode: fixed
           forceView: true
           alignment: center
-        index: 0
+        index: 1
         actions: {}
         slots: []
       - id: '17182030608880.723389945739974'
@@ -511,7 +512,7 @@ slots:
             - xl
             - xs
           primaryKey: true
-        index: 17
+        index: 19
         slots: []
       - id: '17163026452170.16610953810105666'
         definitionId: atomicSelect
@@ -528,7 +529,7 @@ slots:
           primaryKey: false
           filter: true
           widthMode: fixed
-          width: 76
+          width: 62
           options:
             value:
               - value: High
@@ -568,7 +569,7 @@ slots:
             dataValue: 'true'
             withData: false
           alignment: center
-        index: 1
+        index: 0
         actions: {}
         slots: []
       - id: '17163026452180.3304359036551521'
@@ -598,7 +599,7 @@ slots:
           width: 126
           title: Status
           alignment: left
-        index: 8
+        index: 7
         actions: {}
         slots: []
       - id: '17163026452180.1371186303377585'
@@ -606,7 +607,7 @@ slots:
         parentSlotId: '17163015320360.8319390737963326'
         styles:
           xl:
-            visible: true
+            visible: false
         properties:
           name: atomicSelect5
           prop: fk_type_id
@@ -633,7 +634,7 @@ slots:
               {{actions.get_ticket_types.data.map(item=> {return{title:
               item.name, value:item.id} })}}
             withData: true
-        index: 5
+        index: 11
         actions: {}
         slots: []
       - id: '17163026452180.06508430771490081'
@@ -663,8 +664,8 @@ slots:
               value:item.id} })}}
             withData: true
           title: Agent
-          __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent"}}'
-        index: 10
+          __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "User"}}'
+        index: 8
         actions: {}
         slots: []
       - id: '17182758058750.5499953681010898'
@@ -702,7 +703,7 @@ slots:
           widthMode: fixed
           sortable: false
           enableAdding: false
-        index: 18
+        index: 10
         actions: {}
         slots: []
       - id: '17163026452180.1280324827964694'
@@ -710,7 +711,7 @@ slots:
         parentSlotId: '17163015320360.8319390737963326'
         styles:
           xl:
-            visible: true
+            visible: false
         properties:
           name: atomicNumber7
           prop: daysActive
@@ -738,5 +739,19 @@ slots:
           alignment: center
           forceView: true
         actions: {}
-        index: 7
+        index: 12
+        slots: []
+      - id: '17205207714800.23975243352920184'
+        definitionId: atomicString
+        parentSlotId: '17163015320360.8319390737963326'
+        styles: {}
+        properties:
+          name: atomicString78
+          prop: subcategory
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          mappedValue: ''
+          title: Category
+        index: 4
         slots: []
