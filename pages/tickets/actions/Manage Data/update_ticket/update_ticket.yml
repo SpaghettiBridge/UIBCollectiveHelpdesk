@@ -14,13 +14,10 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: false
-  - id: '17182717906160.17168254676437367'
+  - id: '17216400571350.9425908269845196'
     type: UPDATE_ENTITY
-    name: update
+    name: update2
     params:
-      - type: datasourceId
-        value: Dvelopment Database
-        valueType: string
       - type: resourceId
         value: public.tickets
         valueType: string
@@ -32,7 +29,7 @@ steps:
               value: '{{data.id}}'
         valueType: custom
       - type: entity
-        value: ./update-entity.yml
+        value: ./update2-entity.yml
         valueType: custom
       - type: replace
         value: false
@@ -51,6 +48,9 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
+        valueType: custom
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false

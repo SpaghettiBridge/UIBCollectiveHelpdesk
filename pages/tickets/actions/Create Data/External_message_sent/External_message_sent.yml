@@ -3,13 +3,10 @@ kind: workflow
 name: External_message_sent
 nameConfigured: true
 steps:
-  - id: '17182856972450.7608902476983677'
+  - id: '17216399928090.7451277992796064'
     type: UPDATE_ENTITY
-    name: update
+    name: update3
     params:
-      - type: datasourceId
-        value: Dvelopment Database
-        valueType: string
       - type: resourceId
         value: public.tickets
         valueType: string
@@ -21,7 +18,7 @@ steps:
               value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
         valueType: custom
       - type: entity
-        value: ./update-entity.yml
+        value: ./update3-entity.yml
         valueType: custom
       - type: replace
         value: false
@@ -40,6 +37,9 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
+        valueType: custom
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false
