@@ -1,0 +1,49 @@
+id: '17163037365990.7064525122900613'
+definitionId: textArea
+styles:
+  xl:
+    gridItem:
+      x: 9
+      y: 9
+      w: 9
+      h: 25
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 80
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17163037365990.7064525122900613'
+      x: 9
+      y: 645
+      w: 9
+      h: 58
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 80
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: inp_details
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Description
+    position: vertical
+    align: left
+  value: '{{ui.tbl_mainTickets.selectedRow.data.details}}'
+  disabled:
+    value: false
+    dataValue: '{{state.user_type == "User"|| state.editing == false}}'
+    withData: true
+  heightMode: auto
+parentSlotId: '17163037365990.4599257123876983'
+index: -2
+actions: {}
+slots: []

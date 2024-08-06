@@ -1,0 +1,15 @@
+id: '17224189557110.3038948318642365'
+definitionId: view
+styles: {}
+properties:
+  name: view_8
+  viewName: view_1
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17224189557110.22932529916186328'
+index: 0
+slots:
+  - id: '17224189557110.23124934207897185'
+    name: content
+    children: []

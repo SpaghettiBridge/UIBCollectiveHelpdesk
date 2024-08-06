@@ -1,0 +1,44 @@
+id: '17228487311230.7109853279300311'
+kind: workflow
+name: save_message_data
+nameConfigured: true
+steps:
+  - id: '17228487355260.02895099383003452'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17228487386050.6193348953761078'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17182716152270.2745684905907171'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.save_message_data.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.save_message_data.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.save_message_data.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

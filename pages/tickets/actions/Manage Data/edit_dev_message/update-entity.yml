@@ -1,6 +1,0 @@
-mode: structured
-valueByMode:
-  structured:
-    message:
-      value: '{{ui.tbl_dev_thread.editedRow.data.message}}'
-  custom: ''

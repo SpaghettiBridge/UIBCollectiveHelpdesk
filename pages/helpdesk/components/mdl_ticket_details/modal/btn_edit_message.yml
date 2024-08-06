@@ -1,0 +1,47 @@
+id: '17229559469400.3664512987278401'
+definitionId: button
+parentSlotId: '17228483465510.22843556685454014'
+styles:
+  xl:
+    gridItem:
+      id: '17229559469400.3664512987278401'
+      x: 20
+      y: 0
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17229559469400.3664512987278401'
+      x: 20
+      y: 0
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: btn_edit_message
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Save
+actions:
+  buttonClick:
+    - action: '17228602940690.14031104446666953'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

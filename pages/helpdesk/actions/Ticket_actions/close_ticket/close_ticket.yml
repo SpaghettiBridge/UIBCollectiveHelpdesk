@@ -1,0 +1,83 @@
+id: '17228587871750.7554325611225428'
+kind: workflow
+name: close_ticket
+nameConfigured: true
+steps:
+  - id: '17229627506600.9276310727268389'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17228587896560.10064665763750136'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps:
+              - id: '17229628890650.1592365654569452'
+                type: executeAction
+                name: execute
+                params:
+                  - type: action
+                    value: '17182717253910.2527508654963657'
+                    valueType: custom
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: custom
+                  - type: customParams
+                    value: ./execute-customParams.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17228586456600.7252559444589306'
+config:
+  shouldConfirm: true
+  confirmMessage: Are you sure you'd like to close this ticket?
+  showSuccessToast: false
+  successToast: Action "{{actions.close_ticket.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.close_ticket.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+  autoTrigger: false
+selected: true
+configured: true

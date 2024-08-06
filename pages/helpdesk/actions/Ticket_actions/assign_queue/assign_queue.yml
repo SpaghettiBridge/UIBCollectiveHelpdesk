@@ -1,0 +1,36 @@
+id: '17228587497330.6561461373435025'
+kind: workflow
+name: assign_queue
+nameConfigured: true
+steps:
+  - id: '17228587521640.20046583623132164'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17228586456600.7252559444589306'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.assign_queue.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.assign_queue.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.assign_queue.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

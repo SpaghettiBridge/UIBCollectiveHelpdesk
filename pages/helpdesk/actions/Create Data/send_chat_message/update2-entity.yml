@@ -1,0 +1,6 @@
+mode: structured
+valueByMode:
+  structured:
+    last_response:
+      value: '{{moment()}}'
+  custom: ''

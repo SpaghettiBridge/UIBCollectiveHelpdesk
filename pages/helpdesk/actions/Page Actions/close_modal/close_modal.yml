@@ -1,0 +1,37 @@
+id: '17229621604020.12355791802807348'
+kind: workflow
+name: close_modal
+nameConfigured: true
+steps:
+  - id: '17229621694610.8404679958115842'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17182716152270.2745684905907171'
+config:
+  shouldConfirm: true
+  confirmMessage: Are you Sure you'd like to cancel anything you've done?
+  showSuccessToast: false
+  successToast: Action "{{actions.close_modal.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.close_modal.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+  autoTrigger: false
+selected: true
+configured: false

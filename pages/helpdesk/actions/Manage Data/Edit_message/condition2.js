@@ -1,0 +1,1 @@
+{{state.CurrentMessage.message_type != ui.inp_message_type.value}}

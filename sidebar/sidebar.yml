@@ -22,6 +22,18 @@ children:
         dataValue: 240px
         withData: false
       expandContentToFit: false
+      containerStyles:
+        withData: false
+        dataValue: |-
+          {
+            padding: 'default',
+            shadow: 'default',
+            border: 'none'
+          }
+        value:
+          padding: none
+          shadow: default
+          border: none
     index: 0
     slots:
       - id: '17180163636620.30762030648752514'
