@@ -1,0 +1,48 @@
+id: '17229633527590.8181508604820678'
+definitionId: button
+parentSlotId: '17229571298050.6369031793160858'
+styles:
+  xl:
+    gridItem:
+      x: 20
+      y: 0
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 54
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: btn_close_reason
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Close
+actions:
+  buttonClick:
+    - action: '17229621604020.12355791802807348'
+      paramCode: |-
+        {
+          called_by: 'mdl_close_ticket'
+        }
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

@@ -41,8 +41,8 @@ properties:
         link: '/dashboard'
       },
       {
-        title: 'My Tickets',
-        link: '/tickets'
+        title: 'Heldesk',
+        link: '/helpdesk'
       },
       {
         title: 'AI Testing',

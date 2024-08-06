@@ -1,0 +1,1 @@
+{{state.CurrentMessage.message != ui.inp_message_text.value}}

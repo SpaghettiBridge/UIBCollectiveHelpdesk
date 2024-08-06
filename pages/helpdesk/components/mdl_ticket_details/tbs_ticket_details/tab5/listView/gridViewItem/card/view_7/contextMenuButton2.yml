@@ -1,0 +1,87 @@
+id: '17228489125340.6020406531942906'
+definitionId: contextMenuButton
+parentSlotId: '17207954809400.7404520242890589'
+styles:
+  xl:
+    gridItem:
+      x: 22
+      y: 2
+      w: 2
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    iconPlacement: center
+  xs:
+    gridItem:
+      x: 0
+      y: 86
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  contextMenuItems:
+    value:
+      - id: item_1
+        title: Edit
+        icon: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+        onlyIcon: false
+      - id: item_2
+        title: Delete
+        icon: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+        onlyIcon: false
+    dataValue: |-
+      [
+        {
+          id: 'item_1',
+          title: 'item 1',
+          icon: 'chevron-right-outline',
+        },
+        {
+          id: 'item_2',
+          title: 'Item 2',
+          icon: 'chevron-right-outline',
+        },
+      ]
+    withData: false
+  name: contextMenuButton2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  icon:
+    value: settings
+    dataValue: menu
+    withData: false
+  status:
+    value: primary
+    dataValue: basic
+    withData: false
+  contextMenuTrigger:
+    value: hover
+    dataValue: click
+    withData: false
+actions:
+  buttonClick: []
+  menuItemClick:
+    - action: '17228487311230.7109853279300311'
+      paramCode: ' {{item}}'
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17228504351400.4347743215418578'
+      paramCode: ''
+      index: 1
+  init: []
+slots: []

@@ -1,0 +1,34 @@
+id: '17152448971770.8946191640924275'
+name: Heldesk
+url: helpdesk
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+parentPageId: ''
+slots:
+  - id: '17152448971770.10547391630782199'
+    name: content
+    children:
+      - id: '17152448971770.9133121676214331'
+        definitionId: grid
+        parentSlotId: '17152448971770.10547391630782199'
+        styles: {}
+        properties:
+          name: tickets
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        actions:
+          pageLoad: []
+        slots:
+          - id: '17152448971770.540481335972298'
+            name: content
+            children:
+              - components/md_create_ticket/md_create_ticket.yml
+              - components/tbl_mainTickets.yml
+              - components/mdl_ticket_details/mdl_ticket_details.yml
+              - components/chk_all_tickets.yml
+              - components/collapsibleCard/collapsibleCard.yml
+              - components/getRecentTicketHistoryTable.yml

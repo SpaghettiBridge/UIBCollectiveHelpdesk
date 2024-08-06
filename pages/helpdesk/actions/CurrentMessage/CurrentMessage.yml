@@ -1,0 +1,17 @@
+id: '17228487386050.6193348953761078'
+kind: store_item
+name: CurrentMessage
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+storeItem:
+  value: '{}'
+  valueType: object
+  initialValue: '{}'
+  version: 1
+selected: true
+configured: true
+config:
+  preserveStateOnPageChange: false

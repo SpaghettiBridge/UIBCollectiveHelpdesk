@@ -1,0 +1,53 @@
+id: '17229569142970.5333572094096983'
+definitionId: modal
+parentSlotId: '17163031235450.9207252476565222'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 3
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 12
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: modal_of_modals
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+slots:
+  - id: '17229569142970.7859580302894928'
+    name: header
+    children:
+      - hd_Modal_of_modals.yml
+  - id: '17229569142970.3330416103036917'
+    name: body
+    children:
+      - mdl_assign_agent/mdl_assign_agent.yml
+      - mdl_needs_info/mdl_needs_info.yml
+      - mdl_sugg_sol/mdl_sugg_sol.yml
+      - mdl_assign_queue/mdl_assign_queue.yml
+      - mdl_close_ticket/mdl_close_ticket.yml
+      - mdl_merge_ticket/mdl_merge_ticket.yml
+      - mdl_re_open/mdl_re_open.yml
+  - id: '17229569142970.6527844011358594'
+    name: footer
+    children: []

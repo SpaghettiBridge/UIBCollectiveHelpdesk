@@ -1,0 +1,14 @@
+mode: structured
+valueByMode:
+  structured:
+    priority:
+      value: '{{data.priority}}'
+    fk_status_id:
+      value: '{{data.fk_status_id}}'
+    fk_type_id:
+      value: '{{data.fk_type_id}}'
+    fk_agent_id:
+      value: '{{data.fk_agent_id}}'
+    fk_ticket_queue:
+      value: '{{data.fk_ticket_queue}}'
+  custom: ''
