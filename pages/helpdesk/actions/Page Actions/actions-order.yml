@@ -1,7 +1,8 @@
 - expand_image
 - save_message_data
 - message_menu
-- open_ticketDetails
 - filter_change
 - ticket_submenu
 - close_modal
+- open_ticketDetails
+- newAction

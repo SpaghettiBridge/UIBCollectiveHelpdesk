@@ -272,7 +272,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 411
+          width: 274
           widthMode: fixed
           filter: true
           forceView: true
@@ -292,7 +292,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 238
+          width: 191
           widthMode: fixed
           filter: true
           forceView: true
@@ -473,7 +473,7 @@ slots:
             - xl
             - xs
           title: ' #'
-          width: 48
+          width: 42
           widthMode: fixed
           forceView: true
           alignment: center
@@ -577,7 +577,7 @@ slots:
             - xs
           filter: true
           widthMode: fixed
-          width: 126
+          width: 118
           title: Status
           alignment: left
         index: 6
@@ -661,6 +661,7 @@ slots:
 
                 {{value != state.AccountData.account_id ? 'green' : 'red'}}
               withData: true
+            visible: false
         properties:
           name: atomicString12
           prop: fk_awaiting_response

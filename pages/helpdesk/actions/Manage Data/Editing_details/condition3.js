@@ -1,0 +1,1 @@
+{{steps.calc_CC_Subs.data.length != 0}}

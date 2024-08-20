@@ -7,8 +7,6 @@ valueByMode:
       value: '{{ui.slct_subcategory2.value||null}}'
     fk_ticket_reason:
       value: '{{ui.slct_reason.value}}'
-    fk_ticket_sub_reason:
-      value: '{{ui.slct_sub_reason.value||null}}'
     fk_status_id:
       value: '{{data.id}}'
     fk_ticket_group_id:

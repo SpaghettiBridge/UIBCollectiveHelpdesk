@@ -1,9 +1,12 @@
 - assign_agent
 - need_more_info
+- re_open
 - suggest_solution
 - assign_queue
 - edit_ticket
 - close_ticket
 - merge_ticket
 - delete_ticket
-- re_open
+- external_comment
+- internal_comment
+- development_comment

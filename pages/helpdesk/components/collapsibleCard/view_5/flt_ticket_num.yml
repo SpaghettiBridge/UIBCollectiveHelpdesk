@@ -62,7 +62,7 @@ properties:
     dataValue: 'true'
     withData: false
   multi: true
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Heldesk" }}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Helpdesk" }}'
 actions: {}
 slots:
   - id: '17200045631530.6678101176526718'

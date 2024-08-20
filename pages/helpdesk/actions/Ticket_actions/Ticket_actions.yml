@@ -6,5 +6,6 @@ steps: []
 mode: manual
 modeConfigured: false
 parentPageId: '17152448971770.8946191640924275'
-parentId: null
 selected: false
+config:
+  preserveStateOnPageChange: false

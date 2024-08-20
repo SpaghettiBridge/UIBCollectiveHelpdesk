@@ -1,0 +1,1 @@
+{{ui.tbl_mainTickets.selectedRow.data.fk_creator_id == state.AccountData.account_id}}

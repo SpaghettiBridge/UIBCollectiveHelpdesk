@@ -15,6 +15,6 @@ valueByMode:
       value: '{{ui.inp_details.value}}'
     fk_status_id:
       value: '{{ui.slct_details_status.value}}'
-    fk_merged_user_id:
-      value: '{{ui.slct_others.value}}'
+    fk_agent_id:
+      value: '{{steps.calculate_agent.data}}'
   custom: ''

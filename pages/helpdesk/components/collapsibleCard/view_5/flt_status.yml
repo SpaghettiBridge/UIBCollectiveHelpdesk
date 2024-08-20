@@ -55,9 +55,9 @@ properties:
     position: horizontal
     align: left
   multi: true
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Heldesk" }}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Helpdesk" }}'
   value: >-
-    {{["5992f1c3-5754-4264-a0bf-2b58a311126a","d77143f9-c074-42ee-aa8e-a92accc0cfa5","078fa49a-bc85-4583-a935-f9ce2885ea5a","9a298637-b8ad-4197-aa93-d03169574803","56b954f2-851c-476b-b788-63c46387b85e","b28c9480-1ae0-4876-b79c-1a802c95e32a","c4af45aa-f092-4f90-9b8a-37d102b44e21","64bad16b-43d3-4567-ac14-23f9f5ac4041"]}}
+    {{["5992f1c3-5754-4264-a0bf-2b58a311126a","d77143f9-c074-42ee-aa8e-a92accc0cfa5","078fa49a-bc85-4583-a935-f9ce2885ea5a","9a298637-b8ad-4197-aa93-d03169574803","56b954f2-851c-476b-b788-63c46387b85e","b28c9480-1ae0-4876-b79c-1a802c95e32a","c4af45aa-f092-4f90-9b8a-37d102b44e21","0791ddab-26ca-4fd8-b0c9-657a7888e220"]}}
 actions: {}
 slots:
   - id: '17200045631530.13853193706222133'

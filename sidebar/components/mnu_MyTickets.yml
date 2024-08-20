@@ -42,7 +42,7 @@ properties:
         link: '/dashboard'
       },
       {
-        title: 'Heldesk',
+        title: 'Helpdesk',
         link: '/helpdesk'
       },
       {

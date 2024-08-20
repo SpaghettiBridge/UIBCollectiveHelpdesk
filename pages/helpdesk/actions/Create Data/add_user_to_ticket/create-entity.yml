@@ -1,0 +1,10 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_account_id:
+      value: '{{data}}'
+    fk_ticket_id:
+      value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+    type:
+      value: CC
+  custom: ''

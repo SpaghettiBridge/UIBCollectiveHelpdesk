@@ -1,0 +1,26 @@
+id: '17241429325630.26189670735987125'
+kind: js_file
+name: is_date_within_30_days
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: null
+jsFile:
+  declarations:
+    - type: function
+      name: isDateWithinRange
+      start: 0
+      end: 463
+      params:
+        - dateString
+      loc:
+        start:
+          line: 1
+          column: 0
+        end:
+          line: 14
+          column: 1
+  valid: true
+selected: true
+configured: true

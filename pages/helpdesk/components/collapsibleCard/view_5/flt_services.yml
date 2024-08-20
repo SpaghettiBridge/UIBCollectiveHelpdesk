@@ -53,7 +53,7 @@ properties:
     position: horizontal
     align: left
   multi: true
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Heldesk" }}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Helpdesk" }}'
 actions: {}
 slots:
   - id: '17200045631530.6799822433156675'
