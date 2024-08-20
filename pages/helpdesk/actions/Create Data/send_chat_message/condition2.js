@@ -1,1 +1,1 @@
-{{ui.msg_attach.value||ui.msg_attach2.value||ui.msg_attach3.value}}
+{{ui.msg_attach2.value||ui.msg_attach3.value||ui.msg_attach4.value||ui.msg_attach5.value||ui.msg_attach6.value}}

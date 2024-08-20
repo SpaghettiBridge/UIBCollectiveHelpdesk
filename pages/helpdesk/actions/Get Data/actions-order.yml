@@ -17,5 +17,5 @@
 - get_external_messages
 - get_Dev_messages
 - get_ticket_reasons
-- get_ticket_subreasons
 - get_ticket_queues
+- get_tickets_with_merges

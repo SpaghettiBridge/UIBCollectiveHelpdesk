@@ -25,7 +25,7 @@ modeConfigured: true
 parentPageId: '17152448971770.8946191640924275'
 config:
   shouldConfirm: true
-  confirmMessage: Finish editing and lose changes?
+  confirmMessage: Are you sure you want to cancel your changes?
   showSuccessToast: false
   successToast: Action "{{actions.Finish_edit.name}}" successfully executed
   successToastDuration: '3000'
@@ -37,6 +37,7 @@ config:
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
+  autoTrigger: false
 selected: true
 configured: true
 parentId: '17182679468640.0719616409524717'

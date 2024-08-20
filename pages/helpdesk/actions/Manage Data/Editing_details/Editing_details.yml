@@ -145,6 +145,194 @@ steps:
                 isChanged: true
                 nameConfigured: true
                 paused: false
+              - id: '17241714520370.4154618786422932'
+                type: condition
+                name: condition2
+                params:
+                  - type: code
+                    value: ./condition2.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17241720338990.06532110095358301'
+                            type: customAsyncCode
+                            name: calc_CC_Subs
+                            params:
+                              - type: asyncCode
+                                value: ./calc_CC_Subs.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                          - id: '17241720918490.8077084625037281'
+                            type: condition
+                            name: condition3
+                            params:
+                              - type: code
+                                value: ./condition3.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: steps
+                                value:
+                                  - condition: true
+                                    steps:
+                                      - id: '17241721955890.5598747593210742'
+                                        type: loopAction
+                                        name: loop2
+                                        params:
+                                          - type: action
+                                            value: '17241722209100.560678003445511'
+                                            valueType: string
+                                          - type: isActionsLibraryCall
+                                            value: false
+                                            valueType: string
+                                          - type: customArray
+                                            value: ./loop2-customArray.js
+                                            valueType: interpolatedValue
+                                          - type: iterationChunkSize
+                                            value: '3'
+                                            valueType: custom
+                                          - type: iterationChunkDelay
+                                            value: '300'
+                                            valueType: custom
+                                          - type: maxIterations
+                                            value: ''
+                                            valueType: custom
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                          - type: executionMethod
+                                            value: sequential
+                                            valueType: custom
+                                        level: 2
+                                        fallthroughError: false
+                                        isChanged: true
+                                  - condition: false
+                                    steps: []
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17241715229860.6209322502328847'
+                            type: customAsyncCode
+                            name: calc_CC_Adds
+                            params:
+                              - type: asyncCode
+                                value: ./calc_CC_Adds.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                          - id: '17241721320180.36473958832823605'
+                            type: condition
+                            name: condition4
+                            params:
+                              - type: code
+                                value: ./condition4.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: steps
+                                value:
+                                  - condition: true
+                                    steps:
+                                      - id: '17241723885540.348610475895345'
+                                        type: loopAction
+                                        name: loop3
+                                        params:
+                                          - type: action
+                                            value: '17241723324010.862426663118218'
+                                            valueType: string
+                                          - type: isActionsLibraryCall
+                                            value: false
+                                            valueType: string
+                                          - type: customArray
+                                            value: ./loop3-customArray.js
+                                            valueType: interpolatedValue
+                                          - type: iterationChunkSize
+                                            value: '3'
+                                            valueType: custom
+                                          - type: iterationChunkDelay
+                                            value: '300'
+                                            valueType: custom
+                                          - type: maxIterations
+                                            value: ''
+                                            valueType: custom
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                          - type: executionMethod
+                                            value: sequential
+                                            valueType: custom
+                                        level: 2
+                                        fallthroughError: false
+                                        isChanged: true
+                                  - condition: false
+                                    steps: []
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17241724452640.5486785257192794'
+                            type: UPDATE_ENTITY
+                            name: update2
+                            params:
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: string
+                              - type: resourceId
+                                value: public.tickets
+                                valueType: string
+                              - type: filter
+                                value:
+                                  - column: id
+                                    operation: '='
+                                    value:
+                                      value: >-
+                                        {{ui.tbl_mainTickets.selectedRow.data.id}}
+                                valueType: custom
+                              - type: entity
+                                value: ./update2-entity.yml
+                                valueType: custom
+                              - type: replace
+                                value: false
+                                valueType: string
+                              - type: bulk
+                                value: false
+                                valueType: string
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
               - id: '17183726484110.44397083074013466'
                 type: executeAction
                 name: execute
@@ -173,6 +361,7 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+                paused: false
           - condition: false
             steps: []
         valueType: custom

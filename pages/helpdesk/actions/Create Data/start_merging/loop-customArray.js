@@ -1,1 +1,1 @@
-return {{ui.tbl_merge_options.selectedRows.data.map(item => {return {parent: ui.tbl_mainTickets.selectedRow.data.id ,child: item.id} }) }};
+return {{params.rows.map(item => {return {parent: ui.tbl_mainTickets.selectedRow.data.id ,child: item.id, creator: item.fk_creator_id, title: item.ticket_number+": "+item.title} }) }};

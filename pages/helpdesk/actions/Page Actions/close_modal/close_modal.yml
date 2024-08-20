@@ -20,7 +20,7 @@ parentPageId: '17152448971770.8946191640924275'
 parentId: '17182716152270.2745684905907171'
 config:
   shouldConfirm: true
-  confirmMessage: Are you Sure you'd like to cancel anything you've done?
+  confirmMessage: Are you sure you want to cancel your changes?
   showSuccessToast: false
   successToast: Action "{{actions.close_modal.name}}" successfully executed
   successToastDuration: '3000'

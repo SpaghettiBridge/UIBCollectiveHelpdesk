@@ -39,13 +39,17 @@ steps:
         valueType: interpolatedValue
       - type: s3FileKey
         value: >-
-          {{ui.tbl_mainTickets.selectedRow.data.id}}_{{ui.msg_attach.value.name}}
+          {{ui.tbl_mainTickets.selectedRow.data.id}}_{{ui.msg_attach.value.name||ui.msg_attach2.value.name||ui.msg_attach3.value.name||ui.msg_attach4.value.name}}
+        valueType: interpolatedValue
+      - type: s3ExpirationTime
+        value: 300
         valueType: interpolatedValue
       - type: s3SignedOperationType
         value: GET
         valueType: custom
       - type: s3UploadContentType
-        value: '{{ui.msg_attach.value.type}}'
+        value: >-
+          {{ui.msg_attach.value.type||ui.msg_attach2.value.type||ui.msg_attach3.value.type||ui.msg_attach4.value.type}}
         valueType: interpolatedValue
       - type: s3UploadData
         value: '{{data}}'

@@ -1,1 +1,1 @@
-return {{params}};
+{{ui.mdl_merge_ticket.open()}}

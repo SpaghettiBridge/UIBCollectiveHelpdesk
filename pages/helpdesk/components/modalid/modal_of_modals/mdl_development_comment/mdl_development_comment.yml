@@ -1,0 +1,51 @@
+id: '17237864519270.00014747740433818102'
+definitionId: modal
+parentSlotId: '17229569142970.3330416103036917'
+styles:
+  xl:
+    gridItem:
+      x: 20
+      y: 9
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 81
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: mdl_development_comment
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonText: dev comment
+actions: {}
+slots:
+  - id: '17237864519270.3964085967981903'
+    name: header
+    children:
+      - heading8.yml
+  - id: '17237864519270.5437024031465882'
+    name: body
+    children:
+      - txt_ext_message6.yml
+      - btn_send_ext_message6.yml
+      - msg_attach6.yml
+  - id: '17237864519270.18118511101764256'
+    name: footer
+    children: []

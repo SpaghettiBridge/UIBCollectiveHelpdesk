@@ -2,6 +2,7 @@
 - upload_msg_attachment
 - Merge_tickets
 - start_merging
+- add_user_to_ticket
 - External_message_sent
 - internal_message_sent
 - development_message_sent

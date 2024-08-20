@@ -1,0 +1,63 @@
+id: '17241706918020.03890814020750999'
+kind: workflow
+name: get_tickets_with_merges
+nameConfigured: true
+steps:
+  - id: '17241707078280.8424389549143285'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: ./query-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./query-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17182679214480.22948806657656773'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.get_tickets_with_merges.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_tickets_with_merges.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_tickets_with_merges.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

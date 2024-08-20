@@ -1,1 +1,1 @@
-{{steps.params.data.called_by != "" && steps.params.data.called_by != undefined && steps.params.data.called_by != null && steps.params.data.called_by != "Generic"}}
+{{steps.params.data.called_by != "" && steps.params.data.called_by != undefined && steps.params.data.called_by != null && steps.params.data.called_by != "Generic"&& steps.params.data.called_by != "mdl_external_comment"}}
