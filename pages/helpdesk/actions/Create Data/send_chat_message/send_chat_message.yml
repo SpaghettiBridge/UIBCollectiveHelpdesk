@@ -110,55 +110,73 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
-              - id: '17237914932760.20005659854029556'
-                type: httpRequest
-                name: request
+              - id: '17242329819060.17480678558578'
+                type: condition
+                name: condition7
                 params:
-                  - type: datasourceId
-                    value: httpApi
-                    valueType: string
-                    mustSelectFirst: true
-                  - type: method
-                    value: POST
-                    valueType: string
-                  - type: url
-                    value: >-
-                      https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                  - type: code
+                    value: ./condition7.js
                     valueType: interpolatedValue
-                    interpolationType: string
-                  - type: headers
+                    interpolationType: code
+                  - type: steps
                     value:
-                      - name: Content-Type
-                        value: application/json
-                    valueType: custom
-                    interpolationType: string
-                  - type: queryParams
-                    value:
-                      - name: ''
-                        value: ''
-                    valueType: custom
-                    interpolationType: string
-                  - type: body
-                    value: "{\n\tticket_id:{{ui.tbl_mainTickets.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_agent_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets.selectedRow.data.creator} Has sent an external message: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: structuredBody
-                    value: []
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: bodyType
-                    value: object
-                    valueType: string
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: mapperEnabled
-                    value: false
+                      - condition: true
+                        steps:
+                          - id: '17237914932760.20005659854029556'
+                            type: httpRequest
+                            name: request
+                            params:
+                              - type: datasourceId
+                                value: httpApi
+                                valueType: string
+                                mustSelectFirst: true
+                              - type: method
+                                value: POST
+                                valueType: string
+                              - type: url
+                                value: >-
+                                  https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: headers
+                                value:
+                                  - name: Content-Type
+                                    value: application/json
+                                valueType: custom
+                                interpolationType: string
+                              - type: queryParams
+                                value:
+                                  - name: ''
+                                    value: ''
+                                valueType: custom
+                                interpolationType: string
+                              - type: body
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_agent_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets.selectedRow.data.creator} Has sent an external message: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: structuredBody
+                                value: []
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: bodyType
+                                value: object
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps: []
                     valueType: custom
                 level: 1
                 fallthroughError: false
@@ -445,6 +463,59 @@ steps:
                                 value:
                                   - condition: true
                                     steps:
+                                      - id: '17242294545300.5437049329301231'
+                                        type: httpRequest
+                                        name: request2
+                                        params:
+                                          - type: datasourceId
+                                            value: httpApi
+                                            valueType: string
+                                            mustSelectFirst: true
+                                          - type: method
+                                            value: POST
+                                            valueType: string
+                                          - type: url
+                                            value: >-
+                                              https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                                            valueType: interpolatedValue
+                                            interpolationType: string
+                                          - type: headers
+                                            value:
+                                              - name: Content-Type
+                                                value: application/json
+                                            valueType: custom
+                                            interpolationType: string
+                                          - type: queryParams
+                                            value:
+                                              - name: ''
+                                                value: ''
+                                            valueType: custom
+                                            interpolationType: string
+                                          - type: body
+                                            value: "{\n\tticket_id:{{ui.tbl_mainTickets.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets.selectedRow.data.agent} Has suggested a solution: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: structuredBody
+                                            value: []
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: bodyType
+                                            value: object
+                                            valueType: string
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 1
+                                        fallthroughError: false
+                                        isChanged: true
                                       - id: '17229603333540.5263086815290217'
                                         type: executeAction
                                         name: execute7

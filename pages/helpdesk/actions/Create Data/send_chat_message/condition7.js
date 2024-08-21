@@ -1,0 +1,1 @@
+{{ui.tbl_mainTickets.selectedRow.data.fk_agent_id != state.AccountData.account_id}}
