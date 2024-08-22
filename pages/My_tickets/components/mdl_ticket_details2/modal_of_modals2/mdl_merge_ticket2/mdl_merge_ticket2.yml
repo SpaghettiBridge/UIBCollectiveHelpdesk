@@ -1,0 +1,63 @@
+id: '17243334697870.3812053788685903'
+definitionId: modal
+parentSlotId: '17243334697870.6421752855247402'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 9
+      w: 5
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    modalSize:
+      widthValue: 70
+      widthUnit: '%'
+      heightValue: auto
+      heightUnit: null
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
+  xs:
+    gridItem:
+      x: 0
+      y: 45
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: mdl_merge_ticket2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonText: Merge Ticket
+slots:
+  - id: '17243334697870.13883254541276902'
+    name: header
+    children:
+      - heading13.yml
+      - btn_save_merge2.yml
+      - btn_close_merge2.yml
+  - id: '17243334697870.7288844550569249'
+    name: body
+    children:
+      - tbl_mergeable_tickets2.yml
+  - id: '17243334697870.019500567547069192'
+    name: footer
+    children: []

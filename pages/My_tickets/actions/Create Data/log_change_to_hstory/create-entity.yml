@@ -1,0 +1,10 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_updated_by:
+      value: '{{state.AccountData.account_id}}'
+    fk_ticket_id:
+      value: '{{params.ticket}}'
+    change:
+      value: '{{params.change}}'
+  custom: ''

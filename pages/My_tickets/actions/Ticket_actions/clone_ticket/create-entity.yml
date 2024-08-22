@@ -1,0 +1,46 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_creator_id:
+      value: '{{steps.code.data.fk_creator_id}}'
+    fk_agent_id:
+      value: '{{steps.code.data.fk_agent_id}}'
+    fk_status_id:
+      value: '{{data.id}}'
+    fk_merged_user_id:
+      value: '{{steps.code.data.fk_nmerged_user_id}}'
+    fk_type_id:
+      value: '{{steps.code.data.fk_type_id}}'
+    fk_app_id:
+      value: '{{steps.code.data.fk_app_id}}'
+    fk_category_id:
+      value: '{{steps.code.data.fk_category_id}}'
+    location:
+      value: '{{steps.code.data.location}}'
+    priority:
+      value: '{{steps.code.data.priority}}'
+    links:
+      value: '{{steps.code.data.links}}'
+    details:
+      value: '{{steps.code.data.details}}'
+    title:
+      value: 'Clone Of: {{steps.code.data.title}}'
+    urgency:
+      value: '{{steps.code.data.urgency}}'
+    importance:
+      value: '{{steps.code.data.importance}}'
+    assigned_queue:
+      value: '{{steps.code.data.assigned_queue}}'
+    fk_subcategory_id:
+      value: '{{steps.code.data.fk_subcategory_id}}'
+    fk_service_id:
+      value: '{{steps.code.data.service_id}}'
+    fk_awaiting_response:
+      value: '{{steps.code.data.fk_awaiting_response}}'
+    fk_ticket_group_id:
+      value: '{{steps.code.data.fk_ticket_group_id}}'
+    last_response:
+      value: '{{moment()}}'
+    fk_ticket_queue:
+      value: '{{steps.code.data.fk_ticket_queue}}'
+  custom: ''

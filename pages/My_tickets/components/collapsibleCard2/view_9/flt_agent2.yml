@@ -1,0 +1,76 @@
+id: '17243334697870.4646563189024031'
+definitionId: selectMulti
+parentSlotId: '17243334697870.2908905460961779'
+styles:
+  xl:
+    gridItem:
+      x: 8
+      y: 36
+      w: 8
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 72
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: '{{actions.get_accounts.data.filter(x=> x.role == "Agent")}}'
+    withData: true
+  name: flt_agent2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_accounts.loading}}'
+    value: false
+  labelConfig:
+    text: Agent
+    position: horizontal
+    align: left
+  value: ''
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent"}}'
+actions: {}
+slots:
+  - id: '17243334697870.7926678285403421'
+    name: optionViewTypes
+    children:
+      - id: '17243334697880.7391781762869498'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString101
+          prop: name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '17243334697870.7926678285403421'
+        index: 0
+        slots: []

@@ -1,0 +1,67 @@
+id: '17243334697930.37861544919720136'
+kind: workflow
+name: remove_user_from_ticket
+nameConfigured: true
+steps:
+  - id: '17243334697930.613829152142948'
+    type: DELETE_ENTITY
+    name: delete
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.join_tickets_users
+        valueType: string
+      - type: filter
+        value:
+          - column: fk_account_id
+            operation: '='
+            value:
+              value: '{{data}}'
+          - column: fk_ticket_id
+            operation: '='
+            value:
+              value: '{{ui.tbl_mainTickets3.selectedRow.data.id}}'
+        valueType: custom
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697920.4717682312931888'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.remove_user_from_ticket.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.remove_user_from_ticket.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.remove_user_from_ticket.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

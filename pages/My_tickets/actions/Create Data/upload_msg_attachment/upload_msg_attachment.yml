@@ -1,0 +1,97 @@
+id: '17243334697910.6532696119256549'
+kind: workflow
+name: upload_msg_attachment
+nameConfigured: true
+steps:
+  - id: '17243334697910.9669244224265703'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697910.12869816286276148'
+    type: s3Query
+    name: s3Query
+    params:
+      - type: datasourceId
+        value: supabase screenshot bucket
+        valueType: string
+      - type: s3ActionType
+        value: uploadData
+        valueType: custom
+      - type: s3BucketName
+        value: ticket_attachments
+        valueType: custom
+      - type: s3FilePrefix
+        value: ''
+        valueType: interpolatedValue
+      - type: s3Delimiter
+        value: ''
+        valueType: interpolatedValue
+      - type: s3MaxKeys
+        value: ''
+        valueType: interpolatedValue
+      - type: s3FileKey
+        value: >-
+          {{ui.tbl_mainTickets3.selectedRow.data.id}}_{{ui.msg_attach.value.name||ui.msg_attach7.value.name||ui.msg_attach8.value.name||ui.msg_attach9.value.name}}
+        valueType: interpolatedValue
+      - type: s3ExpirationTime
+        value: 300
+        valueType: interpolatedValue
+      - type: s3SignedOperationType
+        value: GET
+        valueType: custom
+      - type: s3UploadContentType
+        value: >-
+          {{ui.msg_attach.value.type||ui.msg_attach7.value.type||ui.msg_attach8.value.type||ui.msg_attach9.value.type}}
+        valueType: interpolatedValue
+      - type: s3UploadData
+        value: '{{data}}'
+        valueType: interpolatedValue
+      - type: s3DestinationFileKey
+        value: ''
+        valueType: interpolatedValue
+      - type: s3TagSet
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.upload_msg_attachment.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.upload_msg_attachment.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.upload_msg_attachment.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentId: '17243334697910.9101401090033436'

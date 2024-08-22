@@ -1,0 +1,8 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_status_id:
+      value: '{{steps.get_status.data.id}}'
+    fk_ticket_reason:
+      value: '{{steps.get_reason.data.id}}'
+  custom: ''

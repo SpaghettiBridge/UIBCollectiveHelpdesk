@@ -1,0 +1,68 @@
+id: '17243334697940.6984430118419322'
+kind: workflow
+name: open_ticketDetails
+nameConfigured: true
+steps:
+  - id: '17243334697940.642974681458661'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17243318908060.8497586652807787'
+        valueType: string
+      - type: value
+        value: '{}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697940.5489094978284641'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17243334697810.9244993407729447'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.open_ticketDetails.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.open_ticketDetails.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.open_ticketDetails.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentId: '17243334697940.3228004568958742'
+actions:
+  success:
+    - action: '17243334697890.8444929078365864'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17243334697900.6074633897525274'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+  error: []

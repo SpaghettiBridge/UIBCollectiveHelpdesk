@@ -1,0 +1,45 @@
+id: '17243334697870.9815833034845003'
+definitionId: stringEdit
+parentSlotId: '17243334697870.9512562487887624'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 73
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: inp_ticket_title2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Title
+    position: horizontal
+    align: left
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots: []

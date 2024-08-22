@@ -1,0 +1,86 @@
+id: '17183709310820.45051034963197223'
+definitionId: selectWithAtomics
+parentSlotId: '17163037365990.12536073187745211'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 99
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 176
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: '{{actions.get_accounts.data.filter(x=> x.role == "Agent")}}'
+    withData: true
+  name: slct_agent
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_accounts.loading}}'
+    value: false
+  disabled:
+    value: false
+    dataValue: '{{state.editing == false}}'
+    withData: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: state.user_type != "User"
+  labelConfig:
+    text: Assigned Agent
+    position: horizontal
+    align: left
+  value: >-
+    {{state.cloned_ticket.fk_agent_id
+    ||ui.tbl_mainTickets.selectedRow.data.fk_agent_id}}
+  allowResetValue:
+    value: false
+    dataValue: 'true'
+    withData: false
+actions: {}
+slots:
+  - id: '17183709310820.15647419406021812'
+    name: optionViewTypes
+    children:
+      - id: '17183714494160.41642524079232435'
+        definitionId: atomicString
+        parentSlotId: '17183709310820.15647419406021812'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString17
+          prop: name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []

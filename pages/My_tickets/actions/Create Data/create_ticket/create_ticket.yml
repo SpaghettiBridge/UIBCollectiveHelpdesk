@@ -1,0 +1,527 @@
+id: '17243334697910.12637417511151905'
+kind: workflow
+name: create_ticket
+nameConfigured: true
+steps:
+  - id: '17243334697910.21481069391231022'
+    type: customAsyncCode
+    name: Caclulate_priority
+    params:
+      - type: asyncCode
+        value: ./Caclulate_priority.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697910.43616217051659634'
+    type: customAsyncCode
+    name: calculate_agent
+    params:
+      - type: asyncCode
+        value: ./calculate_agent.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697910.4440337610314591'
+    type: customAsyncCode
+    name: Calculate_queue
+    params:
+      - type: asyncCode
+        value: ./Calculate_queue.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697910.8985384665483187'
+    type: CREATE_ENTITY
+    name: create_ticket
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.tickets
+        valueType: string
+      - type: entity
+        value: ./create_ticket-entity.yml
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697910.3345651338111948'
+    type: condition
+    name: newStep
+    params:
+      - type: code
+        value: ./newStep.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17186221509550.8597519312755775'
+                type: UPDATE_ENTITY
+                name: update
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{steps.create_ticket.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17165555338520.8351194851183623'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+              - id: '17165555634650.1409115745601368'
+                type: s3Query
+                name: s3Query
+                params:
+                  - type: datasourceId
+                    value: supabase screenshot bucket
+                    valueType: string
+                  - type: s3ActionType
+                    value: uploadData
+                    valueType: custom
+                  - type: s3BucketName
+                    value: ticket_screenshots
+                    valueType: custom
+                  - type: s3FilePrefix
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3Delimiter
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3MaxKeys
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                  - type: s3FileKey
+                    value: >-
+                      {{steps.create_ticket.data.id}}_{{ui.slct_createTick_sh4.value.name}}
+                    valueType: interpolatedValue
+                  - type: s3SignedOperationType
+                    value: GET
+                    valueType: custom
+                  - type: s3UploadContentType
+                    value: '{{ui.slct_createTick_sh4.value.type}}'
+                    valueType: interpolatedValue
+                  - type: s3UploadData
+                    value: '{{steps.code.data}}'
+                    valueType: interpolatedValue
+                  - type: s3DestinationFileKey
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3TagSet
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697910.4499625864272345'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17186221917090.5730805161007306'
+                type: UPDATE_ENTITY
+                name: update2
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{steps.create_ticket.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update2-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567658670.923245309222521'
+                type: customAsyncCode
+                name: code2
+                params:
+                  - type: asyncCode
+                    value: ./code2.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567707630.14932136293566556'
+                type: s3Query
+                name: s3Query2
+                params:
+                  - type: datasourceId
+                    value: supabase screenshot bucket
+                    valueType: string
+                  - type: s3ActionType
+                    value: uploadData
+                    valueType: custom
+                  - type: s3BucketName
+                    value: ticket_screenshots
+                    valueType: custom
+                  - type: s3FilePrefix
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3Delimiter
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3MaxKeys
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                  - type: s3FileKey
+                    value: >-
+                      {{steps.create_ticket.data.id}}_{{ui.slct_createTick_sh5.value.name}}
+                    valueType: interpolatedValue
+                  - type: s3SignedOperationType
+                    value: GET
+                    valueType: custom
+                  - type: s3UploadContentType
+                    value: '{{ui.slct_createTick_sh5.value.type}}'
+                    valueType: interpolatedValue
+                  - type: s3UploadData
+                    value: '{{steps.code2.data}}'
+                    valueType: interpolatedValue
+                  - type: s3DestinationFileKey
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3TagSet
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697910.8743896452967634'
+    type: condition
+    name: condition2
+    params:
+      - type: code
+        value: ./condition2.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17186221962280.694157269885612'
+                type: UPDATE_ENTITY
+                name: update3
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{steps.create_ticket.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update3-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567746630.4003974976125979'
+                type: customAsyncCode
+                name: code3
+                params:
+                  - type: asyncCode
+                    value: ./code3.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 2
+                fallthroughError: false
+                isChanged: true
+              - id: '17165567779700.9403785136565939'
+                type: s3Query
+                name: s3Query3
+                params:
+                  - type: datasourceId
+                    value: supabase screenshot bucket
+                    valueType: string
+                  - type: s3ActionType
+                    value: uploadData
+                    valueType: custom
+                  - type: s3BucketName
+                    value: ticket_screenshots
+                    valueType: custom
+                  - type: s3FilePrefix
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3Delimiter
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3MaxKeys
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                  - type: s3FileKey
+                    value: >-
+                      {{steps.create_ticket.data.id}}_{{ui.slct_createTick_sh6.value.name}}
+                    valueType: interpolatedValue
+                  - type: s3SignedOperationType
+                    value: GET
+                    valueType: custom
+                  - type: s3UploadContentType
+                    value: '{{ui.slct_createTick_sh6.value.type}}'
+                    valueType: interpolatedValue
+                  - type: s3UploadData
+                    value: '{{steps.code3.data}}'
+                    valueType: interpolatedValue
+                  - type: s3DestinationFileKey
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: s3TagSet
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697910.983345787673177'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17243334697890.8833641619693731'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 2
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697910.7063505131373122'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '17187019713980.3586599423532837'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute2-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697910.6356159364085114'
+    type: customAsyncCode
+    name: code4
+    params:
+      - type: asyncCode
+        value: ./code4.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 2
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697910.9101401090033436'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.create_ticket.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.create_ticket.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.create_ticket.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

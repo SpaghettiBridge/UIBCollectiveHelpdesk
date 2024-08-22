@@ -1,0 +1,32 @@
+id: '17243334697880.46282990825897175'
+definitionId: view
+styles: {}
+properties:
+  name: view_10
+  viewName: view_1
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17243334697880.8685497776129065'
+index: 0
+slots:
+  - id: '17243334697880.4383144739207001'
+    name: content
+    children:
+      - img_sh3_view2.yml
+      - img_sh2_view2.yml
+      - img_sh1_view2.yml
+      - slct_details_type2.yml
+      - slct_details_priority2.yml
+      - dt_ticket_details_date2.yml
+      - slct_details_status2.yml
+      - slct_category4.yml
+      - slct_subcategory4.yml
+      - slct_group4.yml
+      - slct_agent2.yml
+      - slct_creator2.yml
+      - slct_others2.yml
+      - txt_service2.yml
+      - txt_email2.yml
+      - txt_title2.yml
+      - slct_queue2.yml

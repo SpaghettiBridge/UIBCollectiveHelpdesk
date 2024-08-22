@@ -1,0 +1,62 @@
+id: '17243334697880.2641754778258003'
+definitionId: stringEdit
+parentSlotId: '17243334697880.4383144739207001'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 18
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 212
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: txt_email2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Email
+    position: horizontal
+    align: left
+  value: >-
+    {{
+
+    if(state.cloned_ticket.fk_creator_id != null
+    ||state.cloned_ticket.fk_creator_id != undefined ){
+
+    return actions.get_accounts.data.filter(x=> x.id ==
+    ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email
+
+    }else{
+
+    return actions.get_accounts.data.filter(x=> x.id ==
+    ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email
+
+    }
+
+    }}
+  disabled:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots: []

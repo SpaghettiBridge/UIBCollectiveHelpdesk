@@ -1,0 +1,178 @@
+id: '17243334697880.911157776921979'
+definitionId: smartTable
+parentSlotId: '17243334697870.6343160652690789'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: '{{actions.Get_ticket_history.data}}'
+  name: publicTicketStatusHistoryTable2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: ''
+  showLoading:
+    withData: true
+    dataValue: '{{actions.Get_ticket_history.loading}}'
+    value: false
+  enableUserColumnResize:
+    value: false
+    dataValue: 'false'
+    withData: false
+  rowHeight: small
+  showFooter:
+    value: true
+    dataValue: 'true'
+    withData: false
+  limit: '25'
+  heightMode: auto
+actions: {}
+slots:
+  - id: '17243334697880.17000083992061943'
+    name: columns
+    children:
+      - id: '17243334697880.36928443675759026'
+        definitionId: atomicString
+        parentSlotId: '17243334697880.17000083992061943'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString112
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 0
+        slots: []
+      - id: '17243334697880.9432034652966372'
+        definitionId: atomicDateTime
+        parentSlotId: '17243334697880.17000083992061943'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime7
+          prop: created_at
+          primaryKey: false
+          timeFormat:
+            value: HH:mm
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 140
+          widthMode: fixed
+          filter: true
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: dd/MM/yyyy
+            withData: true
+        actions: {}
+        index: 1
+        slots: []
+      - id: '17243334697880.8381604521662047'
+        definitionId: atomicString
+        parentSlotId: '17243334697880.17000083992061943'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString113
+          prop: fk_updated_by
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 2
+        slots: []
+      - id: '17243334697880.8629820323696329'
+        definitionId: atomicString
+        parentSlotId: '17243334697880.17000083992061943'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString114
+          prop: fk_ticket_id
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 3
+        slots: []
+      - id: '17243334697880.037472488318627706'
+        definitionId: atomicText
+        parentSlotId: '17243334697880.17000083992061943'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText12
+          prop: change
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          widthMode: auto
+          filter: true
+        index: 4
+        slots: []

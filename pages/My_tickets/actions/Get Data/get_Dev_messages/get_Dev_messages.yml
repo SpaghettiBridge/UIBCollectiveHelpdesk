@@ -1,0 +1,77 @@
+id: '17243334697910.3645898929183147'
+kind: workflow
+name: get_Dev_messages
+nameConfigured: true
+steps:
+  - id: '17243334697910.30179005694905947'
+    type: LOAD_COLLECTION
+    name: load
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.ticket_messages
+        valueType: string
+      - type: filters
+        value:
+          - column: fk_ticket_id
+            operation: '='
+            value:
+              value: '{{ui.tbl_mainTickets3.selectedRow.data.id}}'
+          - column: message_type
+            operation: '='
+            value:
+              value: Development
+        valueType: custom
+      - type: ordering
+        value:
+          limit:
+            value: 1000
+          offset:
+            value: ''
+          orderBy:
+            value: ''
+          orderDirection:
+            value: asc
+        valueType: custom
+      - type: additionalParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697890.5561379313239285'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_Dev_messages.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_Dev_messages.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_Dev_messages.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: false
+selected: true
+configured: true

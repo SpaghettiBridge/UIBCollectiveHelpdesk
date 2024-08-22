@@ -1,0 +1,1 @@
+{{steps.input.data.creator != ui.tbl_mainTickets3.selectedRow.data.fk_creator_id}}

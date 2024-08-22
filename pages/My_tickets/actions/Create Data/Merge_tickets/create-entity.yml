@@ -1,0 +1,10 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_account_id:
+      value: '{{steps.input.data.creator}}'
+    fk_ticket_id:
+      value: '{{ui.tbl_mainTickets3.selectedRow.data.id}}'
+    type:
+      value: CC
+  custom: ''

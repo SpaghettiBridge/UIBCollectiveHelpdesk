@@ -1,0 +1,13 @@
+id: '17243334697880.9790187969838777'
+nameConfigured: true
+name: image_token
+kind: store_item
+parentId: '17243334697880.31399668294544036'
+storeItem:
+  value: ''
+  valueType: string
+  initialValue: >-
+    ?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ0aWNrZXRfc2NyZWVuc2hvdHMvZXJyb3IucG5nIiwiaWF0IjoxNzE2MzY1MDYxLCJleHAiOjE3MTY5Njk4NjF9.yVAhkYsud0XQhC_xxKBYfRBSojQxFwixkng4u50Ld5s&t=2024-05-22T08%3A04%3A22.935Z
+  version: 1
+steps: []
+parentPageId: '17243334697810.9244993407729447'

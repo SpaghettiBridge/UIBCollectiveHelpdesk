@@ -7,6 +7,9 @@ steps:
     type: LOAD_COLLECTION
     name: load2
     params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
       - type: resourceId
         value: public.join_tickets
         valueType: string
@@ -15,7 +18,9 @@ steps:
           - column: fk_parent_ticket
             operation: '='
             value:
-              value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+              value: >-
+                {{state.cloned_ticket.id
+                ||ui.tbl_mainTickets.selectedRow.data.id}}
         valueType: custom
       - type: ordering
         value:
@@ -44,9 +49,6 @@ steps:
         valueType: interpolatedValue
       - type: mapperEnabled
         value: false
-        valueType: custom
-      - type: datasourceId
-        value: Supabase Bridgelink Apps Database
         valueType: custom
     level: 0
     fallthroughError: false

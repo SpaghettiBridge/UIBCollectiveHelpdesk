@@ -1,0 +1,32 @@
+id: '17243334697810.9244993407729447'
+name: My Tickets
+url: My_tickets
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+slots:
+  - id: '17243334697810.06135775237230501'
+    name: content
+    children:
+      - id: '17243334697860.41591626843698726'
+        definitionId: grid
+        parentSlotId: '17243334697810.06135775237230501'
+        styles: {}
+        properties:
+          name: tickets2
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        actions:
+          pageLoad: []
+        slots:
+          - id: '17243334697860.09739285574112921'
+            name: content
+            children:
+              - components/md_create_ticket2/md_create_ticket2.yml
+              - components/tbl_mainTickets3.yml
+              - components/mdl_ticket_details2/mdl_ticket_details2.yml
+              - components/collapsibleCard2/collapsibleCard2.yml
+              - components/getRecentTicketHistoryTable2.yml

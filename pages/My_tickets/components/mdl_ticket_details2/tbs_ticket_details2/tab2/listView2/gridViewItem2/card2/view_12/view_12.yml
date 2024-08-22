@@ -1,0 +1,22 @@
+id: '17243334697880.35346916384222693'
+definitionId: view
+styles: {}
+properties:
+  name: view_12
+  viewName: view_1
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17243334697880.54429683878914'
+index: 0
+slots:
+  - id: '17243334697880.9429951093597408'
+    name: content
+    children:
+      - text5.yml
+      - image2.yml
+      - file2.yml
+      - text6.yml
+      - text7.yml
+      - dateTime2.yml
+      - contextMenuButton4.yml

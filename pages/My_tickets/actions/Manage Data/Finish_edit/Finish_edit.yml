@@ -1,0 +1,43 @@
+id: '17243334697930.9722733306985989'
+kind: workflow
+name: Finish_edit
+nameConfigured: true
+steps:
+  - id: '17243334697930.29927353323896466'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17182872518880.579279834439659'
+        valueType: string
+      - type: value
+        value: 'false'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17243334697810.9244993407729447'
+config:
+  shouldConfirm: true
+  confirmMessage: Are you sure you want to cancel your changes?
+  showSuccessToast: false
+  successToast: Action "{{actions.Finish_edit.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Finish_edit.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+  autoTrigger: false
+selected: true
+configured: true
+parentId: '17243334697930.24781879910445181'

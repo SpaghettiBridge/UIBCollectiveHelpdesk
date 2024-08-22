@@ -1,0 +1,6 @@
+mode: structured
+valueByMode:
+  structured:
+    thread_content:
+      value: '{{JSON.stringify(ui.cht_external.briefMessages)}}'
+  custom: ''

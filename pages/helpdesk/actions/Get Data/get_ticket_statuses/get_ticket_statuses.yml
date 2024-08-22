@@ -31,7 +31,7 @@ steps:
           offset:
             value: ''
           orderBy:
-            value: sequence
+            value: name
           orderDirection:
             value: asc
         valueType: custom

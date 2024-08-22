@@ -1,0 +1,8 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_parent_ticket:
+      value: '{{steps.input.data.parent}}'
+    fk_child_ticket:
+      value: '{{steps.input.data.child}}'
+  custom: ''

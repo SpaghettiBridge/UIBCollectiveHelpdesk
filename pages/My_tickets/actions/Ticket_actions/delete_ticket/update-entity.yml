@@ -1,0 +1,6 @@
+mode: structured
+valueByMode:
+  structured:
+    active:
+      value: Inactive
+  custom: ''

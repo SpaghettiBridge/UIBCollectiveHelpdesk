@@ -1,0 +1,58 @@
+id: '17243334697870.2615248676171533'
+definitionId: button
+parentSlotId: '17243334697870.9512562487887624'
+styles:
+  xl:
+    gridItem:
+      x: 19
+      y: 147
+      w: 5
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17165469362440.43578212744506084'
+      x: 22
+      y: 182
+      w: 2
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: btn_save_new_ticket2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Submit Ticket
+  disabled:
+    value: false
+    dataValue: >-
+      {{ui.slct_createTick_importancy2.valid == false ||
+      ui.slct_createTick_details2.valid== false||
+      ui.slct_createTick_urgency2.valid== false|| ui.inp_ticket_title2.valid==
+      false || ui.slct_createTick_type2.valid == false}}
+    withData: true
+  status:
+    value: primary
+    dataValue: primary
+    withData: true
+actions:
+  buttonClick:
+    - action: '17243334697910.12637417511151905'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

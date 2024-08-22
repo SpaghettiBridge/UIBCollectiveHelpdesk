@@ -1,0 +1,156 @@
+id: '17243334697880.629454812758518'
+definitionId: smartTable
+parentSlotId: '17243334697870.7288844550569249'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: >-
+    {{actions.get_All_tickets.data.filter(x=> x.id !=
+    ui.tbl_mainTickets3.selectedRow.data.id &&
+    !actions.get_Merged_tickets.data.map(x=> x.id).includes(x.id)&&
+    !actions.get_tickets_with_merges.data.map(x=>
+    x.fk_parent_ticket).includes(x.id))}}
+  name: tbl_mergeable_tickets2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: ''
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_All_tickets.loading}}'
+    value: false
+  heightMode: auto
+  rowHeight: dynamic
+  limit: '15'
+  multiplyRowSelection:
+    value: true
+    dataValue: 'false'
+    withData: false
+  rowSelectionType:
+    value: checkbox
+    dataValue: row
+    withData: false
+  showExportAction:
+    value: false
+    dataValue: 'true'
+    withData: false
+actions: {}
+slots:
+  - id: '17243334697880.9875224922908308'
+    name: columns
+    children:
+      - id: '17243334697880.1596132608025862'
+        definitionId: atomicString
+        parentSlotId: '17243334697880.9875224922908308'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString110
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 0
+        slots: []
+      - id: '17243334697880.8097777971412279'
+        definitionId: atomicText
+        parentSlotId: '17243334697880.9875224922908308'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText10
+          prop: details
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          widthMode: auto
+          filter: true
+        index: 2
+        slots: []
+      - id: '17243334697880.2629259400393775'
+        definitionId: atomicText
+        parentSlotId: '17243334697880.9875224922908308'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText11
+          prop: title
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 344
+          widthMode: fixed
+          filter: true
+          mappedValue: '{{row.ticket_number}}: {{value}}'
+        actions: {}
+        index: 1
+        slots: []
+      - id: '17243334697880.5881750707347237'
+        definitionId: atomicString
+        parentSlotId: '17243334697880.9875224922908308'
+        styles: {}
+        properties:
+          name: atomicString111
+          prop: category
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 3
+        slots: []

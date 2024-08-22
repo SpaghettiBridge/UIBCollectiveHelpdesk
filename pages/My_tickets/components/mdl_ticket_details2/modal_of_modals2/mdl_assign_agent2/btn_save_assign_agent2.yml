@@ -1,0 +1,55 @@
+id: '17243334697870.7383302289776648'
+definitionId: button
+parentSlotId: '17243334697870.5317516158618123'
+styles:
+  xl:
+    gridItem:
+      x: 16
+      y: 0
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 9
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: btn_save_assign_agent2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Save
+actions:
+  buttonClick:
+    - action: '17243334697930.1332478241512054'
+      paramCode: >-
+        {
+          id:{{ui.tbl_mainTickets3.selectedRow.data.id}},
+         priority:{{ui.tbl_mainTickets3.selectedRow.data.priority}},
+        fk_type_id:{{ui.tbl_mainTickets3.selectedRow.data.fk_type_id}},
+
+        fk_status_id:"c4af45aa-f092-4f90-9b8a-37d102b44e21",
+          fk_agent_id: {{ui.slc_new_agent2.value}},
+        fk_ticket_queue:{{ui.tbl_mainTickets3.selectedRow.data.fk_ticket_queue}},
+            called_by: "mdl_assign_agent2"
+        }
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

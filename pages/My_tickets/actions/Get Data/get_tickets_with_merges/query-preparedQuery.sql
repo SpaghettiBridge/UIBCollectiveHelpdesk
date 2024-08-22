@@ -1,0 +1,1 @@
+SELECT DISTINCT fk_parent_ticket FROM public.join_tickets;

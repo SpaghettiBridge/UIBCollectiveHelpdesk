@@ -46,6 +46,10 @@ properties:
         link: '/helpdesk'
       },
       {
+        title: 'My Tickets',
+        link: '/My_tickets'
+      },
+      {
         title: 'AI Testing',
         link: '/ai_testing',
         hidden: true

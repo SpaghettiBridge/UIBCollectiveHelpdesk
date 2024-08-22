@@ -1,0 +1,6 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_merged_user_id:
+      value: '{{ui.slct_others2.value}}'
+  custom: ''

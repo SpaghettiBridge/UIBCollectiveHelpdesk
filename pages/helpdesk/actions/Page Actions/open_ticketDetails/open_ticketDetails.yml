@@ -3,6 +3,23 @@ kind: workflow
 name: open_ticketDetails
 nameConfigured: true
 steps:
+  - id: '17243324209080.440783546357451'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17243318908060.8497586652807787'
+        valueType: string
+      - type: value
+        value: '{}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '17163031871570.3948023369148437'
     type: customAsyncCode
     name: code

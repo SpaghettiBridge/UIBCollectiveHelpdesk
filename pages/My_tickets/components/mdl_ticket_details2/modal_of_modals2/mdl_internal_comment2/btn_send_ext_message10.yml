@@ -1,0 +1,59 @@
+id: '17243334697880.7055514019700282'
+definitionId: button
+styles:
+  xl:
+    gridItem:
+      x: 22
+      y: 5
+      w: 2
+      h: 15
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    iconPlacement: center
+  xs:
+    gridItem:
+      x: 0
+      y: 20
+      w: 24
+      h: 15
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: btn_send_ext_message10
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  icon:
+    value: paper-plane
+    dataValue: star-outline
+    withData: false
+  disabled:
+    value: false
+    dataValue: '{{ui.txt_ext_message10.value == ""}}'
+    withData: true
+parentSlotId: '17243334697870.4918599233629892'
+index: -1
+actions:
+  buttonClick:
+    - action: '17243334697920.739513763556181'
+      paramCode: |-
+        {
+          type: "Internal",
+          message:{{ui.txt_ext_message10.value}},
+            called_by:"mdl_internal_comment2"
+        }
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

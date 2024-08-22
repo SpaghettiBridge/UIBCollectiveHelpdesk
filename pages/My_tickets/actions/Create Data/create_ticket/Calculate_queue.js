@@ -1,0 +1,1 @@
+return {{actions.get_ticket_types.data.filter(x=> x.id == ui.slct_createTick_type2.value)[0].ticket_queue}};

@@ -63,5 +63,10 @@ config:
 selected: true
 configured: true
 actions:
-  success: []
+  success:
+    - action: '17186247738670.68451084684456'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
   error: []

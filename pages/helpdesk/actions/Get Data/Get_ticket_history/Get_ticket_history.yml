@@ -18,7 +18,9 @@ steps:
           - column: fk_ticket_id
             operation: '='
             value:
-              value: '{{ui.tbl_mainTickets.selectedRow.data.id}}'
+              value: >-
+                {{state.cloned_ticket.id
+                ||ui.tbl_mainTickets.selectedRow.data.id}}
         valueType: custom
       - type: ordering
         value:

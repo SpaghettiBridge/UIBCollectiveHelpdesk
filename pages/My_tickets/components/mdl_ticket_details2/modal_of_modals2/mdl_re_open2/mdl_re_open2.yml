@@ -1,0 +1,47 @@
+id: '17243334697870.5161202225244603'
+definitionId: modal
+parentSlotId: '17243334697870.6421752855247402'
+styles:
+  xl:
+    gridItem:
+      x: 5
+      y: 9
+      w: 5
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 54
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: mdl_re_open2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonText: Re Open
+slots:
+  - id: '17243334697870.428297511056704'
+    name: header
+    children:
+      - heading14.yml
+  - id: '17243334697870.406379044777299'
+    name: body
+    children: []
+  - id: '17243334697870.7362198502896105'
+    name: footer
+    children: []

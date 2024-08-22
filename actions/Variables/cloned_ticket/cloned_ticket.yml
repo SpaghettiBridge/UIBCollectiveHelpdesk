@@ -1,0 +1,15 @@
+id: '17243318908060.8497586652807787'
+kind: store_item
+name: cloned_ticket
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17199239701920.4777280592537516'
+storeItem:
+  value: '{}'
+  valueType: object
+  initialValue: '{}'
+  version: 1
+selected: true
+configured: true

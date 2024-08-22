@@ -1,0 +1,12 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_awaiting_response:
+      value: >-
+        {{ui.tbl_mainTickets3.selectedRow.data.fk_creator_id !=
+        state.AccountData.account_id?
+        ui.tbl_mainTickets3.selectedRow.data.fk_creator_id
+        :state.AccountData.account_id}}
+    fk_status_id:
+      value: '{{data.id}}'
+  custom: ''
