@@ -1,0 +1,1 @@
+{{ui.tbl_mainTickets3.selectedRow.data.screenshot2 != null}}

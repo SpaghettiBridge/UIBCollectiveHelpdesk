@@ -1,0 +1,63 @@
+id: '17243334697900.8154328197504228'
+kind: workflow
+name: get_accounts
+nameConfigured: true
+steps:
+  - id: '17243334697900.05943937800117416'
+    type: customSQLQuery
+    name: query2
+    params:
+      - type: query
+        value: ./query2-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./query2-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.AccountData.service_id)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697890.5561379313239285'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_accounts.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_accounts.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_accounts.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: false
+  autoTrigger: false
+selected: true
+configured: true

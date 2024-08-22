@@ -1,0 +1,1 @@
+{{ui.tbl_mainTickets3.selectedRow.data.fk_merged_user_id!= null && ui.slct_others2.value.length != ui.tbl_mainTickets3.selectedRow.data.fk_merged_user_id.length }}

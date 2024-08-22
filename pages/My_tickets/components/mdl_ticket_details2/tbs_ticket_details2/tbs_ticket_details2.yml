@@ -1,0 +1,45 @@
+id: '17243334697870.4059878529068337'
+definitionId: tabs
+parentSlotId: '17243334697870.9288315971479082'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 233
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 112
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: tbs_ticket_details2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
+  heightMode: auto
+actions: {}
+slots:
+  - id: '17243334697870.2466887895121126'
+    name: tabs
+    children:
+      - tab2/tab2.yml
+      - tab3/tab3.yml
+      - tab6/tab6.yml

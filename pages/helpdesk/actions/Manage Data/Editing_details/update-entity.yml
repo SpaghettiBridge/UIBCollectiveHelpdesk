@@ -17,4 +17,10 @@ valueByMode:
       value: '{{ui.slct_details_status.value}}'
     fk_agent_id:
       value: '{{steps.calculate_agent.data}}'
+    title:
+      value: '{{ui.txt_title.value}}'
+    fk_creator_id:
+      value: '{{ui.slct_creator.value}}'
+    fk_ticket_queue:
+      value: '{{ui.slct_queue.value}}'
   custom: ''

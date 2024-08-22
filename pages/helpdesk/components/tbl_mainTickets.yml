@@ -103,12 +103,8 @@ properties:
 
     // Apply the filters and map the results
     let output = [];
-    let inputData = [];
-    if (ui.chk_all_tickets?.value) {
-      inputData = actions.get_All_tickets;
-    } else {
-      inputData = actions.get_My_tickets;
-    }
+    let inputData = actions.get_All_tickets;
+
 
     if (actions && inputData && inputData.data !== null) {
       output = inputData.data

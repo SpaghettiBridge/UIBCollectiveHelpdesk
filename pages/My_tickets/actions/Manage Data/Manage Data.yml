@@ -1,0 +1,31 @@
+id: '17243334697930.24781879910445181'
+kind: folder
+name: Manage Data
+nameConfigured: true
+steps:
+  - id: '17243334697930.3506203869200495'
+    type: draft
+    name: newStep
+    params: []
+    level: 0
+    fallthroughError: false
+    isChanged: false
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Manage Data.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Manage Data.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Manage Data.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: false

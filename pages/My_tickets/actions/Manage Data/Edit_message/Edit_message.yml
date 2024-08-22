@@ -1,0 +1,225 @@
+id: '17243334697930.8257449153453107'
+kind: workflow
+name: Edit_message
+nameConfigured: true
+steps:
+  - id: '17243334697930.8161574970413963'
+    type: UPDATE_ENTITY
+    name: update
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.ticket_messages
+        valueType: string
+      - type: filter
+        value:
+          - column: id
+            operation: '='
+            value:
+              value: '{{state.CurrentMessage.message_id}}'
+        valueType: custom
+      - type: entity
+        value: ./update-entity.yml
+        valueType: custom
+      - type: replace
+        value: false
+        valueType: string
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.6859765854162487'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17229563458120.3600742383796802'
+                type: CREATE_ENTITY
+                name: create
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.ticket_status_history
+                    valueType: string
+                  - type: entity
+                    value: ./create-entity.yml
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.6724607736501294'
+    type: condition
+    name: condition2
+    params:
+      - type: code
+        value: ./condition2.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17229564944400.7318237475674632'
+                type: CREATE_ENTITY
+                name: create2
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.ticket_status_history
+                    valueType: string
+                  - type: entity
+                    value: ./create2-entity.yml
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.1765382506634361'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17243334697910.5016404374023156'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.8095666534072583'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '17243334697900.16995916962524693'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute2-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.8576545983113384'
+    type: customAsyncCode
+    name: code2
+    params:
+      - type: asyncCode
+        value: ./code2.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697930.24781879910445181'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Edit_message.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Edit_message.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Edit_message.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

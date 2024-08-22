@@ -1,0 +1,214 @@
+id: '17243334697970.5739270122064428'
+kind: workflow
+name: clone_ticket
+nameConfigured: true
+steps:
+  - id: '17243334697970.2326477283679298'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: false
+  - id: '17243334697970.1864333780693097'
+    type: LOAD_ENTITY
+    name: get
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.lu_ticket_status
+        valueType: string
+      - type: filters
+        value:
+          - column: name
+            operation: '='
+            value:
+              value: New
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697970.45311622684621167'
+    type: CREATE_ENTITY
+    name: create
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.tickets
+        valueType: string
+      - type: entity
+        value: ./create-entity.yml
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+  - id: '17243334697970.41030659773333555'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17243318908060.8497586652807787'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697970.4009820801738415'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17243334697890.8833641619693731'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697970.3475633074248772'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '17187019713980.3586599423532837'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute2-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697970.5677889208412252'
+    type: executeAction
+    name: execute3
+    params:
+      - type: action
+        value: '17243334697890.8444929078365864'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute3-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697970.8140390039330696'
+    type: customAsyncCode
+    name: code2
+    params:
+      - type: asyncCode
+        value: ./code2.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+actions:
+  success:
+    - action: '17243334697970.3278466240733009'
+      paramCode: ''
+      index: 0
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697940.4767733488594905'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.clone_ticket.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.clone_ticket.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.clone_ticket.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

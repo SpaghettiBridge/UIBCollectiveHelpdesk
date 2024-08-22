@@ -1,0 +1,94 @@
+id: '17243334697870.2751001822055448'
+definitionId: selectWithAtomics
+parentSlotId: '17243334697870.2908905460961779'
+styles:
+  xl:
+    gridItem:
+      x: 16
+      y: 0
+      w: 8
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 45
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: |
+      [
+        {
+          "value": "Asset",
+          "title": "Asset"
+        },
+        {
+          "value": "Development",
+          "title": "Development"
+        },
+        {
+          "value": "Helpdesk",
+          "title": "Helpdesk"
+        },
+        {
+          "value": "Training",
+          "title": "Training"
+        }
+      ]
+    withData: true
+  name: flt_queue2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: value
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_All_tickets.loading}}'
+    value: false
+  labelConfig:
+    text: Queue
+    position: horizontal
+    align: left
+  multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent"}}'
+actions: {}
+slots:
+  - id: '17243334697870.9402621650826799'
+    name: optionViewTypes
+    children:
+      - id: '17243334697880.2592345235245861'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString98
+          prop: title
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '17243334697870.9402621650826799'
+        index: 13
+        slots: []

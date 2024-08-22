@@ -1,0 +1,56 @@
+id: '17243334697920.1437852069822425'
+kind: workflow
+name: add_user_to_ticket
+nameConfigured: true
+steps:
+  - id: '17243334697920.7965340660190414'
+    type: CREATE_ENTITY
+    name: create
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.join_tickets_users
+        valueType: string
+      - type: entity
+        value: ./create-entity.yml
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697910.9101401090033436'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.add_user_to_ticket.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.add_user_to_ticket.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.add_user_to_ticket.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

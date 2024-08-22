@@ -1,0 +1,36 @@
+id: '17243334697950.6578440818998512'
+kind: workflow
+name: suggest_solution
+nameConfigured: true
+steps:
+  - id: '17243334697950.7611578634742111'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697940.4767733488594905'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.suggest_solution.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.suggest_solution.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.suggest_solution.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

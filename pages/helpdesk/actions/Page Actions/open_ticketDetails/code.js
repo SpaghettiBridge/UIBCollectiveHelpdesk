@@ -1,1 +1,1 @@
-{{ui.modalid.open()}}
+{{ui.mdl_ticket_details.open()}}

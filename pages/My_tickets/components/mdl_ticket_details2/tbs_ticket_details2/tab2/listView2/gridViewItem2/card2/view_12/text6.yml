@@ -1,0 +1,38 @@
+id: '17243334697880.0335033901225672'
+definitionId: text
+parentSlotId: '17243334697880.9429951093597408'
+styles:
+  xl:
+    gridItem:
+      x: 5
+      y: 2
+      w: 14
+      h: 6
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 59
+      w: 24
+      h: 6
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: text6
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: '{{item.who}}'
+actions: {}
+slots: []

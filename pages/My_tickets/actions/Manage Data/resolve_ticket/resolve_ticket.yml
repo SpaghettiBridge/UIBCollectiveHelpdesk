@@ -1,0 +1,201 @@
+id: '17243334697930.5692261078318515'
+kind: workflow
+name: resolve_ticket
+nameConfigured: true
+steps:
+  - id: '17243334697930.8232449472995473'
+    type: LOAD_ENTITY
+    name: get
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.lu_ticket_status
+        valueType: string
+      - type: filters
+        value:
+          - column: name
+            operation: '='
+            value:
+              value: Resolved
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.3288018812102016'
+    type: UPDATE_ENTITY
+    name: update
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.tickets
+        valueType: string
+      - type: filter
+        value:
+          - column: id
+            operation: '='
+            value:
+              value: '{{ui.tbl_mainTickets3.selectedRow.data.id}}'
+          - column: fk_ticket_reason
+            operation: '='
+            value:
+              value: '{{params.reason}}'
+          - column: fk_ticket_sub_reason
+            operation: '='
+            value:
+              value: '{{params.subreason}}'
+        valueType: custom
+      - type: entity
+        value: ./update-entity.yml
+        valueType: custom
+      - type: replace
+        value: false
+        valueType: string
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.8587949710014138'
+    type: CREATE_ENTITY
+    name: create
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.ticket_status_history
+        valueType: string
+      - type: entity
+        value: ./create-entity.yml
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.4633730619288674'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.7557687071316164'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17243334697890.8833641619693731'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.9319334446753966'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '17187019713980.3586599423532837'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute2-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697930.24781879910445181'
+config:
+  shouldConfirm: true
+  confirmMessage: Are you sure you'd like to mark this ticket as resolved?
+  showSuccessToast: false
+  successToast: Action "{{actions.resolve_ticket.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.resolve_ticket.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

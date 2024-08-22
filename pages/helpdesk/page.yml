@@ -28,7 +28,6 @@ slots:
             children:
               - components/md_create_ticket/md_create_ticket.yml
               - components/tbl_mainTickets.yml
-              - components/modalid/modalid.yml
-              - components/chk_all_tickets.yml
+              - components/mdl_ticket_details/mdl_ticket_details.yml
               - components/collapsibleCard/collapsibleCard.yml
               - components/getRecentTicketHistoryTable.yml

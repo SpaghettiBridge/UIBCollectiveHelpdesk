@@ -1,0 +1,1 @@
+return {{params.rows.map(item => {return {parent: ui.tbl_mainTickets3.selectedRow.data.id ,child: item.id, creator: item.fk_creator_id, title: item.ticket_number+": "+item.title} }) }};

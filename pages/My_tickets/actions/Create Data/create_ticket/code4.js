@@ -1,0 +1,13 @@
+{{ui.md_create_ticket2.close()}}
+{{ui.inp_ticket_title2.reset()}}
+{{ui.slct_createTick_type2.reset()}}
+{{ui.slct_createTick_importancy2.reset()}}
+{{ui.slct_createTick_urgency2.reset()}}
+{{ui.slct_createTick_details2.reset()}}
+{{ui.slct_createTick_links2.reset()}}
+{{ui.slct_createTick_sh4.reset()}}
+{{ui.slct_createTick_sh5.reset()}}
+{{ui.slct_createTick_sh6.reset()}}
+{{ui.slct_category_newTicket2.reset()}}
+{{ui.slct_subcategory_newTicket2.reset()}}
+{{ui.slct_group_newTicket2.reset()}}

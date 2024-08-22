@@ -1,0 +1,89 @@
+id: '17243334697920.2472730403655874'
+kind: workflow
+name: chatDeleted
+nameConfigured: true
+steps:
+  - id: '17243334697930.163096522803027'
+    type: DELETE_ENTITY
+    name: delete
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.ticket_messages
+        valueType: string
+      - type: filter
+        value:
+          - column: id
+            operation: '='
+            value:
+              value: '{{state.CurrentMessage.message_id}}'
+        valueType: custom
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697930.871761415921714'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17243334697910.5016404374023156'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17243334697810.9244993407729447'
+config:
+  shouldConfirm: true
+  confirmMessage: Are you sure you would like to delete this message?
+  showSuccessToast: false
+  successToast: Action "{{actions.chatDeleted.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.chatDeleted.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+  autoTrigger: false
+selected: true
+configured: true
+parentId: '17243334697920.4717682312931888'

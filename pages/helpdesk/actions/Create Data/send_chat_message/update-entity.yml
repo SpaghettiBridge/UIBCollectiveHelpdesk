@@ -7,4 +7,6 @@ valueByMode:
         state.AccountData.account_id?
         ui.tbl_mainTickets.selectedRow.data.fk_creator_id
         :state.AccountData.account_id}}
+    fk_status_id:
+      value: '{{data.id}}'
   custom: ''

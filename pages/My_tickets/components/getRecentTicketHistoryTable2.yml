@@ -1,0 +1,219 @@
+id: '17243334697870.4313224563232885'
+definitionId: smartTable
+parentSlotId: '17243334697860.09739285574112921'
+styles:
+  xl:
+    gridItem:
+      x: 19
+      y: 0
+      w: 5
+      h: 205
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 1479
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data: >-
+    {{actions.Get_Recent_ticket_history.data.filter(x=>
+    ui.tbl_mainTickets3.value.map(y=> y.id).includes( x.fk_ticket_id))}}
+  name: getRecentTicketHistoryTable2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Recent Changes
+  showLoading:
+    withData: true
+    dataValue: '{{actions.Get_Recent_ticket_history.loading}}'
+    value: false
+  rowHeight: dynamic
+  cssClasses:
+    - ''
+  sortColumn:
+    value: created_at
+    dataValue: ''
+    withData: false
+  sortDirection:
+    value: asc
+    dataValue: asc
+    withData: false
+  limit: '50'
+  heightMode: auto
+actions: {}
+slots:
+  - id: '17243334697870.9332343701663119'
+    name: columns
+    children:
+      - id: '17243334697870.49445827412398446'
+        definitionId: atomicString
+        parentSlotId: '17243334697870.9332343701663119'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString82
+          prop: fk_ticket_id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 0
+        slots: []
+      - id: '17243334697870.8973458788158484'
+        definitionId: atomicDateTime
+        parentSlotId: '17243334697870.9332343701663119'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicDateTime6
+          prop: created_at
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 1
+        slots: []
+      - id: '17243334697870.17119082109957273'
+        definitionId: atomicString
+        parentSlotId: '17243334697870.9332343701663119'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString83
+          prop: record_type
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+        index: 2
+        slots: []
+      - id: '17243334697870.6917468903073498'
+        definitionId: atomicText
+        parentSlotId: '17243334697870.9332343701663119'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicText8
+          prop: rec_update
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 200
+          widthMode: auto
+          filter: true
+        index: 4
+        slots: []
+      - id: '17243334697870.4520665302399536'
+        definitionId: atomicString
+        parentSlotId: '17243334697870.9332343701663119'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString84
+          prop: who
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          widthMode: auto
+          filter: true
+          mappedValue: >-
+            {{
+
+
+            if(row.record_type == "message"){
+
+
+            return actions.get_accounts.data.filter(x=> x.id == value)[0].name
+            +" sent a message: "+ row.rec_update
+
+            }else{
+
+            return row.rec_update
+
+            }
+
+
+
+
+
+            }}
+          title: Update
+        index: 5
+        slots: []
+      - id: '17243334697870.2202397560708076'
+        definitionId: atomicNumber
+        parentSlotId: '17243334697870.9332343701663119'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber5
+          prop: ticket_number
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 35
+          widthMode: fixed
+          filter: true
+          title: ' '
+        actions: {}
+        index: 3
+        slots: []

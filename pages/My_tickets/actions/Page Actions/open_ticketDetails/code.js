@@ -1,0 +1,1 @@
+{{ui.mdl_ticket_details2.open()}}

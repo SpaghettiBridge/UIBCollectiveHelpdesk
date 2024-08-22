@@ -1,0 +1,61 @@
+id: '17243334697930.7965073200550163'
+kind: workflow
+name: Bulk_update_tickets
+nameConfigured: true
+steps:
+  - id: '17243334697930.16607841506256427'
+    type: loopAction
+    name: loop
+    params:
+      - type: action
+        value: '17182717253910.2527508654963657'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customArray
+        value: ./loop-customArray.js
+        valueType: interpolatedValue
+      - type: iterationChunkSize
+        value: '3'
+        valueType: custom
+      - type: iterationChunkDelay
+        value: '300'
+        valueType: custom
+      - type: maxIterations
+        value: ''
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: executionMethod
+        value: sequential
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697930.24781879910445181'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Bulk_update_tickets.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Bulk_update_tickets.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Bulk_update_tickets.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

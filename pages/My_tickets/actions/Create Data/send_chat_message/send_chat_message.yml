@@ -1,0 +1,777 @@
+id: '17243334697920.739513763556181'
+kind: workflow
+name: send_chat_message
+nameConfigured: true
+steps:
+  - id: '17243334697920.8203899019910379'
+    type: customAsyncCode
+    name: params
+    params:
+      - type: asyncCode
+        value: ./params.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697920.044607805201919426'
+    type: customAsyncCode
+    name: get_attachment_name
+    params:
+      - type: asyncCode
+        value: ./get_attachment_name.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697920.5916537410094693'
+    type: CREATE_ENTITY
+    name: create
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.ticket_messages
+        valueType: string
+      - type: entity
+        value: ./create-entity.yml
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697920.41636216200106135'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17243075297860.3576493547445292'
+                type: LOAD_ENTITY
+                name: get2
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.lu_ticket_status
+                    valueType: string
+                  - type: filters
+                    value:
+                      - column: name
+                        operation: '='
+                        value:
+                          value: Contact replied
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17188193785760.48830917366114646'
+                type: UPDATE_ENTITY
+                name: update
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.tickets
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: id
+                        operation: '='
+                        value:
+                          value: '{{ui.tbl_mainTickets3.selectedRow.data.id}}'
+                    valueType: custom
+                  - type: entity
+                    value: ./update-entity.yml
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '17242329819060.17480678558578'
+                type: condition
+                name: condition7
+                params:
+                  - type: code
+                    value: ./condition7.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17237914932760.20005659854029556'
+                            type: httpRequest
+                            name: request
+                            params:
+                              - type: datasourceId
+                                value: httpApi
+                                valueType: string
+                                mustSelectFirst: true
+                              - type: method
+                                value: POST
+                                valueType: string
+                              - type: url
+                                value: >-
+                                  https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: headers
+                                value:
+                                  - name: Content-Type
+                                    value: application/json
+                                valueType: custom
+                                interpolationType: string
+                              - type: queryParams
+                                value:
+                                  - name: ''
+                                    value: ''
+                                valueType: custom
+                                interpolationType: string
+                              - type: body
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_agent_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.creator} Has sent an external message: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: structuredBody
+                                value: []
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: bodyType
+                                value: object
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17237875576040.6773916629775245'
+                type: condition
+                name: condition5
+                params:
+                  - type: code
+                    value: ./condition5.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17237877072240.7269653529917799'
+                            type: LOAD_ENTITY
+                            name: get
+                            params:
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: string
+                              - type: resourceId
+                                value: public.lu_ticket_status
+                                valueType: string
+                              - type: filters
+                                value:
+                                  - column: name
+                                    operation: '='
+                                    value:
+                                      value: Contact replied
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17237876239470.22975712421313288'
+                            type: UPDATE_ENTITY
+                            name: update4
+                            params:
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: string
+                              - type: resourceId
+                                value: public.tickets
+                                valueType: string
+                              - type: filter
+                                value:
+                                  - column: id
+                                    operation: '='
+                                    value:
+                                      value: >-
+                                        {{ui.tbl_mainTickets3.selectedRow.data.id}}
+                                valueType: custom
+                              - type: entity
+                                value: ./update4-entity.yml
+                                valueType: custom
+                              - type: replace
+                                value: false
+                                valueType: string
+                              - type: bulk
+                                value: false
+                                valueType: string
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697920.9122600650475028'
+    type: condition
+    name: condition2
+    params:
+      - type: code
+        value: ./condition2.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17192380431610.0861770798873891'
+                type: executeAction
+                name: execute
+                params:
+                  - type: action
+                    value: '17243334697910.6532696119256549'
+                    valueType: custom
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: custom
+                  - type: customParams
+                    value: ./execute-customParams.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697920.6746033652122645'
+    type: UPDATE_ENTITY
+    name: update2
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.tickets
+        valueType: string
+      - type: filter
+        value:
+          - column: id
+            operation: '='
+            value:
+              value: '{{ui.tbl_mainTickets3.selectedRow.data.id}}'
+        valueType: custom
+      - type: entity
+        value: ./update2-entity.yml
+        valueType: custom
+      - type: replace
+        value: false
+        valueType: string
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17243334697920.1644408028292197'
+    type: condition
+    name: condition3
+    params:
+      - type: code
+        value: ./condition3.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17229602973090.9240088907303021'
+                type: condition
+                name: condition4
+                params:
+                  - type: code
+                    value: ./condition4.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17243070391350.6961592327320754'
+                            type: httpRequest
+                            name: request3
+                            params:
+                              - type: datasourceId
+                                value: httpApi
+                                valueType: string
+                                mustSelectFirst: true
+                              - type: method
+                                value: POST
+                                valueType: string
+                              - type: url
+                                value: >-
+                                  https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: headers
+                                value:
+                                  - name: Content-Type
+                                    value: application/json
+                                valueType: custom
+                                interpolationType: string
+                              - type: queryParams
+                                value:
+                                  - name: ''
+                                    value: ''
+                                valueType: custom
+                                interpolationType: string
+                              - type: body
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.agent} Has requested More Information: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: structuredBody
+                                value: []
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: bodyType
+                                value: object
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17229594900630.8590730916525811'
+                            type: executeAction
+                            name: execute3
+                            params:
+                              - type: action
+                                value: '17243334697930.1332478241512054'
+                                valueType: custom
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: custom
+                              - type: customParams
+                                value: ./execute3-customParams.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 0
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17229597347310.8456195794179324'
+                            type: executeAction
+                            name: execute4
+                            params:
+                              - type: action
+                                value: '17243334697920.5437417740980512'
+                                valueType: custom
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: custom
+                              - type: customParams
+                                value: ./execute4-customParams.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps:
+                          - id: '17237890691480.17760889012008585'
+                            type: condition
+                            name: condition6
+                            params:
+                              - type: code
+                                value: ./condition6.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: steps
+                                value:
+                                  - condition: true
+                                    steps:
+                                      - id: '17242294545300.5437049329301231'
+                                        type: httpRequest
+                                        name: request2
+                                        params:
+                                          - type: datasourceId
+                                            value: httpApi
+                                            valueType: string
+                                            mustSelectFirst: true
+                                          - type: method
+                                            value: POST
+                                            valueType: string
+                                          - type: url
+                                            value: >-
+                                              https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                                            valueType: interpolatedValue
+                                            interpolationType: string
+                                          - type: headers
+                                            value:
+                                              - name: Content-Type
+                                                value: application/json
+                                            valueType: custom
+                                            interpolationType: string
+                                          - type: queryParams
+                                            value:
+                                              - name: ''
+                                                value: ''
+                                            valueType: custom
+                                            interpolationType: string
+                                          - type: body
+                                            value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.agent} Has suggested a solution: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: structuredBody
+                                            value: []
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: bodyType
+                                            value: object
+                                            valueType: string
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 1
+                                        fallthroughError: false
+                                        isChanged: true
+                                      - id: '17229603333540.5263086815290217'
+                                        type: executeAction
+                                        name: execute7
+                                        params:
+                                          - type: action
+                                            value: '17243334697920.5437417740980512'
+                                            valueType: custom
+                                          - type: isActionsLibraryCall
+                                            value: false
+                                            valueType: custom
+                                          - type: customParams
+                                            value: ./execute7-customParams.js
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 1
+                                        fallthroughError: false
+                                        isChanged: true
+                                      - id: '17229603273660.10073675428331241'
+                                        type: executeAction
+                                        name: execute6
+                                        params:
+                                          - type: action
+                                            value: '17243334697930.1332478241512054'
+                                            valueType: custom
+                                          - type: isActionsLibraryCall
+                                            value: false
+                                            valueType: custom
+                                          - type: customParams
+                                            value: ./execute6-customParams.js
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 0
+                                        fallthroughError: false
+                                        isChanged: true
+                                  - condition: false
+                                    steps: []
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps:
+              - id: '17201810425380.1285896925243808'
+                type: CREATE_ENTITY
+                name: create2
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.ticket_status_history
+                    valueType: string
+                  - type: entity
+                    value: ./create2-entity.yml
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697920.04357845222275181'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '17243334697900.6074633897525274'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute2-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+  - id: '17243334697920.6942665057801809'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 1
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: true
+parentPageId: '17243334697810.9244993407729447'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.send_chat_message.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.send_chat_message.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.send_chat_message.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentId: '17243334697910.9101401090033436'
+actions:
+  success:
+    - action: '17243334697890.8833641619693731'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+    - action: '17187019713980.3586599423532837'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
+  error: []

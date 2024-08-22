@@ -1,0 +1,26 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_type_id:
+      value: '{{ui.slct_details_type2.value}}'
+    priority:
+      value: '{{ui.slct_details_priority2.value}}'
+    fk_subcategory_id:
+      value: '{{ui.slct_subcategory4.value || null}}'
+    fk_category_id:
+      value: '{{ui.slct_category4.value}}'
+    fk_ticket_group_id:
+      value: '{{ui.slct_group4.value|| null}}'
+    details:
+      value: '{{ui.inp_details2.value}}'
+    fk_status_id:
+      value: '{{ui.slct_details_status2.value}}'
+    fk_agent_id:
+      value: '{{steps.calculate_agent.data}}'
+    title:
+      value: '{{ui.txt_title2.value}}'
+    fk_creator_id:
+      value: '{{ui.slct_creator2.value}}'
+    fk_ticket_queue:
+      value: '{{ui.slct_queue2.value}}'
+  custom: ''

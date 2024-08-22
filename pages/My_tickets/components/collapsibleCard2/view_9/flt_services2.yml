@@ -1,0 +1,76 @@
+id: '17243334697870.04464408186766833'
+definitionId: selectWithAtomics
+parentSlotId: '17243334697870.2908905460961779'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 28
+      w: 8
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 27
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: '{{actions.lu_services.data}}'
+    withData: true
+  name: flt_services2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.lu_services.loading}}'
+    value: false
+  labelConfig:
+    text: Service
+    position: horizontal
+    align: left
+  multi: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{activeRoute.name == "Helpdesk" }}'
+actions: {}
+slots:
+  - id: '17243334697870.3494040534523335'
+    name: optionViewTypes
+    children:
+      - id: '17243334697880.9980231024455379'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString96
+          prop: service_name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '17243334697870.3494040534523335'
+        index: 0
+        slots: []

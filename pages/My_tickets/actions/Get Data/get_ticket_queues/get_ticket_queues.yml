@@ -1,0 +1,75 @@
+id: '17243334697910.8688552504119997'
+kind: workflow
+name: get_ticket_queues
+nameConfigured: true
+steps:
+  - id: '17243334697910.9273998129968075'
+    type: LOAD_COLLECTION
+    name: load
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.lu_ticket_queue
+        valueType: string
+      - type: filters
+        value:
+          - column: status
+            operation: '='
+            value:
+              value: Active
+        valueType: custom
+      - type: ordering
+        value:
+          limit:
+            value: 1000
+          offset:
+            value: ''
+          orderBy:
+            value: name
+          orderDirection:
+            value: asc
+        valueType: custom
+      - type: additionalParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17243334697810.9244993407729447'
+parentId: '17243334697890.5561379313239285'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.get_ticket_queues.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_ticket_queues.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_ticket_queues.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

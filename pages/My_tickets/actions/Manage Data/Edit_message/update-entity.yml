@@ -1,0 +1,8 @@
+mode: structured
+valueByMode:
+  structured:
+    message:
+      value: '{{ui.inp_message_text2.value}}'
+    message_type:
+      value: '{{ui.inp_message_type2.value}}'
+  custom: ''

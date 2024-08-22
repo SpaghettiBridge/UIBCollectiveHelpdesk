@@ -1,0 +1,80 @@
+id: '17243334697860.07770185240176186'
+definitionId: modal
+parentSlotId: '17243334697860.09739285574112921'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 1
+      w: 2
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    modalSize:
+      widthValue: '50'
+      widthUnit: '%'
+      heightValue: auto
+      heightUnit: null
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
+  xs:
+    gridItem:
+      id: '17158509358300.17754054209000358'
+      x: 0
+      y: 1317
+      w: 2
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: md_create_ticket2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonText: Create Ticket
+actions:
+  close: []
+  init: []
+  open: []
+slots:
+  - id: '17243334697870.15315534744841752'
+    name: header
+    children:
+      - hd_create_new_ticket2.yml
+  - id: '17243334697870.9512562487887624'
+    name: body
+    children:
+      - btn_save_new_ticket2.yml
+      - inp_ticket_title2.yml
+      - slct_createTick_details2.yml
+      - slct_createTick_importancy2.yml
+      - slct_createTick_urgency2.yml
+      - slct_createTick_type2.yml
+      - slct_createTick_links2.yml
+      - slct_createTick_sh4.yml
+      - slct_createTick_sh5.yml
+      - slct_createTick_sh6.yml
+      - slct_createTick_user2.yml
+      - slct_createTick_service2.yml
+      - slct_category_newTicket2.yml
+      - slct_subcategory_newTicket2.yml
+      - slct_group_newTicket2.yml
+  - id: '17243334697870.454107597908155'
+    name: footer
+    children: []

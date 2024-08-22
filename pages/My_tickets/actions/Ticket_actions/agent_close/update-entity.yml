@@ -1,0 +1,14 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_category_id:
+      value: '{{ui.slct_category3.value}}'
+    fk_subcategory_id:
+      value: '{{ui.slct_subcategory3.value||null}}'
+    fk_ticket_reason:
+      value: '{{ui.slct_reason2.value}}'
+    fk_status_id:
+      value: '{{data.id}}'
+    fk_ticket_group_id:
+      value: '{{ui.slct_group3.value||null}}'
+  custom: ''

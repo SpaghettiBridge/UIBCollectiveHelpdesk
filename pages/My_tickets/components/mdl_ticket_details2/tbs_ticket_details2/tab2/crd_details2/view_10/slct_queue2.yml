@@ -1,0 +1,94 @@
+id: '17243334697880.5950175286012942'
+definitionId: selectWithAtomics
+parentSlotId: '17243334697880.4383144739207001'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 108
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 230
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+      - title: Option 3
+        value: option 3
+        __UIBAKERY__SYSTEM_ID__: '17206946422840.2232575217674735'
+      - title: Option 4
+        value: option 4
+        __UIBAKERY__SYSTEM_ID__: '17206946428730.03441685137515971'
+      - title: Option 5
+        value: option 5
+        __UIBAKERY__SYSTEM_ID__: '17206946438270.5024144476741683'
+    dataValue: '{{actions.get_ticket_queues.data}}'
+    withData: true
+  name: slct_queue2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: id
+  showLoading:
+    withData: true
+    dataValue: '{{actions.get_ticket_queues.loading}}'
+    value: false
+  value: >-
+    {{state.cloned_ticket.fk_tiket_queue
+    ||ui.tbl_mainTickets3.selectedRow.data.fk_ticket_queue}}
+  disabled:
+    value: false
+    dataValue: '{{state.editing == false}}'
+    withData: true
+  labelConfig:
+    text: Assigned Queue
+    position: horizontal
+    align: left
+  allowResetValue:
+    value: true
+    dataValue: '!{{state.editing == false}}'
+    withData: true
+actions: {}
+slots:
+  - id: '17243334697880.4498050196395098'
+    name: optionViewTypes
+    children:
+      - id: '17243334697880.8807743905389451'
+        definitionId: atomicString
+        parentSlotId: '17243334697880.4498050196395098'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString138
+          prop: name
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots: []

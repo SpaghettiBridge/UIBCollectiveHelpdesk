@@ -68,6 +68,38 @@ steps:
         value:
           - condition: true
             steps:
+              - id: '17243075297860.3576493547445292'
+                type: LOAD_ENTITY
+                name: get2
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.lu_ticket_status
+                    valueType: string
+                  - type: filters
+                    value:
+                      - column: name
+                        operation: '='
+                        value:
+                          value: Contact replied
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
               - id: '17188193785760.48830917366114646'
                 type: UPDATE_ENTITY
                 name: update
@@ -393,6 +425,59 @@ steps:
                     value:
                       - condition: true
                         steps:
+                          - id: '17243070391350.6961592327320754'
+                            type: httpRequest
+                            name: request3
+                            params:
+                              - type: datasourceId
+                                value: httpApi
+                                valueType: string
+                                mustSelectFirst: true
+                              - type: method
+                                value: POST
+                                valueType: string
+                              - type: url
+                                value: >-
+                                  https://n8n.quay-tech.co.uk/webhook/87245f75-d2cb-41e7-8dcf-9e594a4be7b7
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: headers
+                                value:
+                                  - name: Content-Type
+                                    value: application/json
+                                valueType: custom
+                                interpolationType: string
+                              - type: queryParams
+                                value:
+                                  - name: ''
+                                    value: ''
+                                valueType: custom
+                                interpolationType: string
+                              - type: body
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets.selectedRow.data.agent} Has requested More Information: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: structuredBody
+                                value: []
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: bodyType
+                                value: object
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
                           - id: '17229594900630.8590730916525811'
                             type: executeAction
                             name: execute3
