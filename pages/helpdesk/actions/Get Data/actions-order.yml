@@ -1,3 +1,4 @@
+- get_accounts
 - get_apps
 - get_My_tickets
 - get_ticket_subcategories
@@ -5,7 +6,6 @@
 - get_ticket_types
 - get_ticket_categories
 - get_ticket_statuses
-- get_accounts
 - get_ticket_groups
 - Get_ticket_history
 - Get_Recent_ticket_history
