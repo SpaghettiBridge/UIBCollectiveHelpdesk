@@ -53,7 +53,7 @@ properties:
     position: horizontal
     align: left
   value: ''
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent" && ui.chk_all_tickets.value == true}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.user_type == "Agent"}}'
 actions: {}
 slots:
   - id: '17200045631530.28253269608023723'
