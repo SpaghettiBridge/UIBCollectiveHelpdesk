@@ -3,4 +3,6 @@ valueByMode:
   structured:
     fk_status_id:
       value: '{{data.id}}'
+    last_response:
+      value: '{{moment()}}'
   custom: ''

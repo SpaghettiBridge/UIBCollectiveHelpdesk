@@ -1,9 +1,10 @@
 id: '17241649157620.42420481023835155'
 definitionId: button
-parentSlotId: '17229571514920.7172987856454258'
+parentSlotId: '17229571514920.2631314266591538'
 styles:
   xl:
     gridItem:
+      id: '17241649157620.42420481023835155'
       x: 20
       y: 0
       w: 4
@@ -17,9 +18,10 @@ styles:
       shrink: '0'
   xs:
     gridItem:
-      x: 0
-      y: 18
-      w: 24
+      id: '17241649157620.42420481023835155'
+      x: 20
+      y: 98
+      w: 4
       h: 9
     flex:
       size:
@@ -33,7 +35,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  text: Close
+  text: Cancel
 actions:
   buttonClick:
     - action: '17229621604020.12355791802807348'

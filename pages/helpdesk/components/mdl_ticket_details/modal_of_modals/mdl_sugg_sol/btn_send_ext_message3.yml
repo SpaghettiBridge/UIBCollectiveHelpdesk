@@ -40,7 +40,9 @@ properties:
     withData: false
   disabled:
     value: false
-    dataValue: '{{ui.txt_ext_message3.value == ""}}'
+    dataValue: >-
+      {{ui.txt_ext_message3.value == "" || ui.slct_category5.valid != true ||
+      ui.slct_reason3.valid != true}}
     withData: true
 actions:
   buttonClick:

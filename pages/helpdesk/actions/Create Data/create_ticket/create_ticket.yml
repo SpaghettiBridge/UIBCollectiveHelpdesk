@@ -438,34 +438,6 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '17165568254990.031263644818366076'
-    type: executeAction
-    name: execute
-    params:
-      - type: action
-        value: '17158522669320.584790712107971'
-        valueType: custom
-      - type: isActionsLibraryCall
-        value: false
-        valueType: custom
-      - type: customParams
-        value: ./execute-customParams.js
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 2
-    fallthroughError: false
-    isChanged: true
   - id: '17187134999830.7279920840173026'
     type: executeAction
     name: execute2

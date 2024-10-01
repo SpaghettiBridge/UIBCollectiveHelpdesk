@@ -47,16 +47,17 @@ properties:
     - xl
     - xs
   buttonText: Merge Ticket
+  showHeader: false
 slots:
   - id: '17229571514920.7172987856454258'
     name: header
+    children: []
+  - id: '17229571514920.2631314266591538'
+    name: body
     children:
       - heading10.yml
       - btn_save_merge.yml
       - btn_close_merge.yml
-  - id: '17229571514920.2631314266591538'
-    name: body
-    children:
       - tbl_mergeable_tickets.yml
   - id: '17229571514920.34157489779707606'
     name: footer
