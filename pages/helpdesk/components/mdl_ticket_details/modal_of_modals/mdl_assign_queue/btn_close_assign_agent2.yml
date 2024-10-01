@@ -33,7 +33,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  text: Close
+  text: Cancel
 actions:
   buttonClick:
     - action: '17229621604020.12355791802807348'

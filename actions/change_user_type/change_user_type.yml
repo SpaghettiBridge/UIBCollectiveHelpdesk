@@ -1,0 +1,40 @@
+id: '17265683264310.7519349225286924'
+kind: workflow
+name: change_user_type
+nameConfigured: true
+steps:
+  - id: '17265683388350.9102209824758367'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17158471634990.930037243865043'
+        valueType: string
+      - type: value
+        value: '{{state.user_type =="User" ? "Agent" :"User"}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.change_user_type.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.change_user_type.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.change_user_type.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: false

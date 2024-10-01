@@ -13,4 +13,10 @@ valueByMode:
       value: '{{data.fk_ticket_queue}}'
     last_response:
       value: '{{moment()}}'
+    fk_subcategory_id:
+      value: '{{data.fk_subcategory_id}}'
+    fk_category_id:
+      value: '{{data.fk_category_id}}'
+    fk_ticket_reason:
+      value: '{{data.fk_reason_id}}'
   custom: ''

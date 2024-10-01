@@ -1,0 +1,19 @@
+id: '17265678621120.8174405478500752'
+name: content
+children:
+  - id: '17265678621420.6113604001684834'
+    definitionId: layoutHeader
+    parentSlotId: '17265678621120.8174405478500752'
+    styles: {}
+    properties:
+      name: layoutHeader
+      __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+        - xl
+        - xs
+      minRow: '1'
+    index: 0
+    slots:
+      - id: '17265678621420.9517250088932456'
+        name: content
+        children:
+          - components/radio.yml

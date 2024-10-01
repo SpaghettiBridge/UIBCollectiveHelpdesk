@@ -157,9 +157,9 @@ properties:
     - xs
   title: ''
   showLoading:
-    withData: true
-    dataValue: '{{actions.get_My_tickets.loading}}'
     value: false
+    dataValue: '{{actions.get_All_tickets.loading}}'
+    withData: true
   containerStyles:
     withData: false
     dataValue: |-

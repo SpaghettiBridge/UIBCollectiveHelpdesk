@@ -45,6 +45,9 @@ slots:
       - txt_ext_message3.yml
       - btn_send_ext_message3.yml
       - msg_attach3.yml
+      - slct_category5.yml
+      - slct_subcategory5.yml
+      - slct_reason3.yml
   - id: '17229570353890.2173407947869428'
     name: footer
     children: []

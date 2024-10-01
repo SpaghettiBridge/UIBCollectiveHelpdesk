@@ -48,9 +48,9 @@ properties:
     - xs
   optionValueKey: value
   showLoading:
-    withData: true
-    dataValue: '{{actions.get_My_tickets.loading}}'
     value: false
+    dataValue: ''
+    withData: true
   labelConfig:
     text: Priority
     position: horizontal

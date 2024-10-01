@@ -37,12 +37,7 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: |-
-      if(ui.chk_all_tickets.value){
-      return actions.get_All_tickets.data
-      }else {
-      return actions.get_My_tickets.data
-      }
+    dataValue: actions.get_All_tickets.data
     withData: true
   name: flt_ticket_num
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
@@ -50,9 +45,9 @@ properties:
     - xs
   optionValueKey: ticket_number
   showLoading:
-    withData: true
-    dataValue: '{{actions.get_My_tickets.loading}}'
     value: false
+    dataValue: '{{actions.get_All_tickets.loading}}'
+    withData: true
   labelConfig:
     text: Ticket
     position: horizontal
