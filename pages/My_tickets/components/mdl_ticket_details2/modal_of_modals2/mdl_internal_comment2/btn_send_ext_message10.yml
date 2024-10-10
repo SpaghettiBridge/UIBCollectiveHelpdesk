@@ -46,12 +46,7 @@ index: -1
 actions:
   buttonClick:
     - action: '17243334697920.739513763556181'
-      paramCode: |-
-        {
-          type: "Internal",
-          message:{{ui.txt_ext_message10.value}},
-            called_by:"mdl_internal_comment2"
-        }
+      paramCode: "{\n  type: \"Internal\",\n  message:{{ui.txt_ext_message10.value}},\n\tfile: \"msg_attach10\",\n    called_by:\"mdl_internal_comment2\"\n}"
       blockPageLoad: false
       preventDefault: false
       index: 0

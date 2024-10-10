@@ -36,4 +36,6 @@ valueByMode:
       value: '{{ui.slct_group_newTicket.value || null}}'
     last_response:
       value: '{{moment()}}'
+    fk_ticket_reason:
+      value: 4d2c5a43-a774-4683-97bf-ba052c620cb1
   custom: ''

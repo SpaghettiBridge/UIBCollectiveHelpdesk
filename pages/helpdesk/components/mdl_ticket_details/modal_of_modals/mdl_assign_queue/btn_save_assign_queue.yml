@@ -50,5 +50,14 @@ actions:
       blockPageLoad: false
       preventDefault: false
       index: 0
+    - action: '17186250160810.46804195335954923'
+      paramCode: |-
+        {
+          ticket: {{ui.tbl_mainTickets.selectedRow.data.id}},
+            change:{{state.AccountData.name}}+" Has changed the queue from "+{{ui.tbl_mainTickets.selectedRow.data.queue}}+" to "+{{actions.get_ticket_queues.data.filter(c=> c.id ==ui.slc_new_queue.value )[0].name}}
+        }
+      blockPageLoad: false
+      preventDefault: false
+      index: 1
   init: []
 slots: []

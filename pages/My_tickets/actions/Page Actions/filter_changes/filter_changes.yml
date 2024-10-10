@@ -1,6 +1,6 @@
 id: '17243334697940.1364984609947144'
 kind: workflow
-name: filter_change
+name: filter_changes
 nameConfigured: true
 steps:
   - id: '17243334697940.06208999462120435'
@@ -48,13 +48,13 @@ modeConfigured: true
 parentPageId: '17243334697810.9244993407729447'
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.filter_change.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.filter_changes.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.filter_change.name}}" successfully executed
+  successToast: Action "{{actions.filter_changes.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.filter_change.name}}" has failed
+  errorToast: Action "{{actions.filter_changes.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'

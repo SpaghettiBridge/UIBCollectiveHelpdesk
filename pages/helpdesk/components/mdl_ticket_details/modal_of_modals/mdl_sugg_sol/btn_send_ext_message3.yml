@@ -51,6 +51,7 @@ actions:
         {
           type: "Suggest solution",
           message:{{ui.txt_ext_message3.value}},
+        file: "msg_attach3",
             called_by:"mdl_sugg_sol"
         }
       blockPageLoad: false

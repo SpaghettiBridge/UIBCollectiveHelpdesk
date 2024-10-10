@@ -1,5 +1,5 @@
 return new Promise((resolve) => {
-  const file = {{ui.msg_attach2.value||ui.msg_attach3.value||ui.msg_attach4.value||ui.msg_attach5.value||ui.msg_attach6.value}};
+  const file = {{ui[steps.code2.data.file].value}};
   const reader = new FileReader();
   reader.readAsBinaryString(file);
   reader.onload = () => {

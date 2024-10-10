@@ -50,6 +50,7 @@ actions:
         {
           type: "Internal",
           message:{{ui.txt_ext_message5.value}},
+        file: "msg_attach5",
             called_by:"mdl_internal_comment"
         }
       blockPageLoad: false
