@@ -49,6 +49,7 @@ actions:
         {
           type: "Need more info",
           message:{{ui.txt_ext_message2.value}},
+        file: "msg_attach2",
             called_by:"mdl_needs_info"
         }
       blockPageLoad: false

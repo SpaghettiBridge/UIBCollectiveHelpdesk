@@ -46,12 +46,7 @@ index: 0
 actions:
   buttonClick:
     - action: '17243334697920.739513763556181'
-      paramCode: |-
-        {
-          type: "External",
-          message:{{ui.txt_ext_message9.value}},
-            called_by:"mdl_external_comment2"
-        }
+      paramCode: "{\n  type: \"External\",\n  message:{{ui.txt_ext_message9.value}},\t\n    file: \"msg_attach9\",\n    called_by:\"mdl_external_comment2\"\n}"
       blockPageLoad: false
       preventDefault: false
       index: 0

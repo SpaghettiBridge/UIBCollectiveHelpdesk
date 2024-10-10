@@ -1,1 +1,1 @@
-return {{data}};
+return {{steps.params.data}};

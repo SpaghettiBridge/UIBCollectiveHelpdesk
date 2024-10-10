@@ -55,6 +55,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    paused: false
   - id: '17182744091200.18095805516309005'
     type: executeAction
     name: execute
@@ -67,6 +68,34 @@ steps:
         valueType: custom
       - type: customParams
         value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17285633861620.715048737138898'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '17186247738670.68451084684456'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute2-customParams.js
         valueType: interpolatedValue
         interpolationType: code
       - type: successMapper

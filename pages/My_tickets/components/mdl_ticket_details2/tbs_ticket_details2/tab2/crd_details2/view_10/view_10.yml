@@ -30,3 +30,4 @@ slots:
       - txt_email2.yml
       - txt_title2.yml
       - slct_queue2.yml
+      - slct_reason_details2.yml

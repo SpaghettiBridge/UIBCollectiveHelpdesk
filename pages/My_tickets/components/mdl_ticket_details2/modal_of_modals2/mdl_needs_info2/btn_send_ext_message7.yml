@@ -45,12 +45,7 @@ properties:
 actions:
   buttonClick:
     - action: '17243334697920.739513763556181'
-      paramCode: |-
-        {
-          type: "Need more info",
-          message:{{ui.txt_ext_message7.value}},
-            called_by:"mdl_needs_info2"
-        }
+      paramCode: "{\n  type: \"Need more info\",\n  message:{{ui.txt_ext_message7.value}},\n\tfile: \"msg_attach7\",\n    called_by:\"mdl_needs_info2\"\n}"
       blockPageLoad: false
       preventDefault: false
       index: 0

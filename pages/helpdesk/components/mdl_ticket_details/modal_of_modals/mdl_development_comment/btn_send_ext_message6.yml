@@ -46,12 +46,7 @@ index: 0
 actions:
   buttonClick:
     - action: '17188182072340.005324802536976758'
-      paramCode: |-
-        {
-          type: "Development",
-          message:{{ui.txt_ext_message6.value}},
-            called_by:"mdl_development_comment"
-        }
+      paramCode: "{\n  type: \"Development\",\n  message:{{ui.txt_ext_message6.value}},\n\tfile: \"msg_attach6\",\n    called_by:\"mdl_development_comment\"\n}"
       blockPageLoad: false
       preventDefault: false
       index: 0

@@ -45,12 +45,7 @@ properties:
 actions:
   buttonClick:
     - action: '17243334697920.739513763556181'
-      paramCode: |-
-        {
-          type: "Suggest solution",
-          message:{{ui.txt_ext_message8.value}},
-            called_by:"mdl_sugg_sol2"
-        }
+      paramCode: "{\n  type: \"Suggest solution\",\n  message:{{ui.txt_ext_message8.value}},\n\tfile: \"msg_attach8\",\n    called_by:\"mdl_sugg_sol2\"\n}"
       blockPageLoad: false
       preventDefault: false
       index: 0

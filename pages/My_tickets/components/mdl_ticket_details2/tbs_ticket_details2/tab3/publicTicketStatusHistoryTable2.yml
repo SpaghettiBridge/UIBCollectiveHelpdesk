@@ -65,7 +65,7 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
-  rowHeight: small
+  rowHeight: dynamic
   showFooter:
     value: true
     dataValue: 'true'

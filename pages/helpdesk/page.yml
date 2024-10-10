@@ -27,6 +27,11 @@ slots:
               blockPageLoad: false
               preventDefault: false
               index: 0
+            - action: '17187019713980.3586599423532837'
+              paramCode: ''
+              blockPageLoad: false
+              preventDefault: false
+              index: 1
         slots:
           - id: '17152448971770.540481335972298'
             name: content

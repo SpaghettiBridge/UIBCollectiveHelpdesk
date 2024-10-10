@@ -42,7 +42,8 @@ properties:
   __UIBAKERY__SHOW__CONDITION__CODE__: >-
     {{item.message_attachment.split(".")[1] != "png" &&
     item.message_attachment.split(".")[1] !=
-    "gif"&&item.message_attachment.split(".")[1] != "jpeg"}}
+    "gif"&&item.message_attachment.split(".")[1] !=
+    "jpeg"&&item.message_attachment.split(".")[1] != "jpg"}}
 actions:
   fileClick: []
   init: []

@@ -3,6 +3,17 @@ kind: workflow
 name: upload_msg_attachment
 nameConfigured: true
 steps:
+  - id: '17285601705810.6908534815533196'
+    type: customAsyncCode
+    name: code2
+    params:
+      - type: asyncCode
+        value: ./code2.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '17243334697910.9669244224265703'
     type: customAsyncCode
     name: code
@@ -39,7 +50,7 @@ steps:
         valueType: interpolatedValue
       - type: s3FileKey
         value: >-
-          {{ui.tbl_mainTickets3.selectedRow.data.id}}_{{ui.msg_attach.value.name||ui.msg_attach7.value.name||ui.msg_attach8.value.name||ui.msg_attach9.value.name}}
+          {{ui.tbl_mainTickets3.selectedRow.data.id}}_{{ui[steps.code2.data.file].value.name}}
         valueType: interpolatedValue
       - type: s3ExpirationTime
         value: 300
@@ -48,8 +59,7 @@ steps:
         value: GET
         valueType: custom
       - type: s3UploadContentType
-        value: >-
-          {{ui.msg_attach.value.type||ui.msg_attach7.value.type||ui.msg_attach8.value.type||ui.msg_attach9.value.type}}
+        value: '{{ui[steps.code2.data.file].value.type}}'
         valueType: interpolatedValue
       - type: s3UploadData
         value: '{{data}}'
