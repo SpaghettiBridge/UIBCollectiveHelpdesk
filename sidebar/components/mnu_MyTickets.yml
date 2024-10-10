@@ -30,7 +30,7 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  autoSyncItems: true
+  autoSyncItems: false
   name: mnu_MyTickets
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
@@ -43,7 +43,8 @@ properties:
       },
       {
         title: 'Helpdesk',
-        link: '/helpdesk'
+        link: '/helpdesk',
+     hidden: {{state.user_type == "Agent"?false:true }}
       },
       {
         title: 'My Tickets',
