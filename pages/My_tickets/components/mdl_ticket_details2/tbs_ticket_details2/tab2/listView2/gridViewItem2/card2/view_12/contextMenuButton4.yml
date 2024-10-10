@@ -72,6 +72,7 @@ properties:
     value: hover
     dataValue: click
     withData: false
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{item.fk_acc_id == state.AccountData.account_id}}'
 actions:
   buttonClick: []
   menuItemClick:
