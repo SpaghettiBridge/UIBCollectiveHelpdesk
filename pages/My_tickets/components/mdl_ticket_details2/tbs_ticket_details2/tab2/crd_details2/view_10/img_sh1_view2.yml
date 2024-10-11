@@ -4,8 +4,8 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 160
-      w: 7
+      y: 138
+      w: 8
       h: 25
     flex:
       size:
