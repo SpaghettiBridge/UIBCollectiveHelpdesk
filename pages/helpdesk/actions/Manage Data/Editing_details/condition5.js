@@ -1,0 +1,1 @@
+{{ui.slct_details_status.value == data.id }}
