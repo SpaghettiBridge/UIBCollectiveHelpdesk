@@ -333,6 +333,67 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+              - id: '17286274486620.42573734564102605'
+                type: LOAD_ENTITY
+                name: get
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.lu_ticket_status
+                    valueType: string
+                  - type: filters
+                    value:
+                      - column: name
+                        operation: '='
+                        value:
+                          value: Resolved
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+              - id: '17286274290900.4104788243029809'
+                type: condition
+                name: condition5
+                params:
+                  - type: code
+                    value: ./condition5.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17286274717020.6213971201985009'
+                            type: customAsyncCode
+                            name: code
+                            params:
+                              - type: asyncCode
+                                value: ./code.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
               - id: '17183726484110.44397083074013466'
                 type: executeAction
                 name: execute
@@ -362,6 +423,34 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 paused: false
+              - id: '17286274867090.3542060475235158'
+                type: executeAction
+                name: execute2
+                params:
+                  - type: action
+                    value: '17187019713980.3586599423532837'
+                    valueType: custom
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: custom
+                  - type: customParams
+                    value: ./execute2-customParams.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
           - condition: false
             steps: []
         valueType: custom

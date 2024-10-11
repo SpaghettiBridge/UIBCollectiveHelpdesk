@@ -230,6 +230,11 @@ actions:
       blockPageLoad: false
       preventDefault: false
       index: 3
+    - action: '17186247738670.68451084684456'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 6
   init: []
   smartTableCreate: []
   smartTableEdit: []
