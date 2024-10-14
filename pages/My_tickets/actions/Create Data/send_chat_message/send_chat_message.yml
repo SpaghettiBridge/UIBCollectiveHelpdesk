@@ -27,6 +27,43 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '17289236744190.21595874835030204'
+    type: customSQLQuery
+    name: get_ccs
+    params:
+      - type: query
+        value: ./get_ccs-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./get_ccs-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '17243334697920.5916537410094693'
     type: CREATE_ENTITY
     name: create
@@ -183,7 +220,7 @@ steps:
                                 valueType: custom
                                 interpolationType: string
                               - type: body
-                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_agent_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.creator} Has sent an external message: ${steps.create.data.message}.\nTicket Details:  ${ui.tbl_mainTickets3.selectedRow.data.details}\nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\ncc: {{steps.get_ccs.data|| \"\"}} ,\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_agent_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.creator} Has sent an external message: ${steps.create.data.message}.\nTicket Details:  ${ui.tbl_mainTickets3.selectedRow.data.details}\nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
                                 valueType: interpolatedValue
                                 interpolationType: code
                               - type: structuredBody
@@ -238,7 +275,7 @@ steps:
                                 valueType: custom
                                 interpolationType: string
                               - type: body
-                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${state.AccountData.name} Has sent an external message: ${steps.create.data.message}.\nTicket Details: ${ui.tbl_mainTickets3.selectedRow.data.details}\nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\ncc: {{steps.get_ccs.data|| \"\"}} ,\n\temail: {{actions.get_accounts.data.filter(x=> x.id == data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${state.AccountData.name} Has sent an external message: ${steps.create.data.message}.\nTicket Details: ${ui.tbl_mainTickets3.selectedRow.data.details}\nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
                                 valueType: interpolatedValue
                                 interpolationType: code
                               - type: structuredBody
@@ -507,7 +544,7 @@ steps:
                                 valueType: custom
                                 interpolationType: string
                               - type: body
-                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.agent} Has requested More Information: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\ncc: {{steps.get_ccs.data|| \"\"}} ,\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.agent} Has requested More Information: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
                                 valueType: interpolatedValue
                                 interpolationType: code
                               - type: structuredBody
@@ -630,7 +667,7 @@ steps:
                                             valueType: custom
                                             interpolationType: string
                                           - type: body
-                                            value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.agent} Has suggested a solution: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
+                                            value: "{\n\tticket_id:{{ui.tbl_mainTickets3.selectedRow.data.id}},\ncc: {{steps.get_ccs.data|| \"\"}} ,\n\temail: {{actions.get_accounts.data.filter(x=> x.id == ui.tbl_mainTickets3.selectedRow.data.fk_creator_id)[0].email}}, \n  subject:\"Helpdesk ticket \"+ {{ui.tbl_mainTickets3.selectedRow.data.service_name}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.ticket_number}} +\" : \"+ {{ui.tbl_mainTickets3.selectedRow.data.title}},\n\tmessage:`${ui.tbl_mainTickets3.selectedRow.data.agent} Has suggested a solution: ${steps.create.data.message}.\nTicket Details: \nPriority: ${ui.tbl_mainTickets3.selectedRow.data.priority}\nDate Created: ${new Date(ui.tbl_mainTickets3.selectedRow.data.entered_date).toLocaleDateString()}\nCurrent status: ${ui.tbl_mainTickets3.selectedRow.data.status}\nCategory: ${actions.get_ticket_categories.data.filter(x=> x.id ==ui.tbl_mainTickets3.selectedRow.data.fk_category_id )[0].name}\n`,\n}"
                                             valueType: interpolatedValue
                                             interpolationType: code
                                           - type: structuredBody

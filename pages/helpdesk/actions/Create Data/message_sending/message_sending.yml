@@ -1,0 +1,16 @@
+id: '17289196439730.8735272412666264'
+kind: store_item
+name: message_sending
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentPageId: '17152448971770.8946191640924275'
+parentId: '17182679297780.6491491759285466'
+storeItem:
+  value: false
+  valueType: boolean
+  initialValue: false
+  version: 1
+selected: true
+configured: true

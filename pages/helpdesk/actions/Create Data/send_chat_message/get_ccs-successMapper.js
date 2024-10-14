@@ -1,0 +1,1 @@
+return data.map(x=> x.email).join()
