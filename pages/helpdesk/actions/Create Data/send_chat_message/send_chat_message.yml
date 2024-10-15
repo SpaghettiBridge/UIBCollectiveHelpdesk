@@ -457,6 +457,144 @@ steps:
                 isChanged: true
                 nameConfigured: true
                 paused: false
+              - id: '17289741958180.27804726297284565'
+                type: condition
+                name: condition9
+                params:
+                  - type: code
+                    value: ./condition9.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17289742451930.11878234579058033'
+                            type: condition
+                            name: condition10
+                            params:
+                              - type: code
+                                value: ./condition10.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: steps
+                                value:
+                                  - condition: true
+                                    steps:
+                                      - id: '17289743276900.04317543021104164'
+                                        type: LOAD_ENTITY
+                                        name: get3
+                                        params:
+                                          - type: datasourceId
+                                            value: Supabase Bridgelink Apps Database
+                                            valueType: string
+                                          - type: resourceId
+                                            value: public.lu_ticket_status
+                                            valueType: string
+                                          - type: filters
+                                            value:
+                                              - column: name
+                                                operation: '='
+                                                value:
+                                                  value: Awaiting Internal Assistance
+                                            valueType: custom
+                                          - type: customDatabaseName
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 3
+                                        fallthroughError: false
+                                        isChanged: true
+                                      - id: '17289742931060.21311246039454956'
+                                        type: UPDATE_ENTITY
+                                        name: update3
+                                        params:
+                                          - type: datasourceId
+                                            value: Supabase Bridgelink Apps Database
+                                            valueType: string
+                                          - type: resourceId
+                                            value: public.tickets
+                                            valueType: string
+                                          - type: filter
+                                            value:
+                                              - column: id
+                                                operation: '='
+                                                value:
+                                                  value: >-
+                                                    {{ui.tbl_mainTickets.selectedRow.data.id}}
+                                            valueType: custom
+                                          - type: entity
+                                            value: ./update3-entity.yml
+                                            valueType: custom
+                                          - type: replace
+                                            value: false
+                                            valueType: string
+                                          - type: bulk
+                                            value: false
+                                            valueType: string
+                                          - type: customDatabaseName
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 2
+                                        fallthroughError: false
+                                        isChanged: true
+                                      - id: '17289745157640.4774977555775859'
+                                        type: executeAction
+                                        name: execute5
+                                        params:
+                                          - type: action
+                                            value: '17186250160810.46804195335954923'
+                                            valueType: custom
+                                          - type: isActionsLibraryCall
+                                            value: false
+                                            valueType: custom
+                                          - type: customParams
+                                            value: ./execute5-customParams.js
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: successMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: failureMapper
+                                            value: ''
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                          - type: mapperEnabled
+                                            value: false
+                                            valueType: custom
+                                        level: 3
+                                        fallthroughError: false
+                                        isChanged: true
+                                  - condition: false
+                                    steps: []
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
               - id: '17192380235180.026534280973997015'
                 type: condition
                 name: condition2
