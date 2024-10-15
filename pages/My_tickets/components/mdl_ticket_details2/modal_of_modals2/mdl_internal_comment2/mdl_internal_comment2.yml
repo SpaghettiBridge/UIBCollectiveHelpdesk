@@ -46,6 +46,7 @@ slots:
       - txt_ext_message10.yml
       - btn_send_ext_message10.yml
       - msg_attach10.yml
+      - slct_agent4.yml
   - id: '17243334697870.08515881668039715'
     name: footer
     children: []

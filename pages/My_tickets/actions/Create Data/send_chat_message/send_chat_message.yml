@@ -403,6 +403,144 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '17289771335390.6153214219634306'
+    type: condition
+    name: condition8
+    params:
+      - type: code
+        value: ./condition8.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17289772717850.23514367918206736'
+                type: condition
+                name: condition9
+                params:
+                  - type: code
+                    value: ./condition9.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17289771742810.8217906457236182'
+                            type: LOAD_ENTITY
+                            name: get3
+                            params:
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: string
+                              - type: resourceId
+                                value: public.lu_ticket_status
+                                valueType: string
+                              - type: filters
+                                value:
+                                  - column: id
+                                    operation: '='
+                                    value:
+                                      value: Awaiting Internal Assistance
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 0
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17289772015640.8251425657449558'
+                            type: UPDATE_ENTITY
+                            name: update3
+                            params:
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: string
+                              - type: resourceId
+                                value: public.tickets
+                                valueType: string
+                              - type: filter
+                                value:
+                                  - column: id
+                                    operation: '='
+                                    value:
+                                      value: >-
+                                        {{ui.tbl_mainTickets3.selectedRow.data.id}}
+                                valueType: custom
+                              - type: entity
+                                value: ./update3-entity.yml
+                                valueType: custom
+                              - type: replace
+                                value: false
+                                valueType: string
+                              - type: bulk
+                                value: false
+                                valueType: string
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                          - id: '17289773243090.5163277169873506'
+                            type: executeAction
+                            name: execute5
+                            params:
+                              - type: action
+                                value: '17243334697920.5437417740980512'
+                                valueType: custom
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: custom
+                              - type: customParams
+                                value: ./execute5-customParams.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                                interpolationType: code
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps: []
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '17243334697920.9122600650475028'
     type: condition
     name: condition2

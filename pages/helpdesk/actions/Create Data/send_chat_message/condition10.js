@@ -1,0 +1,1 @@
+{{ui.slct_agent3.value != ui.tbl_mainTickets.selectedRow.data.fk_agent_id}}

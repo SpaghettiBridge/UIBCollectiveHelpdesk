@@ -1,0 +1,8 @@
+mode: structured
+valueByMode:
+  structured:
+    fk_agent_id:
+      value: '{{ui.slct_agent3.value}}'
+    fk_status_id:
+      value: '{{data.id}}'
+  custom: ''
