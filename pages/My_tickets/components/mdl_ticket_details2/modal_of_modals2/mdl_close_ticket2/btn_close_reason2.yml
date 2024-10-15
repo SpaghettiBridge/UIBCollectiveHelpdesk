@@ -39,7 +39,7 @@ actions:
     - action: '17243334697940.5347711523438203'
       paramCode: |-
         {
-          called_by: 'mdl_close_ticket'
+          called_by: 'mdl_close_ticket2'
         }
       blockPageLoad: false
       preventDefault: false

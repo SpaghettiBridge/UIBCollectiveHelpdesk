@@ -3,40 +3,96 @@ kind: workflow
 name: get_external_messages
 nameConfigured: true
 steps:
-  - id: '17243334697910.4237452188194146'
-    type: customSQLQuery
-    name: query
+  - id: '17289781096460.017013186847861572'
+    type: condition
+    name: condition
     params:
-      - type: query
-        value: ./query-query.sql
+      - type: code
+        value: ./condition.js
         valueType: interpolatedValue
-        interpolationType: string
-      - type: datasourceId
-        value: Supabase Bridgelink Apps Database
-        valueType: custom
-        mustSelectFirst: true
-      - type: preparedQuery
-        value: ./query-preparedQuery.sql
-        valueType: interpolatedValue
-      - type: preparedQueryParams
+        interpolationType: code
+      - type: steps
         value:
-          - >-
-            __UI_BAKERY__FORMAT_IF_DATE__(ui.tbl_mainTickets3.selectedRow.data.id)
-        valueType: custom
-      - type: customDatabaseName
-        value: ''
-        valueType: interpolatedValue
-      - type: stepVersion
-        value: 2
-        valueType: custom
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
+          - condition: true
+            steps:
+              - id: '17243334697910.4237452188194146'
+                type: customSQLQuery
+                name: query
+                params:
+                  - type: query
+                    value: ./query-query.sql
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: ./query-preparedQuery.sql
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value:
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.tbl_mainTickets3.selectedRow.data.id)
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps:
+              - id: '17289781167900.6565423953361635'
+                type: customSQLQuery
+                name: query2
+                params:
+                  - type: query
+                    value: ./query2-query.sql
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: ./query2-preparedQuery.sql
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value:
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.tbl_mainTickets3.selectedRow.data.id)
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
         valueType: custom
     level: 0
     fallthroughError: false
